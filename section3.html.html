@@ -1,0 +1,1902 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Microbiology Section 3 Study Guide | MOLB 2210</title></head><body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: sticky chapter bar over a single reading column; each topic is a "plate" card holding a short explanation, an interactive scene, and feedback questions. Palette borrows from the Gram stain (crystal violet + safranin). */
+:root{
+  --bg:#f4f3f8; --surface:#ffffff; --sunk:#ebe9f2; --ink:#1b1928; --muted:#575369; --line:#d8d4e3;
+  --cv:#5a2ca0; --cv-ink:#ffffff; --cv-soft:#ece5f8;
+  --saf:#b8245a; --saf-soft:#f9e3eb;
+  --ok:#17703f; --ok-bg:#e0f2e7; --bad:#ad2a20; --bad-bg:#fae4e1; --warn-bg:#fbf0d9;
+  --host:#f4d3c2; --host-edge:#c48a73; --nuc:#c99aa8; --tissue:#f8e6dc; --keratin:#e6c79f; --keratin-edge:#c9a477;
+  --control-edge:#69617f;
+  --mucus:#dbe8b0; --mucus-edge:#a9bf6a;
+  --bact:#6a3dbd; --gneg:#d4437a; --mac:#2a9688; --mac-soft:#bfe6e0; --neu:#4c74cc; --neu-soft:#cfdcf6;
+  --bcell:#3459c4; --tcell:#2f8f47; --nk:#d9702a; --ab:#c08a0c; --tox:#cf2f3a; --vir:#8e44ad; --comp:#7a52e0;
+  --rbc:#d24c4c; --vessel:#f2c1c1; --vessel-edge:#c25555; --fe:#9a4a1c;
+  --font-d:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --font-b:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+  --font-m:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#13121a; --surface:#1c1a26; --sunk:#252232; --ink:#ebe8f4; --muted:#a6a1ba; --line:#363149;
+  --cv:#b08cf2; --cv-ink:#1a1030; --cv-soft:#2e2445; --saf:#f0709b; --saf-soft:#3d2030;
+  --ok:#63d197; --ok-bg:#15301f; --bad:#ff8a7f; --bad-bg:#3a1b19; --warn-bg:#382b12;
+  --host:#6b4a45; --host-edge:#b07d70; --nuc:#93606f; --tissue:#352628; --keratin:#7a6243; --keratin-edge:#a88a60;
+  --control-edge:#b5abc9;
+  --mucus:#55623a; --mucus-edge:#8fa35a;
+  --bact:#a47cf0; --gneg:#ee6b99; --mac:#4cc2b3; --mac-soft:#1f4a45; --neu:#7c9ff0; --neu-soft:#26355a;
+  --bcell:#6f8ff0; --tcell:#5cc477; --nk:#f09450; --ab:#f0c040; --tox:#ff5f6a; --vir:#c27ae6; --comp:#a58bff;
+  --rbc:#e06666; --vessel:#5a2e33; --vessel-edge:#c46a6a; --fe:#e08a50; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#13121a; --surface:#1c1a26; --sunk:#252232; --ink:#ebe8f4; --muted:#a6a1ba; --line:#363149;
+  --cv:#b08cf2; --cv-ink:#1a1030; --cv-soft:#2e2445; --saf:#f0709b; --saf-soft:#3d2030;
+  --ok:#63d197; --ok-bg:#15301f; --bad:#ff8a7f; --bad-bg:#3a1b19; --warn-bg:#382b12;
+  --host:#6b4a45; --host-edge:#b07d70; --nuc:#93606f; --tissue:#352628; --keratin:#7a6243; --keratin-edge:#a88a60;
+  --control-edge:#b5abc9;
+  --mucus:#55623a; --mucus-edge:#8fa35a;
+  --bact:#a47cf0; --gneg:#ee6b99; --mac:#4cc2b3; --mac-soft:#1f4a45; --neu:#7c9ff0; --neu-soft:#26355a;
+  --bcell:#6f8ff0; --tcell:#5cc477; --nk:#f09450; --ab:#f0c040; --tox:#ff5f6a; --vir:#c27ae6; --comp:#a58bff;
+  --rbc:#e06666; --vessel:#5a2e33; --vessel-edge:#c46a6a; --fe:#e08a50; color-scheme:dark }
+
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-b);font-size:17px;line-height:1.55;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--font-d);line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(1.3rem,2.4vw,1.6rem);font-weight:700}
+h3{font-size:1.12rem;font-weight:700}
+p{margin:0}
+.prose{display:grid;gap:12px;max-width:68ch}
+.muted{color:var(--muted)}
+.mono{font-family:var(--font-m);font-size:.86em}
+a{color:var(--cv)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--cv);outline-offset:2px;border-radius:6px}
+sub{font-size:.7em}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding-block:10px}
+.brand{display:flex;flex-direction:column;min-width:0}
+.brand .eyebrow{font-family:var(--font-m);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.brand b{font-family:var(--font-d);font-size:1.08rem}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.tab{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);border:1.5px solid var(--control-edge);border-radius:999px;padding:6px 12px;font-weight:700;font-size:.92rem;background:var(--surface)}
+.tab:hover{border-color:var(--cv)}
+.tab[aria-current="page"]{background:var(--cv);border-color:var(--cv);color:var(--cv-ink)}
+.tab .badge{font-family:var(--font-m);font-size:.72rem;font-weight:600;opacity:.85}
+
+.hero{padding-block:28px 8px}
+.hero .wrap{display:grid;gap:10px}
+.hero .lead{max-width:66ch;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.88rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;flex:none}
+
+main .wrap{padding-block:18px 64px}
+.view{display:grid;gap:26px}
+.chap-head{display:grid;gap:6px;padding-top:6px}
+.chap-head .eyebrow,.plate-head .eyebrow{font-family:var(--font-m);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--saf)}
+.plate{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,3vw,30px);display:grid;gap:18px;min-width:0}
+.plate-head{display:grid;gap:4px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:6px;align-content:start;min-width:0}
+.card h4{font-size:1rem}
+.card.cv{background:var(--cv-soft);border-color:transparent}
+.card.saf{background:var(--saf-soft);border-color:transparent}
+.card ul,.prose ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
+.tip{background:var(--warn-bg);border-radius:12px;padding:12px 16px;font-size:.95rem}
+.tip b{font-family:var(--font-d)}
+table.facts{border-collapse:collapse;width:100%;font-size:.95rem}
+table.facts th,table.facts td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.facts th{font-family:var(--font-m);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+table.facts td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl{overflow-x:auto}
+.review{display:grid;gap:8px}
+.review ul{margin:0;padding-left:1.1em;display:grid;gap:4px;color:var(--muted)}
+
+/* scenes */
+.scene{background:var(--sunk);border-radius:12px;overflow:hidden;position:relative;min-width:0}
+.scene svg{display:block;width:100%;height:auto}
+.scene-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:780px){.scene-grid{grid-template-columns:minmax(0,1fr)}}
+.info{border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:8px;align-content:start;min-height:120px}
+.info h4{font-size:1.02rem}
+.info .tag{font-family:var(--font-m);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--saf)}
+.info p,.info li{font-size:.95rem}
+.info ul{margin:0;padding-left:1.1em;display:grid;gap:3px}
+.caption{font-size:.92rem;color:var(--muted);min-height:1.5em}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{border:1.5px solid var(--control-edge);background:var(--surface);border-radius:999px;padding:6px 13px;cursor:pointer;font-size:.92rem;font-weight:700}
+.chip:hover{border-color:var(--cv)}
+.chip[aria-pressed="true"],.chip.on{background:var(--cv);border-color:var(--cv);color:var(--cv-ink)}
+.chip.done::after{content:" ✓"}
+.btn{border:0;background:var(--cv);color:var(--cv-ink);border-radius:10px;padding:9px 16px;font-weight:700;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--cv);border:1.5px solid var(--cv)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.group-label{font-family:var(--font-m);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);width:100%}
+input[type=range]{width:100%;accent-color:var(--cv)}
+.skip-link{position:absolute;left:12px;top:-120px;background:var(--surface);color:var(--ink);padding:12px 18px;z-index:99;border:3px solid var(--cv);border-radius:8px}
+.skip-link:focus{top:12px}
+.match-row .item-status,.order-list .item-status{font-weight:700;font-size:.9em;display:block;margin-top:4px}
+.match-row.right .item-status,.order-list li.right .item-status{color:var(--ok)}
+.match-row.wrong .item-status,.order-list li.wrong .item-status{color:var(--bad)}
+@media (forced-colors:active){.chip,.btn,.opt,.mv,.step,.tab{border:1px solid ButtonText}.chip[aria-pressed="true"],.step[aria-selected="true"]{outline:2px solid Highlight}}
+.readout{font-family:var(--font-m);font-size:.9rem;font-variant-numeric:tabular-nums}
+
+/* journey stepper */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;counter-reset:st}
+.step{border:1.5px solid var(--control-edge);background:var(--surface);border-radius:12px;padding:8px 10px;text-align:left;cursor:pointer;display:grid;gap:2px;min-width:0}
+.step .n{font-family:var(--font-m);font-size:.72rem;color:var(--muted)}
+.step b{font-size:.9rem;line-height:1.2}
+.step[aria-selected="true"]{border-color:var(--cv);background:var(--cv-soft)}
+@media (max-width:640px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.panel{display:grid;gap:16px}
+
+/* questions */
+.qset{display:grid;gap:0}
+.qset-title{font-family:var(--font-d);font-weight:700;font-size:1rem;margin-bottom:4px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.qset-title .count{font-family:var(--font-m);font-size:.75rem;color:var(--muted);font-weight:400}
+.q{border-top:1px solid var(--line);padding-block:14px;display:grid;gap:10px}
+.q-stem{font-weight:700;display:flex;gap:10px}
+.q-stem .qn{font-family:var(--font-m);font-size:.78rem;color:var(--cv);border:1.5px solid var(--cv);border-radius:6px;padding:0 6px;height:1.6em;line-height:1.5em;flex:none;margin-top:2px}
+.q.solved .q-stem .qn{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.opts{display:grid;gap:7px}
+.opt{text-align:left;border:1.5px solid var(--control-edge);background:var(--surface);border-radius:10px;padding:9px 13px;cursor:pointer;font-size:.97rem}
+.opt:hover:not(:disabled){border-color:var(--cv)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg);text-decoration:line-through;text-decoration-color:var(--bad)}
+.q.solved .opt:not(.right):not(.wrong){opacity:.55}
+.fb{padding:10px 14px;border-radius:10px;font-size:.95rem}
+.fb.ok{background:var(--ok-bg)} .fb.ok strong{color:var(--ok)}
+.fb.bad{background:var(--bad-bg)} .fb.bad strong{color:var(--bad)}
+.prev{font-family:var(--font-m);font-size:.72rem;color:var(--ok)}
+
+.sort-row{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding-block:10px;border-top:1px solid var(--line)}
+.sort-row .txt{flex:1 1 280px;min-width:0}
+.sort-row .bins{display:flex;gap:6px;flex-wrap:wrap}
+.sort-row .bins button{border:1.5px solid var(--control-edge);background:var(--surface);border-radius:8px;padding:5px 11px;cursor:pointer;font-size:.88rem;font-weight:700}
+.sort-row .bins button:hover:not(:disabled){border-color:var(--cv)}
+.sort-row .bins button.right{border-color:var(--ok);background:var(--ok-bg)}
+.sort-row .bins button.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.sort-row .fb{flex-basis:100%}
+.sort-row.done .txt::before{content:"✓ ";color:var(--ok);font-weight:700}
+
+.match-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,220px);gap:8px 14px;align-items:center;padding-block:9px;border-top:1px solid var(--line)}
+@media (max-width:560px){.match-row{grid-template-columns:minmax(0,1fr)}}
+.match-row select{font:inherit;font-size:.95rem;padding:7px 9px;border-radius:8px;border:1.5px solid var(--control-edge);background:var(--surface);color:var(--ink);width:100%}
+.match-row.right select{border-color:var(--ok);background:var(--ok-bg)}
+.match-row.wrong select{border-color:var(--bad);background:var(--bad-bg)}
+.match-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding-top:10px}
+
+.order-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.order-list li{display:flex;align-items:center;gap:10px;border:1.5px solid var(--control-edge);border-radius:10px;padding:8px 10px;background:var(--surface)}
+.order-list li .pos{font-family:var(--font-m);font-size:.8rem;color:var(--muted);width:1.4em}
+.order-list li .lbl{flex:1;min-width:0}
+.order-list li.right{border-color:var(--ok);background:var(--ok-bg)}
+.order-list li.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.mv{border:1.5px solid var(--control-edge);background:var(--surface);border-radius:8px;width:34px;height:32px;cursor:pointer}
+
+/* flashcards */
+.ab-bars{display:grid;gap:8px}
+.ab-bar{display:grid;grid-template-columns:3.2em minmax(0,1fr) 5.4em;gap:10px;align-items:center}
+.ab-bar b{font-family:var(--font-d)}
+.ab-bar .track{height:16px;background:var(--sunk);border-radius:4px;overflow:hidden}
+.ab-bar .fill{height:100%;background:var(--ab);border-radius:4px}
+.ab-bar .pct{font-family:var(--font-m);font-size:.85rem;text-align:right;font-variant-numeric:tabular-nums}
+.builder{display:grid;gap:12px}
+.bcard{border:1.5px dashed var(--line);border-radius:14px;padding:14px;display:grid;gap:10px}
+.bcard-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.bcard-top h4{font-size:1.25rem}
+.bfields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}
+.bfields label{display:grid;gap:4px;font-size:.85rem;font-weight:700;color:var(--muted)}
+.bfields input,.bfields select{font:inherit;font-size:.95rem;padding:7px 9px;border-radius:8px;border:1.5px solid var(--control-edge);background:var(--surface);color:var(--ink)}
+.key{background:var(--sunk);border-radius:10px;padding:10px 14px;font-size:.93rem;display:grid;gap:4px}
+.deck{display:grid;gap:12px;justify-items:center}
+.flash{width:min(100%,460px);aspect-ratio:3/2;perspective:1000px;cursor:pointer;border:0;background:none;padding:0}
+.flash-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flash.flipped .flash-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;border:1.5px solid var(--control-edge);display:grid;place-items:center;padding:18px;text-align:center;background:var(--surface);overflow:auto}
+.face.front{background:var(--cv-soft)}
+.face.back{transform:rotateY(180deg)}
+.face .big{font-family:var(--font-d);font-size:clamp(1.4rem,4vw,2rem);font-weight:800}
+.face .sm{font-size:.95rem}
+.deck-meta{font-family:var(--font-m);font-size:.8rem;color:var(--muted)}
+
+/* SVG paint classes */
+svg text{font-family:var(--font-b)}
+.t{fill:var(--ink);font-size:13px} .tm{fill:var(--muted);font-size:12px} .tb{font-weight:700}
+.tl{fill:var(--ink);font-size:11px;font-family:var(--font-m)}
+.f-host{fill:var(--host);stroke:var(--host-edge);stroke-width:2}
+.f-nuc{fill:var(--nuc)}
+.f-tissue{fill:var(--tissue)}
+.f-ker{fill:var(--keratin);stroke:var(--keratin-edge);stroke-width:1}
+.f-mucus{fill:var(--mucus);stroke:var(--mucus-edge);stroke-width:1}
+.f-bact{fill:var(--bact)} .f-gneg{fill:var(--gneg)}
+.f-mac{fill:var(--mac);fill-opacity:.82;stroke:var(--mac);stroke-width:2}
+.f-macn{fill:var(--mac-soft)}
+.f-neu{fill:var(--neu);fill-opacity:.85;stroke:var(--neu);stroke-width:2}
+.f-neun{fill:var(--neu-soft)}
+.f-b{fill:var(--bcell)} .f-t{fill:var(--tcell)} .f-nk{fill:var(--nk)}
+.f-ab{fill:var(--ab)} .s-ab{stroke:var(--ab);stroke-width:3.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.f-tox{fill:var(--tox)} .f-vir{fill:var(--vir)} .s-vir{stroke:var(--vir);stroke-width:2.5;stroke-linecap:round}
+.f-comp{fill:var(--comp)} .f-rbc{fill:var(--rbc)} .f-fe{fill:var(--fe)}
+.f-vessel{fill:var(--vessel);stroke:var(--vessel-edge);stroke-width:3}
+.f-surface{fill:var(--surface)} .f-sunk{fill:var(--sunk)} .f-line{fill:var(--line)}
+.s-ink{stroke:var(--ink);fill:none} .s-muted{stroke:var(--muted);fill:none} .s-line{stroke:var(--line);fill:none}
+.s-cv{stroke:var(--cv);fill:none} .s-saf{stroke:var(--saf);fill:none} .s-mac{stroke:var(--mac);fill:none}
+.f-cv{fill:var(--cv)} .f-saf{fill:var(--saf)}
+.hot{cursor:pointer}
+.hot circle.mk{fill:var(--saf);stroke:var(--surface);stroke-width:2.5}
+.hot text{fill:#fff;font-size:11px;font-weight:700;font-family:var(--font-m);pointer-events:none}
+.hot.sel circle.mk{fill:var(--cv)}
+.hot:focus-visible{outline:none} .hot:focus-visible circle.mk{stroke:var(--ink);stroke-width:3}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+.mv-t{transition:transform 1s ease-in-out,opacity .8s ease}
+.fade{transition:opacity .7s ease}
+.part{cursor:pointer;transition:opacity .3s}
+.dimmed .part:not(.sel){opacity:.28}
+
+/* keyframes for dynamic scenes */
+.k{transform-box:fill-box;transform-origin:center}
+@keyframes eat{0%{transform:translateX(0)}60%,100%{transform:translateX(var(--dx,-240px))}}
+@keyframes slip{0%{transform:translateX(0)}45%{transform:translateX(var(--dx,-160px))}55%{transform:translateX(calc(var(--dx,-160px) + 18px))}68%{transform:translateX(calc(var(--dx,-160px) - 4px))}100%{transform:translateX(calc(var(--dx,-160px) + 90px))}}
+@keyframes digest{0%,55%{opacity:1;transform:scale(1)}100%{opacity:.18;transform:scale(.55)}}
+@keyframes appear{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+@keyframes vanish{to{opacity:0}}
+@keyframes drop{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--dx,0px),70px) rotate(var(--rot,40deg))}}
+@keyframes go{from{transform:translate(0,0)}to{transform:translate(var(--dx,0px),var(--dy,0px))}}
+@keyframes wiggle{0%,100%{transform:translateX(0)}25%{transform:translateX(6px)}75%{transform:translateX(-6px)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@keyframes ring{0%{opacity:.9;transform:scale(.3)}100%{opacity:0;transform:scale(1.6)}}
+@keyframes burst{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--dx,0px),var(--dy,0px)) scale(.6)}}
+@keyframes shrink{to{transform:scale(.55);opacity:.35}}
+@keyframes recolor{to{fill:var(--line)}}
+.a-eat{animation:eat 2.4s ease-in-out forwards}
+.a-slip{animation:slip 2.8s ease-in-out forwards}
+.a-digest{animation:digest 2.4s ease-in forwards}
+.a-appear{animation:appear .6s ease-out both}
+.a-vanish{animation:vanish .8s ease-in forwards}
+.a-drop{animation:drop 1s ease-in forwards}
+.a-go{animation:go 1.4s ease-in-out forwards}
+.a-wiggle{animation:wiggle .35s ease-in-out 4}
+.a-shake{animation:shake .5s ease-in-out 1}
+.a-ring{animation:ring 1.3s ease-out 3}
+.a-burst{animation:burst 1s ease-out forwards}
+.a-shrink{animation:shrink 1.2s ease-in forwards}
+.shake{animation:shake .45s ease-in-out 1}
+.flow{stroke-dasharray:14 10}.flowing{animation:flow .5s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-24}}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:1ms!important;animation-delay:0ms!important;animation-iteration-count:1!important;transition-duration:1ms!important;scroll-behavior:auto!important}
+}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+footer .wrap{padding-block:18px 28px}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="eyebrow">MOLB 2210 · General Microbiology</span><b>Section 3 Study Guide</b></div>
+    <nav class="tabs" aria-label="Chapters">
+      <a class="tab" href="#ch15" data-ch="ch15">Ch 15 <span class="badge" id="badge-ch15"></span></a>
+      <a class="tab" href="#ch16" data-ch="ch16">Ch 16 <span class="badge" id="badge-ch16"></span></a>
+      <a class="tab" href="#ch17" data-ch="ch17">Ch 17 <span class="badge" id="badge-ch17"></span></a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1 id="hero-title">How microbes cause disease, and how your body fights back</h1>
+    <p class="lead">Work through each chapter at your own pace. Play with the models, then answer the questions. Every answer gives you feedback, and a wrong answer tells you why so you can try again. Your progress is saved in this browser. Keyboard users can use Tab to move between controls and Enter or Space to activate them; use arrow keys to change infection-stage tabs.</p>
+    <div class="legend" aria-label="Color key for the models">
+      <span><i class="dot" style="background:var(--bact)"></i>Gram-positive bacterium</span>
+      <span><i class="dot" style="background:var(--gneg)"></i>Gram-negative bacterium</span>
+      <span><i class="dot" style="background:var(--host)"></i>Host cell</span>
+      <span><i class="dot" style="background:var(--mac)"></i>Macrophage</span>
+      <span><i class="dot" style="background:var(--neu)"></i>Neutrophil</span>
+      <span><i class="dot" style="background:var(--bcell)"></i>B cell</span>
+      <span><i class="dot" style="background:var(--tcell)"></i>T cell</span>
+      <span><i class="dot" style="background:var(--nk)"></i>NK cell</span>
+      <span><i class="dot" style="background:var(--ab)"></i>Antibody</span>
+    </div>
+  </div>
+</section>
+
+<main id="main-content" tabindex="-1">
+<div class="wrap">
+
+<!-- ===================== CHAPTER 15 ===================== -->
+<section class="view" id="view-ch15" aria-labelledby="h-ch15">
+  <div class="chap-head">
+    <span class="eyebrow">Chapter 15</span>
+    <h2 id="h-ch15" tabindex="-1">Microbial Mechanisms of Pathogenicity</h2>
+    <p class="muted">How a pathogen gets in, holds on, gets past your defenses, does damage, and gets out.</p>
+  </div>
+
+  <article class="plate" id="p15-1">
+    <div class="plate-head"><span class="eyebrow">15.1 · Key terms</span><h3>Pathogenicity vs. virulence</h3></div>
+    <div class="two">
+      <div class="card cv"><h4>Pathogenicity</h4><p>The <b>ability</b> to cause disease. It is a yes-or-no question: can this microbe make a host sick at all?</p></div>
+      <div class="card saf"><h4>Virulence</h4><p>The <b>degree</b> of pathogenicity. How easily, and how badly, does this microbe cause disease?</p></div>
+    </div>
+    <div class="prose">
+      <p>Think of pathogenicity as whether a dog bites, and virulence as how hard it bites. Two strains of the same species are both pathogenic, but one can be far more virulent than the other.</p>
+      <p>The traits that raise virulence are called <b>virulence factors</b>: adhesins, capsules, enzymes, and toxins. You will meet all of them in the infection model below.</p>
+    </div>
+    <div class="qset" data-sort="ch15-pvsort"></div>
+    <div class="qset" data-quiz="ch15-pv"></div>
+  </article>
+
+  <article class="plate" id="p15-2">
+    <div class="plate-head"><span class="eyebrow">15.2 · Numbers of invading microbes</span><h3>ID<sub>50</sub> and LD<sub>50</sub></h3></div>
+    <div class="two">
+      <div class="card"><h4>ID<sub>50</sub> · infectious dose</h4><p>The number of microbes needed to infect <b>50%</b> of a sample population. It measures the <b>virulence</b> of a microbe.</p><p class="muted">Lower ID<sub>50</sub> = fewer cells needed = more virulent.</p></div>
+      <div class="card"><h4>LD<sub>50</sub> · lethal dose</h4><p>The amount of a toxin that kills <b>50%</b> of a sample population. It measures the <b>potency of a toxin</b>.</p><p class="muted">Lower LD<sub>50</sub> = less toxin needed = more potent.</p></div>
+    </div>
+    <h4>Try it: find the ID<sub>50</sub></h4>
+    <p class="muted">Drag the dose slider. Each dot is one animal in a test group of 20. Find the dose where half of each group is infected.</p>
+    <div class="scene-grid">
+      <div class="scene" id="dose-scene"></div>
+      <div class="info">
+        <label for="dose" class="tag">Dose given</label>
+        <input type="range" id="dose" min="0" max="70" step="1" value="20" aria-describedby="dose-read">
+        <div class="readout" id="dose-read"></div>
+        <div id="dose-people" class="readout"></div>
+      </div>
+    </div>
+    <div class="two">
+      <div class="card"><h4>ID<sub>50</sub> of <i>Bacillus anthracis</i> depends on the portal</h4>
+        <div class="tbl"><table class="facts"><thead><tr><th>Portal of entry</th><th>ID<sub>50</sub></th></tr></thead><tbody>
+        <tr><td>Skin</td><td class="num">10–50 endospores</td></tr>
+        <tr><td>Inhalation</td><td class="num">10,000–20,000 endospores</td></tr>
+        <tr><td>Ingestion</td><td class="num">250,000–1,000,000 endospores</td></tr></tbody></table></div></div>
+      <div class="card"><h4>LD<sub>50</sub> of three toxins</h4>
+        <div class="tbl"><table class="facts"><thead><tr><th>Toxin</th><th>LD<sub>50</sub></th></tr></thead><tbody>
+        <tr><td>Botulinum</td><td class="num">0.03 ng/kg</td></tr>
+        <tr><td>Shiga toxin</td><td class="num">250 ng/kg</td></tr>
+        <tr><td>Staphylococcal enterotoxin</td><td class="num">1,350 ng/kg</td></tr></tbody></table></div></div>
+    </div>
+    <div class="qset" data-quiz="ch15-id"></div>
+  </article>
+
+  <article class="plate" id="p15-3">
+    <div class="plate-head"><span class="eyebrow">15.3 · Interactive model</span><h3>The infection journey of a bacterium</h3></div>
+    <p class="prose muted">Follow one bacterium through the five stages of infection. Choose a stage, try each option, and answer the checkpoint before moving on.</p>
+    <div class="steps" role="tablist" aria-label="Stages of infection" id="j-steps">
+      <button class="step" type="button" role="tab" id="journey-tab-1" aria-controls="journey-panel-1" data-j="1"><span class="n">Stage 1</span><b>Portal of entry</b></button>
+      <button class="step" type="button" role="tab" id="journey-tab-2" aria-controls="journey-panel-2" data-j="2"><span class="n">Stage 2</span><b>Adherence</b></button>
+      <button class="step" type="button" role="tab" id="journey-tab-3" aria-controls="journey-panel-3" data-j="3"><span class="n">Stage 3</span><b>Evading defenses</b></button>
+      <button class="step" type="button" role="tab" id="journey-tab-4" aria-controls="journey-panel-4" data-j="4"><span class="n">Stage 4</span><b>Damaging the host</b></button>
+      <button class="step" type="button" role="tab" id="journey-tab-5" aria-controls="journey-panel-5" data-j="5"><span class="n">Stage 5</span><b>Portal of exit</b></button>
+    </div>
+
+    <div class="panel" id="journey-panel-1" data-jp="1" role="tabpanel" aria-labelledby="journey-tab-1" tabindex="0">
+      <div class="scene-grid">
+        <div class="scene" id="j1-scene"></div>
+        <div class="info" id="j1-info" aria-live="polite"></div>
+      </div>
+      <div class="controls" id="j1-ctrl"><span class="group-label">Send the bacterium in through…</span></div>
+      <div class="qset" data-quiz="ch15-j1"></div>
+    </div>
+
+    <div class="panel" id="journey-panel-2" data-jp="2" role="tabpanel" aria-labelledby="journey-tab-2" tabindex="0" hidden>
+      <div class="scene-grid">
+        <div class="scene" id="j2-scene"></div>
+        <div class="info" aria-live="polite">
+          <span class="tag">Stage 2</span><h4>Adherence: holding on</h4>
+          <p>Almost all pathogens must attach to host tissue. <b>Adhesins</b> on the pathogen bind to <b>receptors</b> on host cells.</p>
+          <ul>
+            <li><b>Glycocalyx</b>: the dextran glycocalyx of <i>Streptococcus mutans</i> sticks it to teeth.</li>
+            <li><b>Fimbriae</b>: fimbriae of <i>Actinomyces</i> attach to the glycocalyx of <i>S. mutans</i>.</li>
+            <li><b>Viral spikes</b>: SARS-CoV-2 spikes bind the ACE2 receptor.</li>
+          </ul>
+          <p class="caption" id="j2-cap">Press <b>Attach</b>, then <b>Flush</b>. Then turn adhesins off and try again.</p>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="chip" id="j2-adh" aria-pressed="true">Adhesins: on</button>
+        <button class="btn" id="j2-attach">Attach</button>
+        <button class="btn" id="j2-flush">Flush (mucus, urine, peristalsis)</button>
+        <button class="btn ghost" id="j2-reset">Reset</button>
+      </div>
+      <div class="qset" data-quiz="ch15-j2"></div>
+    </div>
+
+    <div class="panel" id="journey-panel-3" data-jp="3" role="tabpanel" aria-labelledby="journey-tab-3" tabindex="0" hidden>
+      <div class="scene-grid">
+        <div class="scene" id="j3-scene"></div>
+        <div class="info" id="j3-info" aria-live="polite"></div>
+      </div>
+      <div class="controls" id="j3-ctrl"><span class="group-label">Give the bacterium a virulence factor, then watch the phagocyte</span></div>
+      <div class="qset" data-quiz="ch15-j3"></div>
+    </div>
+
+    <div class="panel" id="journey-panel-4" data-jp="4" role="tabpanel" aria-labelledby="journey-tab-4" tabindex="0" hidden>
+      <div class="scene-grid">
+        <div class="scene" id="j4-scene"></div>
+        <div class="info" id="j4-info" aria-live="polite"></div>
+      </div>
+      <div class="controls" id="j4-ctrl"><span class="group-label">How does the bacterium cause damage?</span></div>
+      <div class="qset" data-sort="ch15-toxsort"></div>
+      <div class="qset" data-quiz="ch15-j4"></div>
+    </div>
+
+    <div class="panel" id="journey-panel-5" data-jp="5" role="tabpanel" aria-labelledby="journey-tab-5" tabindex="0" hidden>
+      <div class="scene-grid">
+        <div class="scene" id="j5-scene"></div>
+        <div class="info" id="j5-info" aria-live="polite"></div>
+      </div>
+      <div class="controls" id="j5-ctrl"><span class="group-label">Leave the host through…</span></div>
+      <div class="qset" data-quiz="ch15-j5"></div>
+    </div>
+  </article>
+
+  <article class="plate review">
+    <h3>Also on your Section 3 study guide for Chapter 15</h3>
+    <ul>
+      <li>Viral pathogenicity: cytocidal vs. noncytocidal cytopathic effects, and how interferons protect neighboring cells.</li>
+      <li>Eukaryotic pathogens: fungi (mycotoxins, aflatoxin, ergot), protozoa (<i>Giardia</i>, <i>Toxoplasma</i>, <i>Trypanosoma</i>), helminths, and algae (saxitoxin, paralytic shellfish poisoning).</li>
+      <li>Plasmids that carry virulence genes and R (resistance) genes.</li>
+    </ul>
+  </article>
+</section>
+
+<!-- ===================== CHAPTER 16 ===================== -->
+<section class="view" id="view-ch16" aria-labelledby="h-ch16" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Chapter 16</span>
+    <h2 id="h-ch16" tabindex="-1">Innate Immunity: Nonspecific Defenses of the Host</h2>
+    <p class="muted">The defenses you were born with. They are fast, they work against any pathogen, and they have no memory.</p>
+  </div>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">16.1 · Key terms</span><h3>Match each term to its meaning</h3></div>
+    <div class="two">
+      <div class="card"><h4>Innate immunity</h4><p>Present at birth. Rapid. Works against <b>any</b> pathogen. No memory.</p><p class="muted">First line + second line of defense.</p></div>
+      <div class="card"><h4>Adaptive immunity</h4><p>Targets a <b>specific</b> pathogen. Slower the first time. Has <b>memory</b>.</p><p class="muted">Third line of defense (Chapter 17).</p></div>
+    </div>
+    <div class="qset" data-match="ch16-terms"></div>
+    <div class="qset" data-quiz="ch16-terms"></div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">16.2 · Interactive model</span><h3>First and second lines of defense</h3></div>
+    <p class="prose muted">This is a slice through skin (left) and a mucous membrane (right), with a blood vessel below. Pick any part to see how it protects you. Then switch to <b>Watch an infection</b> to see what happens when the first line is breached.</p>
+    <div class="controls" role="group" aria-label="Model mode">
+      <button class="chip on" id="dx-mode-explore" aria-pressed="true">Explore the defenses</button>
+      <button class="chip" id="dx-mode-run" aria-pressed="false">Watch an infection</button>
+    </div>
+    <div class="scene-grid">
+      <div class="scene" id="dx-scene"></div>
+      <div class="info" id="dx-info" aria-live="polite"></div>
+    </div>
+    <div id="dx-list" class="controls"></div>
+    <div id="dx-run" class="controls" hidden>
+      <button class="btn ghost" id="dx-back">Back</button>
+      <button class="btn" id="dx-next">Next step</button>
+      <span class="readout" id="dx-stepnum"></span>
+    </div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">16.3 · Interactive model</span><h3>Toll-like receptors (TLRs) and PAMPs</h3></div>
+    <div class="prose">
+      <p><b>PAMPs</b> (pathogen-associated molecular patterns) are molecules found on microbes but <b>not</b> on your own cells: LPS, flagellin, peptidoglycan, bacterial DNA, and viral DNA or RNA.</p>
+      <p><b>TLRs</b> are receptors on phagocytes and dendritic cells. Each kind of TLR recognizes one kind of pattern. When a TLR binds its PAMP, the cell releases <b>cytokines</b> that call in more phagocytes and switch on T cells and B cells.</p>
+      <p>A TLR recognizes a whole <i>category</i> of microbe (every gram-negative bacterium has LPS), not one specific species. That is why it is part of innate immunity.</p>
+    </div>
+    <p class="muted"><b>Your task:</b> pick a molecule, then pick the TLR that senses it. One molecule should not fit anywhere. Can you tell which?</p>
+    <div class="scene-grid">
+      <div class="scene" id="tlr-scene"></div>
+      <div class="info" id="tlr-info" aria-live="polite"><span class="tag">Macrophage surface</span><h4>Choose a molecule</h4><p>Then choose a receptor on the macrophage.</p></div>
+    </div>
+    <div class="controls" id="tlr-tray"><span class="group-label">Molecules drifting past the macrophage</span></div>
+    <div class="controls" id="tlr-rec"><span class="group-label">Receptors (you can also click them in the picture)</span></div>
+    <div class="qset" data-quiz="ch16-tlr"></div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">16.4 · Second line of defense</span><h3>Phagocytosis</h3></div>
+    <div class="two">
+      <div class="card"><h4>Neutrophils</h4><p>The <b>first responders</b>. They dominate early in a bacterial infection.</p></div>
+      <div class="card"><h4>Macrophages</h4><p>The <b>clean-up crew</b>. They dominate later and clear dead cells and debris.</p></div>
+    </div>
+    <p class="muted">Put the four phases of phagocytosis in order, then play the animation.</p>
+    <div class="qset" data-order="ch16-phago"></div>
+    <div class="scene-grid">
+      <div class="scene" id="ph-scene"></div>
+      <div class="info" id="ph-info" aria-live="polite"><span class="tag">Phagocytosis</span><h4>Put the steps in order first</h4><p>Or press a phase below to see it.</p></div>
+    </div>
+    <div class="controls" id="ph-ctrl"></div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">16.5 · Brief overview</span><h3>Inflammation and fever</h3></div>
+    <div class="prose">
+      <p><b>Inflammation</b> is a local response to tissue damage. It destroys or walls off the cause and then repairs the tissue. You saw it step by step in the model in 16.2.</p>
+    </div>
+    <div class="controls" aria-label="Signs of inflammation">
+      <span class="group-label">Signs of inflammation: PRISH</span>
+      <span class="chip on">Pain</span><span class="chip on">Redness</span><span class="chip on">Immobility</span><span class="chip on">Swelling</span><span class="chip on">Heat</span>
+    </div>
+    <div class="tbl"><table class="facts">
+      <thead><tr><th>Who is involved</th><th>What they do</th></tr></thead>
+      <tbody>
+        <tr><td><b>Damaged tissue cells</b></td><td>Release chemicals that dilate blood vessels and make them leaky.</td></tr>
+        <tr><td><b>Macrophages</b></td><td>Already waiting in the tissue. Their TLRs detect the microbe, and they release cytokines that sound the alarm. Later they clean up.</td></tr>
+        <tr><td><b>Neutrophils</b></td><td>Travel in the blood, stick to the vessel wall (margination), squeeze out, and follow chemokines to the site within about an hour. They phagocytize microbes.</td></tr>
+        <tr><td><b>Blood vessels</b></td><td>Vasodilation causes redness and heat. Increased permeability lets fluid leak out, causing swelling.</td></tr>
+      </tbody></table></div>
+    <h4>Fever: the body's thermostat</h4>
+    <p class="prose muted">Cytokines tell the hypothalamus to release prostaglandins, which reset the body's set point higher. Move the slider and watch body temperature chase the new set point.</p>
+    <div class="scene-grid">
+      <div class="scene" id="fever-scene"></div>
+      <div class="info" aria-live="polite">
+        <label for="cyto" class="tag">Cytokine signal reaching the hypothalamus</label>
+        <input type="range" id="cyto" min="0" max="100" value="0" aria-describedby="fever-read fever-msg">
+        <div class="readout" id="fever-read"></div>
+        <p id="fever-msg" class="caption"></p>
+        <div class="controls"><button class="btn ghost" id="fever-clear">Infection cleared</button></div>
+      </div>
+    </div>
+    <div class="two">
+      <div class="card"><h4>Why fever helps</h4><ul><li>Phagocytes and T cells work better at a slightly higher temperature.</li><li>Boosts interferons and other antimicrobial substances.</li><li>May slow pathogen growth.</li><li>Speeds up repair.</li></ul></div>
+      <div class="card"><h4>When fever hurts</h4><ul><li>Fast heart rate (tachycardia)</li><li>Acidosis and dehydration</li><li>Seizures and coma at very high temperatures</li></ul></div>
+    </div>
+    <div class="qset" data-quiz="ch16-inflam"></div>
+  </article>
+
+  <article class="plate" id="cytokines">
+    <div class="plate-head"><span class="eyebrow">16.6 · Interactive model</span><h3>Cytokines: the immune system's messengers</h3></div>
+    <div class="prose">
+      <p>Cytokines are small proteins that cells release to send messages. A cytokine only affects cells that have a receptor for it, the way a group text only reaches the people on the thread.</p>
+      <p>You do not need to memorize specific cytokines. Know the families and what kind of message each one sends.</p>
+    </div>
+    <div class="scene-grid">
+      <div class="scene" id="cy-scene"></div>
+      <div class="info" id="cy-info" aria-live="polite"><span class="tag">Send a message</span><h4>Choose a cytokine family</h4><p>Watch who receives it and what they do.</p></div>
+    </div>
+    <div class="controls" id="cy-ctrl"></div>
+    <div class="qset" data-quiz="ch16-cyto"></div>
+  </article>
+
+  <article class="plate review">
+    <h3>Also on your Section 3 study guide for Chapter 16</h3>
+    <ul>
+      <li>Normal microbiota: microbial antagonism, probiotics vs. prebiotics, and opportunistic pathogens.</li>
+      <li>White blood cell counts: what high and low counts can suggest.</li>
+      <li>Other antimicrobial substances: interferons (alpha, beta, gamma), iron-binding proteins, antimicrobial peptides.</li>
+    </ul>
+  </article>
+</section>
+
+<!-- ===================== CHAPTER 17 ===================== -->
+<section class="view" id="view-ch17" aria-labelledby="h-ch17" hidden>
+  <div class="chap-head">
+    <span class="eyebrow">Chapter 17</span>
+    <h2 id="h-ch17" tabindex="-1">Adaptive Immunity: Specific Defenses of the Host</h2>
+    <p class="muted">Defenses that learn one specific pathogen, tell self from nonself, and remember.</p>
+  </div>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">17.1 · Key terms</span><h3>Terminology warm-up</h3></div>
+    <div class="qset" data-match="ch17-terms"></div>
+    <div class="qset" data-quiz="ch17-terms"></div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">17.2 · Interactive model</span><h3>Humoral vs. cellular immunity</h3></div>
+    <div class="two">
+      <div class="card cv"><h4>Humoral immunity · B cells</h4><ul><li>Mature in red bone marrow</li><li>Make <b>antibodies</b></li><li>Fight pathogens <b>outside</b> cells: in blood and body fluids</li><li>Extracellular bacteria, toxins, viruses before they enter a cell</li></ul></div>
+      <div class="card saf"><h4>Cellular immunity · T cells</h4><ul><li>Mature in the <b>thymus</b></li><li>T cell receptors read antigen; T cells release cytokines or kill</li><li>Fight pathogens <b>inside</b> cells</li><li>Virus-infected cells, intracellular bacteria</li></ul></div>
+    </div>
+    <p class="muted"><b>Your task:</b> pick a threat, decide which arm of adaptive immunity handles it, and watch the response.</p>
+    <div class="scene-grid">
+      <div class="scene" id="hc-scene"></div>
+      <div class="info" id="hc-info" aria-live="polite"></div>
+    </div>
+    <div class="controls" id="hc-threats"><span class="group-label">Threats</span></div>
+    <div class="controls" id="hc-answer">
+      <button class="btn" data-arm="h">Humoral (B cells, antibodies)</button>
+      <button class="btn" data-arm="c">Cellular (T cells)</button>
+    </div>
+    <div class="tip"><b>Cytokines link both arms.</b> Helper T cells release cytokines that help activate B cells and cytotoxic T cells. Review the cytokine families in <a href="#ch16" data-jump="cytokines">Chapter 16, section 16.6</a>.</div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">17.3 · Interactive model</span><h3>Antigens and antibodies</h3></div>
+    <div class="two">
+      <div class="card"><h4>Antigen</h4><p>A substance that causes the production of antibodies: capsules, cell walls, flagella, fimbriae, toxins, viral capsids and spikes, and also pollen or egg white.</p></div>
+      <div class="card"><h4>Epitope</h4><p>The specific small region on an antigen that an antibody binds. One antigen usually has many different epitopes.</p></div>
+      <div class="card"><h4>Antibody</h4><p>A Y-shaped protein (immunoglobulin, Ig) that binds one specific epitope and tags it for destruction.</p></div>
+    </div>
+    <h4>Explore the antibody</h4>
+    <div class="scene-grid">
+      <div class="scene" id="ab-scene"></div>
+      <div class="info" id="ab-info" aria-live="polite"><span class="tag">Antibody structure</span><h4>Choose a part</h4><p>Tap a part of the Y, or use the buttons below.</p></div>
+    </div>
+    <div class="controls" id="ab-ctrl"></div>
+    <h4>Lock and key: which antibody binds?</h4>
+    <p class="muted">This bacterium has three different epitopes. Send in antibodies one at a time. An antibody binds only where its tips fit.</p>
+    <div class="scene-grid">
+      <div class="scene" id="ep-scene"></div>
+      <div class="info" id="ep-info" aria-live="polite"><span class="tag">Specificity</span><h4>Choose an antibody</h4><p>Bound so far: 0 of 3 epitopes</p></div>
+    </div>
+    <div class="controls" id="ep-ctrl"></div>
+    <div class="qset" data-quiz="ch17-ab"></div>
+  </article>
+
+  <article class="plate" id="classes">
+    <div class="plate-head"><span class="eyebrow">17.4 · Flashcard studio</span><h3>The five antibody classes</h3></div>
+    <p class="prose">Know which class is most common, which are rare, and what each basically does. Order from most to least abundant in serum: <b>G, A, M, D, E</b>. One way to remember it: <i>"<b>G</b>ood <b>A</b>ntibodies <b>M</b>ake <b>D</b>efense <b>E</b>asy."</i></p>
+    <div class="ab-bars" id="ab-bars" aria-label="Percent of serum antibodies by class"></div>
+    <p class="muted" style="font-size:.88rem">Bar lengths use a log scale so IgD and IgE are visible at all. On a normal scale they would be invisible: IgE is about 1 in 50,000 serum antibodies.</p>
+    <h4>Step 1 · Build your own cards</h4>
+    <p class="muted">Writing a card in your own words is the study step that makes it stick. Fill in each card, then press <b>Check my card</b> to compare with the answer key. Your notes are saved in this browser and show up on the back of your cards in Step 2. Copying them onto paper index cards works too.</p>
+    <div class="builder" id="builder"></div>
+    <h4>Step 2 · Study your deck</h4>
+    <p class="muted">Tap a card to flip it. Cards you mark <b>Still learning</b> come back around until you know them.</p>
+    <div class="controls" id="deck-mode">
+      <button class="chip on" data-mode="class">Class → facts</button>
+      <button class="chip" data-mode="clue">Clue → class</button>
+      <button class="chip" data-mode="mix">Mixed</button>
+    </div>
+    <div class="deck" id="deck"></div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">17.5 · The general idea</span><h3>B cell activation</h3></div>
+    <div class="prose">
+      <p>You have millions of B cells, and each one carries receptors for one epitope. When an antigen arrives, only the B cell whose receptor fits it is chosen (<b>clonal selection</b>). That cell then copies itself (<b>clonal expansion</b>) into antibody-producing plasma cells and long-lived memory B cells.</p>
+    </div>
+    <div class="controls">
+      <span class="group-label">Type of antigen</span>
+      <button class="chip on" id="bc-td" aria-pressed="true">T-dependent (protein)</button>
+      <button class="chip" id="bc-ti" aria-pressed="false">T-independent (polysaccharide)</button>
+    </div>
+    <div class="scene-grid">
+      <div class="scene" id="bc-scene"></div>
+      <div class="info" id="bc-info" aria-live="polite"></div>
+    </div>
+    <div class="controls"><button class="btn ghost" id="bc-back">Back</button><button class="btn" id="bc-next">Next step</button><span class="readout" id="bc-num"></span></div>
+    <div class="qset" data-quiz="ch17-bcell"></div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">17.6 · Antigen presentation</span><h3>MHC: the cell's display case</h3></div>
+    <div class="two">
+      <div class="card cv"><h4>MHC class I</h4><p>Found on <b>all nucleated cells</b>. It displays small pieces of the proteins being made <b>inside</b> the cell. This marks the cell as "self" and lets <b>cytotoxic T cells</b> check what is going on inside.</p></div>
+      <div class="card"><h4>MHC class II</h4><p>Found only on <b>antigen-presenting cells</b> (B cells, macrophages, dendritic cells). Displays pieces of microbes they swallowed, and presents them to <b>helper T cells</b>.</p></div>
+    </div>
+    <p class="muted">Pick a cell and watch who responds.</p>
+    <div class="scene-grid">
+      <div class="scene" id="mhc-scene"></div>
+      <div class="info" id="mhc-info" aria-live="polite"></div>
+    </div>
+    <div class="controls" id="mhc-ctrl"></div>
+    <div class="qset" data-quiz="ch17-mhc"></div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">17.7 · The general idea</span><h3>T cells and NK cells</h3></div>
+    <div class="two">
+      <div class="card"><h4>Help</h4><p><b>Helper T cells</b> coordinate the response. They release cytokines that activate B cells, cytotoxic T cells, and macrophages.</p></div>
+      <div class="card"><h4>Kill</h4><p><b>Cytotoxic T cells</b> recognize a foreign peptide on MHC I and directly kill that infected cell.</p></div>
+      <div class="card"><h4>Control</h4><p><b>Regulatory T cells</b> calm the response down so it does not overreact or attack self.</p></div>
+      <div class="card"><h4>Remember</h4><p><b>Memory T cells</b> stay after the infection and respond faster next time.</p></div>
+    </div>
+    <div class="card saf"><h4>Natural killer (NK) cells</h4><p>NK cells are not activated by a specific antigen. They kill cells that have <b>lost</b> MHC I or have too little of it, which is a trick many virus-infected and tumor cells use to hide from cytotoxic T cells. They are important early, before T cells are ready.</p></div>
+    <h4>NK cell patrol</h4>
+    <p class="muted">You are an NK cell. Check each cell's MHC I and decide: spare it or destroy it.</p>
+    <div class="scene-grid">
+      <div class="scene" id="nk-scene"></div>
+      <div class="info" id="nk-info" aria-live="polite"></div>
+    </div>
+    <div class="controls" id="nk-ctrl">
+      <button class="btn" data-nk="spare">Spare it</button>
+      <button class="btn" data-nk="kill">Destroy it</button>
+      <button class="btn ghost" id="nk-next" hidden>Next cell</button>
+      <span class="readout" id="nk-score"></span>
+    </div>
+    <div class="qset" data-quiz="ch17-tnk"></div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">17.8 · Interactive model</span><h3>Antigen–antibody reactions</h3></div>
+    <p class="prose">When antibodies bind antigens they form an antigen–antibody complex. The antibody itself rarely destroys anything. It <b>tags</b> the target so that something else can deal with it. Try each outcome.</p>
+    <div class="controls" id="rx-tabs" role="tablist" aria-label="Antigen-antibody reactions"></div>
+    <div class="scene-grid">
+      <div class="scene" id="rx-scene"></div>
+      <div class="info" id="rx-info" aria-live="polite"></div>
+    </div>
+    <div class="controls" id="rx-ctrl"></div>
+    <div class="qset" data-quiz="ch17-rx"></div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-head"><span class="eyebrow">17.9 · Memory</span><h3>Primary vs. secondary response, and types of adaptive immunity</h3></div>
+    <div class="scene-grid">
+      <div class="scene" id="mem-scene"></div><p class="caption">Graph summary: the first exposure produces a delayed, smaller antibody response. The second exposure produces a faster, higher, and longer-lasting response because of immune memory.</p>
+      <div class="info" id="mem-info" aria-live="polite"><span class="tag">Antibody titer over time</span><h4>Expose the body to an antigen</h4><p>Press <b>First exposure</b>, then <b>Second exposure</b>.</p></div>
+    </div>
+    <div class="controls"><button class="btn" id="mem-1">First exposure</button><button class="btn" id="mem-2" disabled>Second exposure</button><button class="btn ghost" id="mem-r">Reset</button></div>
+    <div class="qset" data-sort="ch17-types"></div>
+  </article>
+
+  <article class="plate review">
+    <h3>Also on your Section 3 study guide for Chapter 17</h3>
+    <ul>
+      <li>T-dependent vs. T-independent antigens (see 17.5).</li>
+      <li>Antibody diversity and clonal deletion of self-reactive B cells.</li>
+      <li>Class switching from IgM to IgG during the secondary response.</li>
+    </ul>
+  </article>
+</section>
+
+</div>
+</main>
+<footer><div class="wrap">Built from the Chapter 15–17 lecture slides and the Section 3 study guide for MOLB 2210. Progress is stored only in this browser.</div></footer>
+<script>
+
+/* ================= QUESTION BANK ================= */
+const QUIZ = {
+"ch15-pv":[
+ {q:"Which statement best describes <b>virulence</b>?",o:[
+  {t:"Whether a microbe can cause disease at all",f:"That is pathogenicity, the yes-or-no ability to cause disease."},
+  {t:"The degree of pathogenicity: how easily and how severely a microbe causes disease",ok:1,f:"Virulence is a matter of degree. Two pathogenic strains can differ greatly in virulence."},
+  {t:"The number of different host species a microbe can infect",f:"That describes host range, not virulence."},
+  {t:"How fast a microbe divides in culture",f:"Growth rate in a lab dish does not measure how much disease a microbe causes."}]},
+ {q:"A strain of <i>Staphylococcus aureus</i> picks up a plasmid carrying genes for coagulase and an enterotoxin. The strain has most likely become…",o:[
+  {t:"Non-pathogenic",f:"Gaining virulence factors does not take away the ability to cause disease."},
+  {t:"More virulent",ok:1,f:"Coagulase and toxins are virulence factors. Plasmids that carry them are called virulence plasmids."},
+  {t:"Less virulent",f:"New virulence factors make a pathogen better at causing disease, not worse."},
+  {t:"Resistant to all antibiotics",f:"Antibiotic resistance genes are on R plasmids. Coagulase and toxins affect virulence."}]}
+],
+"ch15-id":[
+ {q:"Based on the <i>B. anthracis</i> table, which portal of entry needs the <b>fewest</b> endospores to cause infection?",o:[
+  {t:"Skin",ok:1,f:"The ID<sub>50</sub> through skin is only 10–50 endospores, the lowest of the three."},
+  {t:"Inhalation",f:"Inhalation needs 10,000–20,000 endospores, more than skin."},
+  {t:"Ingestion",f:"Ingestion needs the most: 250,000–1,000,000 endospores."}]},
+ {q:"Strain X has an ID<sub>50</sub> of 50 cells. Strain Y has an ID<sub>50</sub> of 5,000 cells. Which is more virulent?",o:[
+  {t:"Strain X",ok:1,f:"A lower ID<sub>50</sub> means fewer cells are needed to infect half the population, so X is more virulent."},
+  {t:"Strain Y",f:"Y needs 100 times more cells to infect half the population. A higher ID<sub>50</sub> means less virulent."},
+  {t:"They are equally virulent",f:"Their ID<sub>50</sub> values differ 100-fold, so their virulence differs too."}]},
+ {q:"Which toxin in the table is the most potent?",o:[
+  {t:"Botulinum toxin",ok:1,f:"Its LD<sub>50</sub> is 0.03 ng/kg. The lowest LD<sub>50</sub> is the most potent toxin."},
+  {t:"Shiga toxin",f:"Shiga toxin's LD<sub>50</sub> (250 ng/kg) is thousands of times higher than botulinum's."},
+  {t:"Staphylococcal enterotoxin",f:"Its LD<sub>50</sub> of 1,350 ng/kg is the highest, so it is the least potent of the three."}]},
+ {q:"LD<sub>50</sub> is mainly used to measure…",o:[
+  {t:"How many cells are needed to infect a host",f:"That is ID<sub>50</sub>."},
+  {t:"The potency of a toxin",ok:1,f:"LD<sub>50</sub> is the lethal dose of a toxin for 50% of a sample population."},
+  {t:"How quickly bacteria multiply in the host",f:"Neither ID<sub>50</sub> nor LD<sub>50</sub> measures growth rate."}]}
+],
+"ch15-j1":[
+ {q:"What is the <b>most common</b> portal of entry?",o:[
+  {t:"Respiratory tract",ok:1,f:"Inhaling microbes is the most common way pathogens enter the body."},
+  {t:"Unbroken skin",f:"Intact skin is impenetrable to most organisms."},
+  {t:"Genital system",f:"The genital system is the portal for STIs, but it is not the most common portal overall."},
+  {t:"Conjunctiva",f:"The conjunctiva is a mucous membrane portal, but not the most common one."}]},
+ {q:"A mosquito bite deposits bacteria directly into the tissue under the skin. Which portal of entry is this?",o:[
+  {t:"Mucous membranes",f:"The mosquito bypassed the barriers and placed microbes directly in tissue."},
+  {t:"Skin (hair follicles or sweat ducts)",f:"Entry through follicles or ducts does not involve breaking the barrier."},
+  {t:"Parenteral route",ok:1,f:"Bites, injections, cuts, wounds, and surgery deposit microbes directly into tissue."}]}
+],
+"ch15-j2":[
+ {q:"Why is adherence so important for a pathogen?",o:[
+  {t:"It lets the pathogen make its own toxins",f:"Toxin production does not depend on attaching."},
+  {t:"Without it, mucus, urine flow, and peristalsis would wash the pathogen away before it could colonize",ok:1,f:"Holding on is what lets a pathogen stay long enough to multiply."},
+  {t:"It kills the host cell immediately",f:"Adherence is attachment, not damage."}]},
+ {q:"Adhesins on a pathogen bind to ________ on host cells.",o:[
+  {t:"Antibodies",f:"Antibodies are made by the host to bind pathogens, not the other way around."},
+  {t:"Receptors",ok:1,f:"Adhesins (ligands) bind complementary receptors, like a key in a lock."},
+  {t:"Capsules",f:"A capsule is a structure on the pathogen."}]}
+],
+"ch15-j3":[
+ {q:"Coagulase helps a bacterium by…",o:[
+  {t:"Digesting the hyaluronic acid between cells",f:"That is hyaluronidase."},
+  {t:"Turning fibrinogen into a fibrin clot that walls the bacterium off from phagocytes",ok:1,f:"The clot acts as a protective barrier around the bacteria."},
+  {t:"Destroying IgA antibodies",f:"That is IgA protease."}]},
+ {q:"Antigenic variation helps a pathogen survive because…",o:[
+  {t:"The antibodies the host made against the old surface antigens no longer bind",ok:1,f:"Influenza virus, <i>Neisseria gonorrhoeae</i>, <i>Trypanosoma brucei</i>, and <i>Borrelia burgdorferi</i> all do this."},
+  {t:"It makes the pathogen grow faster",f:"Changing surface antigens is about hiding, not growing."},
+  {t:"It forms a capsule",f:"Capsules impair phagocytosis, which is a different strategy."}]},
+ {q:"<i>Salmonella</i> uses invasins to cause membrane ruffling. What does this accomplish?",o:[
+  {t:"The host cell engulfs the bacterium, so it gets inside the host cell",ok:1,f:"Invasins rearrange the host's actin, and the ruffling membrane pulls the bacterium in."},
+  {t:"The bacterium attaches to teeth",f:"That is adherence by a glycocalyx, like <i>S. mutans</i>."},
+  {t:"The bacterium steals iron",f:"Stealing iron is done by siderophores."}]}
+],
+"ch15-j4":[
+ {q:"Why do many pathogens secrete siderophores?",o:[
+  {t:"To steal iron, which they need to grow, from the host's iron-binding proteins",ok:1,f:"Siderophores bind iron more tightly than the host's own proteins do."},
+  {t:"To kill phagocytes",f:"Killing phagocytes is the job of leukocidins."},
+  {t:"To stick to host cells",f:"Sticking is adherence, done by adhesins."}]},
+ {q:"A patient with a gram-negative infection gets worse right after starting an antibiotic that lyses bacteria. Why?",o:[
+  {t:"Dying gram-negative cells release endotoxin (lipid A), which triggers cytokines, fever, and possibly shock",ok:1,f:"Endotoxin is released when gram-negative cells die, so killing many at once can cause a spike in symptoms."},
+  {t:"The antibiotic is an exotoxin",f:"Antibiotics are not toxins made by the bacteria."},
+  {t:"The bacteria start making more exotoxin",f:"The problem here comes from cell death, which releases LPS from the outer membrane."}]}
+],
+"ch15-j5":[
+ {q:"Why is a portal of exit important to a pathogen?",o:[
+  {t:"It lets the pathogen spread to new hosts, which is how disease is transmitted",ok:1,f:"A pathogen that cannot leave its host cannot reach another one."},
+  {t:"It lets the pathogen get more nutrients",f:"Exiting is about transmission."},
+  {t:"It protects the pathogen from antibiotics",f:"Exiting is about spreading to a new host."}]},
+ {q:"Malaria parasites leave a person when a mosquito takes a blood meal. Which portal of exit is this?",o:[
+  {t:"Respiratory tract",f:"No coughing or sneezing is involved."},
+  {t:"Blood (arthropods that bite)",ok:1,f:"Biting arthropods and contaminated needles carry pathogens out in blood."},
+  {t:"Gastrointestinal tract",f:"GI exit happens in feces and saliva."}]}
+],
+"ch16-terms":[
+ {q:"Which is a feature of <b>innate</b> immunity?",o:[
+  {t:"It is present at birth and responds rapidly to any pathogen",ok:1,f:"Innate defenses do not need to learn the pathogen first."},
+  {t:"It produces memory cells",f:"Memory belongs to adaptive immunity."},
+  {t:"It targets one specific pathogen",f:"Specificity is a feature of adaptive immunity."}]},
+ {q:"Your normal microbiota protect you mainly by…",o:[
+  {t:"Producing antibodies",f:"Only your B cells (plasma cells) make antibodies."},
+  {t:"Competing with pathogens for space and nutrients (microbial antagonism)",ok:1,f:"They also make substances harmful to pathogens, alter local conditions, and help the immune system develop."},
+  {t:"Raising your body temperature",f:"That is fever, which is caused by cytokines."}]},
+ {q:"Lysozyme in tears, saliva, sweat, and urine kills bacteria by…",o:[
+  {t:"Lowering the pH",f:"Low pH is the job of sebum, gastric juice, and vaginal secretions."},
+  {t:"Breaking down bacterial cell walls",ok:1,f:"Lysozyme breaks the bonds in peptidoglycan, so it works best on gram-positive cells."},
+  {t:"Trapping bacteria in mucus",f:"Trapping is a physical defense of mucus."}]}
+],
+"ch16-tlr":[
+ {q:"Why don't TLRs react to your own healthy cells?",o:[
+  {t:"Your cells do not have PAMPs such as LPS, flagellin, or peptidoglycan",ok:1,f:"PAMPs are patterns found on microbes and not on host cells."},
+  {t:"TLRs are only found on bacteria",f:"TLRs are on host cells, especially macrophages and dendritic cells."},
+  {t:"Antibodies cover your cells",f:"TLRs are innate and do not depend on antibodies."}]},
+ {q:"What happens right after a TLR on a macrophage binds a PAMP?",o:[
+  {t:"The macrophage releases cytokines that recruit more cells and activate T and B cells",ok:1,f:"That is the link between innate and adaptive immunity."},
+  {t:"The macrophage makes antibodies",f:"Macrophages do not make antibodies."},
+  {t:"The macrophage dies",f:"Binding a PAMP activates the macrophage."}]}
+],
+"ch16-inflam":[
+ {q:"The redness and heat of inflammation are mainly caused by…",o:[
+  {t:"Vasodilation, which brings more blood to the area",ok:1,f:"Wider vessels deliver more warm blood."},
+  {t:"Neutrophils releasing heat",f:"Heat and redness come from increased blood flow."},
+  {t:"Bacteria making toxins",f:"These signs are the body's own response."}]},
+ {q:"Swelling (edema) happens because…",o:[
+  {t:"Blood vessels become more permeable and fluid leaks into the tissue",ok:1,f:"Increased permeability also lets defensive cells and clotting factors reach the site."},
+  {t:"Cells divide rapidly",f:"Edema is fluid, not extra cells."},
+  {t:"The hypothalamus resets the temperature",f:"That is fever."}]},
+ {q:"Which phagocytes usually arrive first at a site of bacterial infection?",o:[
+  {t:"Neutrophils",ok:1,f:"Neutrophils are the first responders, arriving within about an hour."},
+  {t:"Macrophages from the blood",f:"Macrophages dominate later as the clean-up crew."},
+  {t:"B cells",f:"B cells are not phagocytes, and they belong to adaptive immunity."}]},
+ {q:"How do cytokines cause a fever?",o:[
+  {t:"They make the hypothalamus release prostaglandins that reset the set point higher",ok:1,f:"The body then holds the higher temperature until the cytokines are cleared."},
+  {t:"They burn calories directly",f:"Cytokines are signals. The hypothalamus raises the temperature."},
+  {t:"They block sweating permanently",f:"Fever works through a new set point."}]}
+],
+"ch16-cyto":[
+ {q:"Chemokines mainly…",o:[
+  {t:"Attract white blood cells to a site (chemotaxis)",ok:1,f:"Chemokines are 'come here' signals."},
+  {t:"Protect neighboring cells from viruses",f:"That is interferons."},
+  {t:"Carry messages between leukocytes to activate them",f:"That describes interleukins."}]},
+ {q:"Alpha and beta interferons are produced by ________ and act on ________.",o:[
+  {t:"Virus-infected cells; neighboring uninfected cells",ok:1,f:"The neighbors make antiviral proteins that block viral replication."},
+  {t:"Bacteria; macrophages",f:"Interferons are made by host cells."},
+  {t:"B cells; antibodies",f:"Interferons are antiviral cytokines."}]},
+ {q:"Why is a cytokine storm dangerous?",o:[
+  {t:"Positive feedback makes cells release more and more cytokines, causing tissue damage",ok:1,f:"It can lead to pulmonary edema, ARDS, and multiorgan dysfunction."},
+  {t:"It shuts the immune system off",f:"A storm is an overreaction."},
+  {t:"It removes all cytokines",f:"A storm is overproduction."}]}
+],
+"ch17-terms":[
+ {q:"Why is the secondary response faster and stronger than the primary response?",o:[
+  {t:"Memory cells made during the first exposure respond right away",ok:1,f:"That is immunological memory, the basis for vaccines."},
+  {t:"The pathogen is weaker the second time",f:"The difference comes from the host's memory cells."},
+  {t:"Innate immunity learns the pathogen",f:"Innate immunity has no memory."}]},
+ {q:"Adaptive immunity's ability to tell 'self' from 'nonself' means it…",o:[
+  {t:"Attacks foreign antigens while normally leaving your own cells alone",ok:1,f:"Self-reactive B cells are removed by clonal deletion."},
+  {t:"Attacks every cell it touches",f:"That would be autoimmunity everywhere."},
+  {t:"Only recognizes bacteria",f:"It recognizes viruses, toxins, pollen, and more."}]}
+],
+"ch17-ab":[
+ {q:"Which part of an antibody binds the antigen?",o:[
+  {t:"The variable regions at the tips of the arms",ok:1,f:"Variable regions differ between antibodies, which gives each one its specificity."},
+  {t:"The Fc (constant) stem",f:"The Fc region is the same within a class. Phagocytes and complement bind it."},
+  {t:"The disulfide bonds",f:"Disulfide bonds hold the chains together."}]},
+ {q:"What is the valence of a single Y-shaped (monomer) antibody like IgG?",o:[
+  {t:"1",f:"Each arm has a binding site."},
+  {t:"2",ok:1,f:"Two arms means two antigen-binding sites."},
+  {t:"10",f:"That is the valence of the IgM pentamer (5 × 2)."}]},
+ {q:"Why can many different antibodies bind the same bacterium?",o:[
+  {t:"A bacterium has many different epitopes on its surface",ok:1,f:"Capsule, flagella, fimbriae, and wall proteins each carry their own epitopes."},
+  {t:"Antibodies bind anything",f:"Each antibody binds only one epitope."},
+  {t:"All antibodies are identical",f:"Their variable regions differ."}]}
+],
+"ch17-bcell":[
+ {q:"In clonal selection, which B cell is activated?",o:[
+  {t:"Only the B cell whose receptor fits the antigen",ok:1,f:"The antigen 'selects' the matching B cell."},
+  {t:"Every B cell in the lymph node",f:"Only the matching one responds."},
+  {t:"The B cell that is closest",f:"Matching, not distance, decides it."}]},
+ {q:"How does a T-dependent antigen differ from a T-independent antigen?",o:[
+  {t:"A T-dependent antigen needs a helper T cell's cytokines to activate the B cell",ok:1,f:"T-dependent antigens are usually proteins. T-independent antigens are often repeating polysaccharides or LPS."},
+  {t:"A T-dependent antigen is always a polysaccharide",f:"Polysaccharides from capsules and LPS are usually T-independent."},
+  {t:"A T-independent antigen activates T cells only",f:"It activates B cells without T cell help."}]}
+],
+"ch17-mhc":[
+ {q:"Where is MHC class I found?",o:[
+  {t:"On all nucleated cells",ok:1,f:"That is why it can identify almost any cell as 'self'."},
+  {t:"Only on macrophages and dendritic cells",f:"That describes MHC class II."},
+  {t:"Only on red blood cells",f:"Red blood cells lack a nucleus and lack MHC I."}]},
+ {q:"A cell is infected with a virus. A cytotoxic T cell recognizes it because…",o:[
+  {t:"MHC I on its surface displays a viral peptide",ok:1,f:"The cytotoxic T cell's receptor reads the foreign peptide on MHC I and kills the cell."},
+  {t:"Antibodies inside the cell signal the T cell",f:"Antibodies work outside cells."},
+  {t:"The cell shows MHC II",f:"Infected body cells use MHC I."}]}
+],
+"ch17-tnk":[
+ {q:"Which T cell's main job is to <b>help</b> by releasing cytokines?",o:[
+  {t:"Helper T cell",ok:1,f:"Helper T cells coordinate the response."},
+  {t:"Cytotoxic T cell",f:"Cytotoxic T cells kill."},
+  {t:"Regulatory T cell",f:"Regulatory T cells control and calm the response."}]},
+ {q:"How do NK cells decide which cells to kill?",o:[
+  {t:"They kill cells with missing or low MHC I",ok:1,f:"NK cells do not need antigen recognition."},
+  {t:"They kill any cell with a specific antigen they learned",f:"That would be adaptive. NK cells are not stimulated by antigen."},
+  {t:"They kill cells that display MHC II",f:"MHC II on antigen-presenting cells is normal."}]}
+],
+"ch17-rx":[
+ {q:"Antibodies link many bacteria together into visible clumps. This is…",o:[
+  {t:"Agglutination",ok:1,f:"Clumping makes the bacteria easier to phagocytize. IgM is especially good at it."},
+  {t:"Neutralization",f:"Neutralization blocks a toxin or virus from attaching."},
+  {t:"Opsonization",f:"Opsonization coats a single cell to make phagocytosis easier."}]},
+ {q:"Antibodies cover the binding sites of a toxin so it cannot attach to host cells. This is…",o:[
+  {t:"Complement activation",f:"Complement makes holes in cells."},
+  {t:"Neutralization",ok:1,f:"Antitoxins work by neutralization."},
+  {t:"ADCC",f:"ADCC kills large coated cells such as worms."}]},
+ {q:"A helminth is too big to be phagocytized. Antibodies coat it, NK cells grab the Fc stems, and release chemicals that kill it. This is…",o:[
+  {t:"Antibody-dependent cell-mediated cytotoxicity (ADCC)",ok:1,f:"The antibody marks the target, and an immune cell kills it from outside."},
+  {t:"Agglutination",f:"Agglutination clumps many small cells."},
+  {t:"Opsonization",f:"Opsonization leads to engulfing, which is impossible for a worm."}]},
+ {q:"Antibodies bound to a bacterium trigger proteins in blood that punch holes in its membrane. This is…",o:[
+  {t:"Complement activation",ok:1,f:"Complement can lyse cells, attract phagocytes, and promote inflammation."},
+  {t:"Neutralization",f:"Neutralization blocks attachment."},
+  {t:"Agglutination",f:"Agglutination clumps cells."}]}
+]
+};
+
+const SORTS = {
+"ch15-pvsort":{title:"Sort it: is each statement about pathogenicity or virulence?",bins:["Pathogenicity","Virulence"],items:[
+ {t:"Measles virus can cause disease in humans.",b:0,f:"This is about whether it can cause disease at all."},
+ {t:"One strain of <i>E. coli</i> causes mild diarrhea, while another strain causes kidney failure.",b:1,f:"Both cause disease. They differ in degree."},
+ {t:"<i>Lactobacillus</i> in yogurt does not cause disease in healthy people.",b:0,f:"This is about whether it causes disease at all."},
+ {t:"Strain A needs 10 cells to infect half a group of mice. Strain B needs 10,000.",b:1,f:"Comparing ID<sub>50</sub> values compares virulence."},
+ {t:"A capsule-less mutant of <i>Streptococcus pneumoniae</i> is cleared quickly and rarely causes pneumonia.",b:1,f:"Losing a virulence factor (the capsule) lowers virulence."},
+ {t:"<i>Streptococcus pyogenes</i> is able to cause strep throat.",b:0,f:"This is a statement that it can cause disease."}]},
+"ch15-toxsort":{title:"Sort it: exotoxin or endotoxin?",bins:["Exotoxin","Endotoxin"],items:[
+ {t:"Proteins produced and secreted by living bacteria",b:0,f:"Exotoxins are secreted proteins."},
+ {t:"The lipid A portion of LPS",b:1,f:"Endotoxin is part of the gram-negative outer membrane."},
+ {t:"Released mainly when gram-negative cells die",b:1,f:"Endotoxin is released during multiplication and especially at cell death."},
+ {t:"Highly specific for target cells, such as nerves or the gut lining",b:0,f:"Exotoxins are highly specific."},
+ {t:"Causes fever, chills, weakness, and possibly shock no matter which species made it",b:1,f:"All endotoxins act through macrophage cytokines, so the effects are similar."},
+ {t:"Includes A-B toxins such as diphtheria toxin",b:0,f:"A-B toxins are exotoxins."},
+ {t:"Antitoxins (antibodies) can neutralize it",b:0,f:"Antitoxins are made against specific exotoxins."},
+ {t:"Can cause disseminated intravascular coagulation",b:1,f:"Endotoxin can trigger clotting throughout the blood vessels."}]},
+"ch17-types":{title:"Sort it: which type of adaptive immunity?",bins:["Natural active","Natural passive","Artificial active","Artificial passive"],items:[
+ {t:"You recover from chickenpox and never get it again.",b:0,f:"Your own immune system responded to a natural infection."},
+ {t:"A fetus receives IgG across the placenta.",b:1,f:"The baby receives the mother's antibodies naturally."},
+ {t:"A newborn gets IgA from colostrum (breast milk).",b:1,f:"Antibodies passed naturally from mother to baby."},
+ {t:"You get a flu shot.",b:2,f:"A vaccine makes your own immune system respond."},
+ {t:"After a snakebite, a patient receives antivenom (antibodies).",b:3,f:"Ready-made antibodies are injected. Protection is immediate but short."},
+ {t:"A child receives the tetanus toxoid vaccine.",b:2,f:"A vaccine leads to the child's own active immunity."}]}
+};
+
+const MATCHES = {
+"ch16-terms":{title:"Match the term to its definition",pairs:[
+ ["Immunity","The ability to ward off disease"],
+ ["Susceptibility","Lack of resistance to a disease"],
+ ["PAMP","A molecule found on microbes but not on host cells, such as LPS or flagellin"],
+ ["TLR","A receptor on host cells that recognizes a pathogen-associated molecular pattern"],
+ ["Chemotaxis","Movement of phagocytes toward chemical signals"],
+ ["Phagolysosome","The compartment formed when a lysosome fuses with a phagosome"],
+ ["Microbial antagonism","Normal microbiota competing with pathogens for space and nutrients"],
+ ["Lysozyme","An enzyme in tears and saliva that destroys bacterial cell walls"]]},
+"ch17-terms":{title:"Match the term to its definition",pairs:[
+ ["Adaptive immunity","Defenses that target a specific pathogen after exposure"],
+ ["Primary response","The first time the immune system meets a particular antigen"],
+ ["Secondary response","A later, faster, stronger response to the same antigen because of memory"],
+ ["Antigen","A substance that causes the production of antibodies"],
+ ["Epitope","The specific region on an antigen that an antibody binds"],
+ ["Valence","The number of antigen-binding sites on an antibody"],
+ ["Antibody titer","The relative amount of antibody in serum"],
+ ["Clonal expansion","An activated B cell multiplying into many identical cells"]]}
+};
+
+const ORDERS = {
+"ch16-phago":{title:"Phases of phagocytosis",items:[
+ {t:"Chemotaxis",s:"Chemical signals attract the phagocyte."},
+ {t:"Adherence",s:"TLRs on the phagocyte attach to PAMPs on the microbe."},
+ {t:"Ingestion",s:"Pseudopods engulf the microbe into a phagosome."},
+ {t:"Digestion",s:"Lysosomes fuse to form a phagolysosome that destroys the microbe."}]}
+};
+
+const ABCLASSES = [
+ {k:"IgG",pct:80,rank:1,where:"Blood, lymph, intestine",job:"Crosses the placenta to protect the fetus; activates complement; enhances phagocytosis; neutralizes toxins and viruses",hook:"G = Greatest amount, and it goes to the baby during Gestation"},
+ {k:"IgA",pct:13,rank:2,where:"Mucous membranes, saliva, tears, breast milk",job:"Stops microbes from attaching to mucous membranes",hook:"A guards the Airways and other mucosal entrances"},
+ {k:"IgM",pct:6,rank:3,where:"Stays inside blood vessels",job:"First antibody made in an infection (short-lived); agglutination; activates complement. A pentamer with 10 binding sites",hook:"M = Made first, and it is a Massive pentamer"},
+ {k:"IgD",pct:0.02,rank:4,where:"On the surface of B cells (also blood and lymph)",job:"Works as an antigen receptor on B cells; no well-defined job in serum",hook:"D = Detector sitting on the B cell"},
+ {k:"IgE",pct:0.002,rank:5,where:"Bound to mast cells and basophils",job:"Triggers histamine release in allergies; helps kill parasitic worms",hook:"E = Eek! Allergies (and Evicting worms)"}
+];
+const RANKS = ["","Most common","2nd most common","3rd most common","Rare","Rarest"];
+const CLUES = [
+ ["Crosses the placenta to protect the fetus","IgG"],
+ ["Most abundant antibody in serum (about 80%)","IgG"],
+ ["Found in tears, saliva, and breast milk","IgA"],
+ ["Stops microbes from sticking to mucous membranes","IgA"],
+ ["The first antibody made in a new infection","IgM"],
+ ["A pentamer that is excellent at agglutination","IgM"],
+ ["Sits on B cells as an antigen receptor","IgD"],
+ ["Triggers histamine release in allergies","IgE"],
+ ["Rarest antibody in serum","IgE"],
+ ["Helps destroy parasitic worms","IgE"]
+];
+
+/* ================= CORE ================= */
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const RM = (()=>{try{return matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){return false}})();
+const NS='http://www.w3.org/2000/svg';
+function h(tag,attrs={},html){const e=document.createElement(tag);for(const k in attrs){if(k==='class')e.className=attrs[k];else e.setAttribute(k,attrs[k]);}if(html!=null)e.innerHTML=html;return e;}
+function sv(tag,attrs={},parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const wait=ms=>new Promise(r=>setTimeout(r,RM?0:ms));
+const Store={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const PKEY='molb2210-s3-progress-v1';
+let progress=Store.get(PKEY,{}); if(typeof progress!=='object'||!progress)progress={};
+const validIds=new Set();
+function reg(id){validIds.add(id);}
+function markDone(id){if(!progress[id]){progress[id]=1;Store.set(PKEY,progress);}updateBadges();}
+function updateBadges(){['ch15','ch16','ch17'].forEach(ch=>{const all=[...validIds].filter(i=>i.startsWith(ch));const done=all.filter(i=>progress[i]).length;const b=$('#badge-'+ch);if(b)b.textContent=`${done}/${all.length}`;b&&b.setAttribute('aria-label',`${done} of ${all.length} done`);});}
+
+/* SVG builder: set innerHTML of a scene with a viewBox */
+function scene(id,vb,label,inner=''){const host=document.getElementById(id);host.innerHTML=`<svg viewBox="${vb}" role="img" aria-label="${label}" xmlns="${NS}">${inner}</svg>`;return host.firstElementChild;}
+
+/* ---- MCQ ---- */
+function mountQuiz(box){
+  const set=box.dataset.quiz,data=QUIZ[set];if(!data)return;
+  box.appendChild(h('div',{class:'qset-title'},`Check yourself <span class="count">${data.length} question${data.length>1?'s':''}</span>`));
+  data.forEach((it,i)=>{
+    const id=`${set}-${i}`;reg(id);
+    const q=h('div',{class:'q'});
+    const stem=h('p',{class:'q-stem',id:id+'-s'},`<span class="qn">${i+1}</span><span>${it.q}</span>`);
+    q.appendChild(stem);
+    if(progress[id])q.appendChild(h('span',{class:'prev'},'✓ You answered this correctly before. Try it again for practice.'));
+    const opts=h('div',{class:'opts',role:'group','aria-labelledby':id+'-s'});
+    const fb=h('div',{class:'fb','aria-live':'polite'});fb.hidden=true;
+    shuffle(it.o).forEach(o=>{
+      const b=h('button',{class:'opt',type:'button'},o.t);
+      b.addEventListener('click',()=>{
+        if(q.classList.contains('solved'))return;
+        fb.hidden=false;
+        if(o.ok){b.classList.add('right');b.setAttribute('aria-label','Correct answer: '+b.textContent);q.classList.add('solved');fb.className='fb ok';fb.innerHTML=`<strong>Correct.</strong> ${o.f||''}`;$$('.opt',opts).forEach(x=>x.disabled=true);markDone(id);}
+        else{b.classList.add('wrong');b.setAttribute('aria-label','Incorrect answer: '+b.textContent);b.disabled=true;fb.className='fb bad';fb.innerHTML=`<strong>Not quite.</strong> ${o.f||''} Try again.`;}
+      });
+      opts.appendChild(b);
+    });
+    q.appendChild(opts);q.appendChild(fb);box.appendChild(q);
+  });
+}
+
+/* ---- Sorter ---- */
+function mountSort(box){
+  const set=box.dataset.sort,d=SORTS[set];if(!d)return;
+  const title=h('div',{class:'qset-title'},`${d.title} <span class="count"></span>`);box.appendChild(title);
+  const count=$('.count',title);let solved=0;
+  const upd=()=>count.textContent=`${solved} of ${d.items.length} sorted`;
+  shuffle(d.items.map((x,i)=>({...x,i}))).forEach(it=>{
+    const id=`${set}-${it.i}`;reg(id);
+    const row=h('div',{class:'sort-row'});
+    row.appendChild(h('div',{class:'txt'},it.t));
+    const bins=h('div',{class:'bins',role:'group','aria-label':'Choose a category'});
+    const fb=h('div',{class:'fb','aria-live':'polite'});fb.hidden=true;
+    d.bins.forEach((bn,bi)=>{const b=h('button',{type:'button'},bn);b.addEventListener('click',()=>{
+      if(row.classList.contains('done'))return;fb.hidden=false;
+      if(bi===it.b){b.classList.add('right');row.classList.add('done');$$('button',bins).forEach(x=>x.disabled=true);fb.className='fb ok';fb.innerHTML=`<strong>${bn}.</strong> ${it.f}`;solved++;upd();markDone(id);}
+      else{b.classList.add('wrong');b.disabled=true;fb.className='fb bad';fb.innerHTML=`<strong>Not ${bn}.</strong> ${it.w||'Look back at the definitions and try again.'}`;}
+    });bins.appendChild(b);});
+    row.appendChild(bins);row.appendChild(fb);box.appendChild(row);
+  });
+  upd();
+}
+
+/* ---- Matcher ---- */
+function mountMatch(box){
+  const set=box.dataset.match,d=MATCHES[set];if(!d)return;
+  box.appendChild(h('div',{class:'qset-title'},`${d.title} <span class="count">${d.pairs.length} terms</span>`));
+  const terms=shuffle(d.pairs.map(p=>p[0]));
+  const rows=shuffle(d.pairs.map((p,i)=>({term:p[0],def:p[1],i}))).map(p=>{
+    const id=`${set}-${p.i}`;reg(id);
+    const row=h('div',{class:'match-row'});
+    const sid=`${set}-sel-${p.i}`;
+    row.appendChild(h('label',{for:sid},p.def));
+    const sel=h('select',{id:sid});sel.appendChild(h('option',{value:''},'Choose a term…'));
+    terms.forEach(t=>sel.appendChild(h('option',{value:t},t)));
+    const status=h('span',{class:'item-status','aria-live':'polite'});sel.addEventListener('change',()=>{row.classList.remove('right','wrong');status.textContent='Not checked';});
+    row.append(sel,status);box.appendChild(row);
+    return {row,sel,status,p,id};
+  });
+  const act=h('div',{class:'match-actions'});
+  const chk=h('button',{class:'btn',type:'button'},'Check matches');
+  const show=h('button',{class:'btn ghost',type:'button'},'Show answers');
+  const msg=h('span',{class:'readout','aria-live':'polite'});
+  chk.addEventListener('click',()=>{let n=0;rows.forEach(r=>{const ok=r.sel.value===r.p.term;r.row.classList.toggle('right',ok);r.row.classList.toggle('wrong',!ok);r.status.textContent=ok?'Correct':'Try again';if(ok){n++;markDone(r.id);}});msg.textContent=n===rows.length?`All ${n} correct. Nice work.`:`${n} of ${rows.length} correct. Review the items marked Try again.`;});
+  show.addEventListener('click',()=>{rows.forEach(r=>{r.sel.value=r.p.term;r.row.classList.remove('wrong');r.row.classList.add('right');r.status.textContent='Answer shown';});msg.textContent='Answers shown. Cover them and try again later.';});
+  act.append(chk,show,msg);box.appendChild(act);
+}
+
+/* ---- Ordering ---- */
+function mountOrder(box){
+  const set=box.dataset.order,d=ORDERS[set];if(!d)return;
+  const id=`${set}-0`;reg(id);
+  box.appendChild(h('div',{class:'qset-title'},`${d.title}: put them in order <span class="count">use the arrows</span>`));
+  let items=shuffle(d.items.map((x,i)=>({...x,i})));
+  if(items.every((x,i)=>x.i===i))items.reverse();
+  const ol=h('ol',{class:'order-list'});box.appendChild(ol);
+  const act=h('div',{class:'match-actions'});const chk=h('button',{class:'btn',type:'button'},'Check order');const msg=h('span',{class:'readout','aria-live':'polite'});act.append(chk,msg);box.appendChild(act);
+  function render(focus){ol.innerHTML='';items.forEach((it,k)=>{const li=h('li',{},`<span class="pos">${k+1}</span><span class="lbl"><b>${it.t}</b><br><span class="muted" style="font-size:.9rem">${it.s}</span></span>`);
+    const up=h('button',{class:'mv',type:'button','aria-label':`Move ${it.t} up`},'↑');const dn=h('button',{class:'mv',type:'button','aria-label':`Move ${it.t} down`},'↓');
+    up.disabled=k===0;dn.disabled=k===items.length-1;
+    up.onclick=()=>{[items[k-1],items[k]]=[items[k],items[k-1]];render(`up-${k-1}`);};
+    dn.onclick=()=>{[items[k+1],items[k]]=[items[k],items[k+1]];render(`dn-${k+1}`);};
+    up.dataset.f=`up-${k}`;dn.dataset.f=`dn-${k}`;li.append(up,dn);ol.appendChild(li);});
+    if(focus){const [dir,n]=focus.split('-');let b=$(`[data-f="${dir}-${n}"]`,ol);if(!b||b.disabled)b=$(`[data-f="${dir==='up'?'dn':'up'}-${n}"]`,ol);b&&b.focus();}}
+  render();
+  chk.addEventListener('click',()=>{let ok=0;$$('li',ol).forEach((li,k)=>{const r=items[k].i===k;li.classList.toggle('right',r);li.classList.toggle('wrong',!r);let status=$('.item-status',li);if(!status){status=h('span',{class:'item-status'});$('.lbl',li).appendChild(status);}status.textContent=r?'Correct position':'Incorrect position';if(r)ok++;});
+    if(ok===items.length){msg.textContent='Correct order! Press Play below to watch it.';markDone(id);box.dispatchEvent(new CustomEvent('ordered'));}
+    else msg.textContent=`${ok} of ${items.length} in the right spot. Hint: the phagocyte has to find the microbe before it can touch it.`;});
+}
+
+/* ---- routing ---- */
+function show(ch){
+  if(!['ch15','ch16','ch17'].includes(ch))ch='ch15';
+  ['ch15','ch16','ch17'].forEach(c=>{$('#view-'+c).hidden=c!==ch;});
+  $$('.tab').forEach(t=>{if(t.dataset.ch===ch)t.setAttribute('aria-current','page');else t.removeAttribute('aria-current');});
+  Store.set('molb2210-s3-tab',ch);
+}
+window.addEventListener('hashchange',()=>{show(location.hash.slice(1));window.scrollTo({top:0});});
+
+/* ================= SHARED DRAWING HELPERS ================= */
+function blob(cx,cy,r,amp=.07,n=14,ph=0,sq=.9){const p=[];for(let i=0;i<n;i++){const a=i/n*Math.PI*2;const rr=r*(1+amp*Math.sin(a*3+ph)+amp*.6*Math.cos(a*5+ph*2));p.push([cx+rr*Math.cos(a),cy+rr*sq*Math.sin(a)]);}
+  let d='';for(let i=0;i<n;i++){const a=p[i],b=p[(i+1)%n];if(i===0){const z=p[n-1];d+=`M${((z[0]+a[0])/2).toFixed(1)} ${((z[1]+a[1])/2).toFixed(1)} `;}d+=`Q${a[0].toFixed(1)} ${a[1].toFixed(1)} ${((a[0]+b[0])/2).toFixed(1)} ${((a[1]+b[1])/2).toFixed(1)} `;}return d+'Z';}
+const D={
+  rod:(x,y,cls='f-bact',len=54,w=22,rot=0,id='')=>`<rect ${id?`id="${id}"`:''} x="${x-len/2}" y="${y-w/2}" width="${len}" height="${w}" rx="${w/2}" class="${cls}" ${rot?`transform="rotate(${rot} ${x} ${y})"`:''}/>`,
+  Y:(x,y,s=1,rot=0,extra='')=>`<g ${extra}><g transform="translate(${x} ${y}) rotate(${rot}) scale(${s})"><path d="M0 14 V0 M0 0 L-9 -11 M0 0 L9 -11" class="s-ab" style="stroke-width:${3.4/s}"/></g></g>`,
+  phago:(x,y,r=60,kind='mac',ph=1)=>`<path d="${blob(x,y,r,.08,14,ph)}" class="f-${kind}"/><path d="M${x-r*.38} ${y+r*.05} q ${r*.18} ${-r*.42} ${r*.42} ${-r*.12} q ${r*.24} ${r*.28} ${r*.36} ${-r*.06}" class="s-${kind==='mac'?'mac':'muted'}" style="stroke:var(--${kind}-soft,var(--surface));stroke-width:${r*.16};stroke-linecap:round;fill:none"/>`,
+  host:(x,y,w,hh,rx=14)=>`<rect x="${x}" y="${y}" width="${w}" height="${hh}" rx="${rx}" class="f-host"/><ellipse cx="${x+w*.5}" cy="${y+hh*.55}" rx="${Math.min(w,hh)*.18}" ry="${Math.min(w,hh)*.14}" class="f-nuc"/>`,
+  virus:(x,y,r=10,cls='f-vir')=>{let s='';for(let i=0;i<8;i++){const a=i*Math.PI/4;s+=`<line x1="${x+Math.cos(a)*r}" y1="${y+Math.sin(a)*r}" x2="${x+Math.cos(a)*(r+5)}" y2="${y+Math.sin(a)*(r+5)}" class="s-vir"/>`;}return `<g>${s}<circle cx="${x}" cy="${y}" r="${r}" class="${cls}"/></g>`;},
+  label:(x,y,t,anchor='middle',cls='t tb')=>`<text x="${x}" y="${y}" text-anchor="${anchor}" class="${cls}">${t}</text>`
+};
+function put(g,markup){g.insertAdjacentHTML('beforeend',markup);return g.lastElementChild;}
+function tw(el,x,y,s=1,ms=1000,o=null){if(!el)return wait(0);el.style.transformBox='fill-box';el.style.transformOrigin='center';el.style.transition=`transform ${ms}ms ease-in-out, opacity ${Math.min(ms,800)}ms ease`;el.getBoundingClientRect();el.style.transform=`translate(${x}px,${y}px) scale(${s})`;if(o!=null)el.style.opacity=o;return wait(ms);}
+function flash(el,cls){if(!el)return;el.classList.remove(cls);el.getBoundingClientRect();el.classList.add(cls);}
+function infoHTML(tag,title,body){return `<span class="tag">${tag}</span><h4>${title}</h4>${body}`;}
+function chipRow(boxId,items,onPick,startIndex=-1){const box=document.getElementById(boxId);const btns=items.map((it,i)=>{const b=h('button',{class:'chip',type:'button','aria-pressed':'false'},it.label);b.addEventListener('click',()=>{btns.forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');b.classList.add('done');onPick(it,i);});box.appendChild(b);return b;});if(startIndex>=0)btns[startIndex].click();return btns;}
+
+/* ================= 15.2 DOSE RESPONSE ================= */
+function initDose(){
+  const x0=58,x1=540,y0=26,y1=232,X=e=>x0+e/7*(x1-x0),Y=p=>y1-p*(y1-y0);
+  const IDA=2,IDB=5,pf=(e,id)=>1/(1+Math.pow(10,(id-e)*1.3));
+  const path=id=>{let d='';for(let e=0;e<=7.001;e+=.05)d+=(d?'L':'M')+X(e).toFixed(1)+' '+Y(pf(e,id)).toFixed(1)+' ';return d;};
+  const lab=['1','10','100','1,000','10⁴','10⁵','10⁶','10⁷'];
+  let g='';
+  for(let e=0;e<=7;e++)g+=`<line x1="${X(e)}" y1="${y0}" x2="${X(e)}" y2="${y1}" class="s-line"/><text x="${X(e)}" y="${y1+18}" text-anchor="middle" class="tl">${lab[e]}</text>`;
+  [0,.5,1].forEach(p=>g+=`<text x="${x0-8}" y="${Y(p)+4}" text-anchor="end" class="tl">${p*100}%</text>`);
+  g+=`<line x1="${x0}" y1="${Y(.5)}" x2="${x1}" y2="${Y(.5)}" class="s-muted" stroke-dasharray="4 4"/>`;
+  g+=`<line x1="${x0}" y1="${y1}" x2="${x1}" y2="${y1}" class="s-ink"/><line x1="${x0}" y1="${y0}" x2="${x0}" y2="${y1}" class="s-ink"/>`;
+  g+=`<path d="${path(IDA)}" class="s-saf" stroke-width="3"/><path d="${path(IDB)}" class="s-cv" stroke-width="3"/>`;
+  g+=`<circle cx="${X(IDA)}" cy="${Y(.5)}" r="5" class="f-saf"/><text x="${X(IDA)+8}" y="${Y(.5)-8}" class="t tb" style="fill:var(--saf)">Strain A · ID₅₀ = 100</text>`;
+  g+=`<circle cx="${X(IDB)}" cy="${Y(.5)}" r="5" class="f-cv"/><text x="${X(IDB)+8}" y="${Y(.5)+18}" class="t tb" style="fill:var(--cv)">Strain B · ID₅₀ = 100,000</text>`;
+  g+=`<text x="${(x0+x1)/2}" y="${y1+40}" text-anchor="middle" class="tm">Number of bacteria given (log scale)</text>`;
+  g+=`<text x="16" y="${(y0+y1)/2}" text-anchor="middle" class="tm" transform="rotate(-90 16 ${(y0+y1)/2})">Percent infected</text>`;
+  g+=`<line id="d-line" x1="0" y1="${y0}" x2="0" y2="${y1}" class="s-ink" stroke-width="2"/><circle id="d-a" r="6" class="f-saf" style="stroke:var(--surface);stroke-width:2"/><circle id="d-b" r="6" class="f-cv" style="stroke:var(--surface);stroke-width:2"/>`;
+  scene('dose-scene','0 0 560 286','Dose-response curves for two bacterial strains. Strain A reaches 50 percent infected at 100 cells; strain B at 100,000 cells.',g);
+  const sl=$('#dose'),rd=$('#dose-read'),pp=$('#dose-people');
+  const fmt=e=>{const n=Math.round(Math.pow(10,e));return n>=1e7?'10,000,000':n.toLocaleString();};
+  const people=(n,c)=>{let s='';for(let i=0;i<20;i++)s+=`<i class="dot" style="background:${i<n?`var(${c})`:'var(--line)'};margin:2px"></i>`;return s;};
+  function upd(){const e=sl.value/10,a=pf(e,IDA),b=pf(e,IDB);$('#d-line').setAttribute('x1',X(e));$('#d-line').setAttribute('x2',X(e));
+    $('#d-a').setAttribute('cx',X(e));$('#d-a').setAttribute('cy',Y(a));$('#d-b').setAttribute('cx',X(e));$('#d-b').setAttribute('cy',Y(b));
+    const na=Math.round(a*20),nb=Math.round(b*20);
+    rd.innerHTML=`<b>${fmt(e)}</b> bacteria per animal`;
+    sl.setAttribute('aria-valuetext',`${fmt(e)} bacteria. Strain A infects ${na} of 20, strain B infects ${nb} of 20.`);
+    pp.innerHTML=`<div style="margin-top:8px"><b style="color:var(--saf)">Strain A</b>: ${na} of 20 infected<br>${people(na,'--saf')}</div><div style="margin-top:8px"><b style="color:var(--cv)">Strain B</b>: ${nb} of 20 infected<br>${people(nb,'--cv')}</div>`+
+      `<p class="caption" style="margin-top:8px">${na===10?'You found strain A\'s ID₅₀: half the group is infected.':nb===10?'You found strain B\'s ID₅₀: half the group is infected.':'Strain A needs 1,000 times fewer cells to infect half the group, so strain A is more virulent.'}</p>`;}
+  sl.addEventListener('input',upd);upd();
+}
+
+/* ================= 15.3 JOURNEY ================= */
+function initJourneyNav(){
+  const steps=$$('#j-steps .step');
+  function go(n){steps.forEach(s=>{const active=s.dataset.j==n;s.setAttribute('aria-selected',String(active));s.tabIndex=active?0:-1;});$$('[data-jp]').forEach(p=>p.hidden=p.dataset.jp!=n);}
+  steps.forEach((s,i)=>s.addEventListener('keydown',e=>{let next;if(e.key==='ArrowRight'||e.key==='ArrowDown')next=(i+1)%steps.length;else if(e.key==='ArrowLeft'||e.key==='ArrowUp')next=(i+steps.length-1)%steps.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=steps.length-1;else return;e.preventDefault();go(steps[next].dataset.j);steps[next].focus();}));
+  steps.forEach(s=>s.addEventListener('click',()=>go(s.dataset.j)));go(1);
+  window.journeyGo=go;
+}
+
+/* Stage 1: portals of entry */
+function initJ1(){
+  let g=`<rect x="0" y="140" width="640" height="180" class="f-tissue"/>`;
+  // mucosa
+  g+=`<rect x="0" y="100" width="210" height="24" class="f-mucus"/>`;
+  for(let i=0;i<5;i++){const x=4+i*41;g+=`<rect x="${x}" y="128" width="38" height="44" rx="6" class="f-host"/><ellipse cx="${x+19}" cy="${155}" rx="7" ry="6" class="f-nuc"/>`;for(let k=0;k<5;k++)g+=`<line x1="${x+5+k*7}" y1="128" x2="${x+3+k*7}" y2="121" class="s-muted" stroke-width="1.5"/>`;}
+  // skin with follicle and duct
+  for(let k=0;k<4;k++)g+=`<rect x="215" y="${92+k*12}" width="210" height="12" class="f-ker"/>`;
+  g+=`<rect x="309" y="92" width="22" height="122" rx="11" class="f-sunk" style="stroke:var(--keratin-edge)"/><line x1="320" y1="38" x2="320" y2="208" class="s-muted" stroke-width="3"/>`;
+  g+=`<rect x="376" y="92" width="8" height="84" rx="4" class="f-sunk" style="stroke:var(--keratin-edge)"/>`;
+  // parenteral: wound + needle
+  for(let k=0;k<4;k++){g+=`<rect x="430" y="${92+k*12}" width="85" height="12" class="f-ker"/><rect x="555" y="${92+k*12}" width="85" height="12" class="f-ker"/>`;}
+  g+=`<path d="M515 92 L555 92 L540 176 L530 176 Z" class="f-sunk"/><path d="M515 92 L530 176 M555 92 L540 176" class="s-saf" stroke-width="2"/>`;
+  g+=`<line x1="612" y1="14" x2="548" y2="128" class="s-muted" stroke-width="5" stroke-linecap="round"/><circle cx="614" cy="12" r="6" class="f-line"/>`;
+  g+=D.label(105,300,'Mucous membrane')+D.label(320,300,'Skin')+D.label(535,300,'Parenteral route');
+  g+=D.label(395,232,'sweat duct','middle','tm')+D.label(282,232,'hair follicle','middle','tm');
+  g+=`<path id="pp-muc" d="M100 26 C100 70 104 96 102 130 L102 220" fill="none"/>`;
+  g+=`<path id="pp-fol" d="M320 26 L320 190 L348 236" fill="none"/>`;
+  g+=`<path id="pp-par" d="M535 26 L535 140 L540 236" fill="none"/>`;
+  g+=`<path id="pp-int" d="M262 26 L262 84 L250 60 L242 82" fill="none"/>`;
+  g+=`<g id="j1-b" transform="translate(262 26)">${D.rod(0,0,'f-bact',34,15)}</g>`;
+  scene('j1-scene','0 0 640 316','Cross-section showing three portals of entry: a mucous membrane with mucus and ciliated cells, skin with a hair follicle and sweat duct, and a wound with a needle.',g);
+  const info=$('#j1-info');
+  info.innerHTML=infoHTML('Stage 1','Portal of entry','<p>Every infection starts with a way in. Most pathogens have a <b>preferred</b> portal of entry. Pick one below.</p>');
+  let run=0;
+  function along(id,dur){const my=++run;const p=document.getElementById(id),b=$('#j1-b'),L=p.getTotalLength();
+    if(RM){const q=p.getPointAtLength(L);b.setAttribute('transform',`translate(${q.x} ${q.y})`);return;}
+    const t0=performance.now();(function f(t){if(my!==run)return;const k=Math.min(1,(t-t0)/dur),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2,q=p.getPointAtLength(e*L);b.setAttribute('transform',`translate(${q.x} ${q.y})`);if(k<1)requestAnimationFrame(f);})(t0);}
+  const P=[
+    {label:'Mucous membranes',path:'pp-muc',html:infoHTML('Most common route','Mucous membranes','<ul><li><b>Respiratory tract</b>: the most common portal of all (inhalation)</li><li><b>Digestive canal</b>: food, water, contaminated fingers</li><li><b>Genital system</b>: the portal for STIs</li><li>Urinary system and conjunctiva</li></ul>')},
+    {label:'Unbroken skin',path:'pp-int',html:infoHTML('Blocked','Unbroken skin','<p>The bacterium bounces off. Intact skin, with its tightly packed keratin layers, is impenetrable to most organisms.</p>')},
+    {label:'Hair follicle or sweat duct',path:'pp-fol',html:infoHTML('Way in','Skin openings','<p>Some microbes get past intact skin by entering through <b>hair follicles</b> and <b>sweat gland ducts</b>.</p>')},
+    {label:'Parenteral route',path:'pp-par',html:infoHTML('Barrier bypassed','Parenteral route','<p>Microbes are deposited <b>directly into tissue</b> beneath the skin or mucous membranes when barriers are penetrated: punctures, injections, bites, cuts, wounds, and surgery.</p>')}
+  ];
+  chipRow('j1-ctrl',P,p=>{info.innerHTML=p.html;along(p.path,1900);});
+}
+
+/* Stage 2: adherence */
+function initJ2(){
+  let g=`<rect x="0" y="196" width="640" height="104" class="f-tissue"/>`;
+  for(let i=0;i<6;i++)g+=D.host(6+i*106,200,100,92,10);
+  const rx=[52,96,180,226,284,308,332,356,418,464,548,592];
+  rx.forEach(x=>g+=`<line x1="${x}" y1="200" x2="${x}" y2="190" class="s-mac" stroke-width="3"/><path d="M${x-7} 183 Q${x} 196 ${x+7} 183" class="s-mac" stroke-width="3"/>`);
+  for(let k=0;k<3;k++)g+=`<line x1="20" y1="${150+k*14}" x2="600" y2="${150+k*14}" class="s-muted flow" stroke-width="2"/>`;
+  g+=`<path d="M600 150 l-10 -5 v10 z M600 164 l-10 -5 v10 z M600 178 l-10 -5 v10 z" class="f-line" style="fill:var(--muted)"/>`;
+  g+=`<g id="j2-b" style="transform:translate(320px,60px)"><g id="j2-in"><g id="j2-fim">${[-36,-12,12,36].map(x=>`<line x1="${x}" y1="14" x2="${x*1.0}" y2="120" class="s-ink" stroke-width="1.6"/><circle cx="${x}" cy="122" r="4.5" class="f-saf"/>`).join('')}</g>${D.rod(0,0,'f-bact',100,34)}</g></g>`;
+  g+=D.label(320,292,'Host epithelial cells with receptors','middle','tm');
+  scene('j2-scene','0 0 640 300','A bacterium with fimbriae ending in adhesins above a row of host cells with receptors. Arrows show fluid flow across the surface.',g);
+  const b=$('#j2-b'),inn=$('#j2-in'),fim=$('#j2-fim'),cap=$('#j2-cap'),adh=$('#j2-adh');
+  let has=true,attached=false;
+  b.style.transition='transform 1s ease-in-out, opacity .8s';
+  adh.addEventListener('click',()=>{has=!has;adh.setAttribute('aria-pressed',has);adh.textContent='Adhesins: '+(has?'on':'off');fim.style.opacity=has?1:0;reset(false);});
+  function reset(msg=true){attached=false;b.style.transform='translate(320px,60px)';b.style.opacity=1;$$('.flow').forEach(f=>f.classList.remove('flowing'));if(msg)cap.textContent='Press Attach, then Flush.';}
+  $('#j2-attach').addEventListener('click',()=>{attached=true;b.style.opacity=1;b.style.transform=`translate(320px,${has?62:164}px)`;cap.innerHTML=has?'Adhesins on the fimbriae lock onto host receptors.':'Without adhesins the bacterium rests on the surface but nothing holds it there.';});
+  $('#j2-flush').addEventListener('click',async()=>{$$('.flow').forEach(f=>f.classList.add('flowing'));
+    if(attached&&has){flash(inn,'a-wiggle');cap.innerHTML='<b>Held on!</b> The flow pushes, but the adhesins keep the bacterium attached so it can colonize.';markDone('ch15-j2-demo');}
+    else{b.style.transform=`translate(780px,${attached?164:60}px)`;b.style.opacity=0;cap.innerHTML='<b>Washed away.</b> Without attachment, mucus, urine flow, and peristalsis flush the bacterium out before it can multiply.';}
+    await wait(2200);$$('.flow').forEach(f=>f.classList.remove('flowing'));});
+  $('#j2-reset').addEventListener('click',()=>reset());
+}
+
+/* Stage 3: evading host defenses */
+function initJ3(){
+  scene('j3-scene','0 0 640 300','Animated scene of a bacterium meeting a phagocyte in host tissue.',`<rect width="640" height="300" class="f-tissue"/><g id="j3-dyn"></g><text id="j3-cap" x="320" y="288" text-anchor="middle" class="t tb"></text>`);
+  const g=$('#j3-dyn'),cap=t=>$('#j3-cap').textContent=t,info=$('#j3-info');
+  let run=0;
+  const B=(x=230,y=150,cls='f-bact',id='bb')=>`<g id="${id}">${D.rod(x,y,cls,60,26)}</g>`;
+  const P=(x=520,y=150,r=62)=>`<g id="pp"><g class="pin">${D.phago(x,y,r,'mac',2)}</g></g>`;
+  const bump=async(dx,back)=>{const p=$('#pp');await tw(p,dx,0,1,1300);flash($('.pin',p),'shake');await wait(500);await tw(p,dx+back,0,1,900);};
+  const F=[
+   {label:'No virulence factor',t:'Control',title:'No protection',body:'<p>A phagocyte reaches the bacterium, engulfs it, and digests it. Each virulence factor is a different way to keep this from happening.</p>',
+    play:async my=>{g.innerHTML=P()+B();cap('');await wait(300);if(my!==run)return;tw($('#pp'),-268,0,1,1700);await wait(1100);tw($('#bb'),0,0,.5,900,.25);await wait(900);cap('Engulfed and digested');}},
+   {label:'Capsule or M protein',t:'Resist phagocytosis',title:'Capsules and M protein',body:'<p>A <b>capsule</b> (glycocalyx) around the cell wall is slippery, so phagocytes cannot get a grip. <b>M protein</b> in the cell wall of <i>Streptococcus pyogenes</i> also resists phagocytosis.</p><ul><li><i>S. pneumoniae</i>: pneumonia</li><li><i>Haemophilus influenzae</i>: pneumonia, meningitis</li><li><i>Bacillus anthracis</i>: anthrax</li><li><i>Yersinia pestis</i>: plague</li></ul>',
+    play:async my=>{g.innerHTML=`<ellipse cx="230" cy="150" rx="54" ry="36" style="fill:var(--cv-soft);stroke:var(--bact);stroke-width:2;stroke-dasharray:5 4"/>`+B()+P();cap('');await wait(300);if(my!==run)return;await bump(-182,92);cap('The phagocyte slides off the capsule');}},
+   {label:'Coagulase',t:'Enzyme',title:'Coagulase',body:'<p>Coagulase turns fibrinogen into <b>fibrin</b>, forming a clot that walls the bacteria off from phagocytes and other defenses.</p>',
+    play:async my=>{let mesh='';for(let i=0;i<22;i++){const a=Math.random()*6.28,b=a+1.6+Math.random()*2;mesh+=`<line x1="${230+78*Math.cos(a)}" y1="${150+70*Math.sin(a)}" x2="${230+78*Math.cos(b)}" y2="${150+70*Math.sin(b)}" class="s-muted" stroke-width="2"/>`;}
+      g.innerHTML=B()+P();cap('');await wait(400);if(my!==run)return;put(g,`<g class="k a-appear">${mesh}</g>`);cap('A fibrin clot forms');await wait(900);if(my!==run)return;await bump(-140,80);cap('The fibrin wall keeps the phagocyte out');}},
+   {label:'Hyaluronidase',t:'Enzyme',title:'Hyaluronidase',body:'<p>Hyaluronidase digests <b>hyaluronic acid</b>, the "glue" of the extracellular matrix that holds cells together. Breaking it down lets bacteria spread through tissue.</p>',
+    play:async my=>{let f='';for(let k=0;k<7;k++)f+=`<path d="M20 ${70+k*26} q 30 -10 60 0 t 60 0 t 60 0" class="s-muted" stroke-width="2"/>`;
+      g.innerHTML=`<g id="ecm">${f}</g>`+B(250,150);cap('Extracellular matrix in the way');await wait(600);if(my!==run)return;
+      const dots=[0,1,2,3,4].map(i=>put(g,`<circle cx="226" cy="${130+i*10}" r="4" class="f-saf"/>`));dots.forEach((d,i)=>tw(d,-120-i*15,(i-2)*20,1,1000));await wait(900);if(my!==run)return;
+      const e=$('#ecm');e.style.transition='opacity 1s';e.style.opacity=.08;dots.forEach(d=>d.style.opacity=0);cap('Matrix digested');await wait(900);if(my!==run)return;
+      [[-130,-40],[-170,30],[-90,60],[-60,-70]].forEach(([dx,dy],i)=>{const c=put(g,`<g>${D.rod(250,150,'f-bact',60,26)}</g>`);tw(c,dx,dy,1,1100+i*150);});await wait(1300);cap('Bacteria spread into the tissue');}},
+   {label:'IgA protease',t:'Enzyme',title:'IgA proteases',body:'<p>IgA antibodies guard mucous membranes. IgA proteases <b>destroy IgA</b>, so the antibodies cannot hold on to the bacterium.</p>',
+    play:async my=>{g.innerHTML=B();const pos=[[470,60,286,108],[500,150,298,150],[470,240,286,192]];
+      const ys=pos.map(([x,y])=>put(g,D.Y(x,y,1.6,-90)));cap('IgA antibodies approach');await wait(200);
+      ys.forEach((y,i)=>tw(y,pos[i][2]-pos[i][0],pos[i][3]-pos[i][1],1,1200));await wait(1300);if(my!==run)return;
+      const ds=pos.map(()=>put(g,`<circle cx="262" cy="150" r="4" class="f-saf"/>`));ds.forEach((d,i)=>tw(d,pos[i][2]-262,pos[i][3]-150,1,700));cap('Protease released');await wait(750);if(my!==run)return;
+      ys.forEach(y=>y.style.opacity=0);ds.forEach(d=>d.style.opacity=0);
+      pos.forEach(([,,x,y])=>{const a=put(g,`<path d="M${x} ${y} l18 -9 M${x} ${y} l18 9" class="s-ab"/>`),b=put(g,`<path d="M${x+2} ${y} h20" class="s-ab"/>`);tw(a,10,60,1,1000,0);tw(b,30,70,1,1100,0);});
+      await wait(900);cap('The antibodies are cut apart');}},
+   {label:'Antigenic variation',t:'Disguise',title:'Antigenic variation',body:'<p>The pathogen changes its surface antigens. Antibodies the host made against the old antigens no longer fit.</p><ul><li>Influenza virus</li><li><i>Neisseria gonorrhoeae</i></li><li><i>Trypanosoma brucei</i></li><li><i>Borrelia burgdorferi</i></li></ul>',
+    play:async my=>{const m=[[200,137],[230,137],[260,137],[230,163]];
+      g.innerHTML=`<g id="bb">${D.rod(230,150,'f-bact',90,26)}</g>`+`<g id="oldag">${m.map(([x,y])=>`<path d="M${x-6} ${y} l6 ${y<150?-10:10} l6 ${y<150?10:-10} z" class="f-saf"/>`).join('')}</g>`;
+      const ys=m.map(([x,y])=>put(g,D.Y(x,y<150?y-25:y+25,1.4,y<150?180:0)));cap('Antibodies bound to the old surface antigens');await wait(1400);if(my!==run)return;
+      const o=$('#oldag');o.style.transition='opacity .6s';o.style.opacity=0;put(g,`<g class="k a-appear">${m.map(([x,y])=>`<rect x="${x-6}" y="${y<150?y-11:y}" width="12" height="11" style="fill:var(--mac)"/>`).join('')}</g>`);
+      await wait(500);ys.forEach((y,i)=>tw(y,(i-1.5)*50,i===3?80:-80,1,1200,0));cap('New antigens: the old antibodies fall off');}},
+   {label:'Invasins',t:'Hide inside cells',title:'Invasins: getting inside host cells',body:'<p>Invasins are bacterial surface proteins that rearrange the host cell\'s <b>actin</b>. The membrane ruffles and engulfs the bacterium. Inside, it is hidden from phagocytes. <i>Shigella</i> and <i>Listeria</i> even use actin to move from one cell to the next.</p><p class="muted">Example: <i>Salmonella</i> entering intestinal cells.</p>',
+    play:async my=>{g.innerHTML=D.host(14,58,206,186,18)+`<g id="bb">${D.rod(330,150,'f-bact',50,22)}</g>`+P(560,150,52);cap('');await wait(300);if(my!==run)return;
+      tw($('#bb'),-100,0,1,900);await wait(900);if(my!==run)return;const r=put(g,`<g class="k a-appear"><path d="M220 112 q 30 -20 40 8" class="s-ink" stroke-width="3" style="stroke:var(--host-edge)"/><path d="M220 188 q 30 20 40 -8" class="s-ink" stroke-width="3" style="stroke:var(--host-edge)"/></g>`);cap('Membrane ruffling');await wait(800);if(my!==run)return;
+      tw($('#bb'),-210,10,1,1000);r.style.transition='opacity .6s';r.style.opacity=0;await wait(900);if(my!==run)return;await tw($('#pp'),-160,0,1,1200);cap('Hidden inside a host cell, out of reach');}},
+   {label:'Biofilm',t:'Shield',title:'Biofilms',body:'<p>Bacteria in a biofilm are shielded by the <b>extracellular polymeric substance (EPS)</b>. Biofilms resist phagocytes, antibiotics, and disinfectants, and are involved in about 65% of all infections.</p>',
+    play:async my=>{let rods='';for(let i=0;i<11;i++){const a=i*2.4,r=18+(i%4)*14;rods+=D.rod(230+r*Math.cos(a),150+r*.8*Math.sin(a),'f-bact',30,13,(i*37)%180);}
+      g.innerHTML=`<path d="${blob(230,150,96,.1,16,3)}" style="fill:var(--mucus);fill-opacity:.85;stroke:var(--mucus-edge);stroke-width:2"/>`+rods+P();cap('');await wait(300);if(my!==run)return;await bump(-120,70);cap('The EPS matrix shields the bacteria');}},
+   {label:'Survive inside a phagocyte',t:'Resist digestion',title:'Surviving inside phagocytes',body:'<p>Some bacteria are engulfed but not destroyed. They may:</p><ul><li>Tolerate the low pH of the phagolysosome</li><li>Escape from the phagosome before lysosomes fuse</li><li>Prevent lysosomes from fusing with the phagosome</li></ul>',
+    play:async my=>{g.innerHTML=P()+B();cap('');await wait(300);if(my!==run)return;await tw($('#pp'),-268,0,1,1700);if(my!==run)return;
+      put(g,`<circle cx="230" cy="150" r="40" class="k a-appear" style="fill:none;stroke:var(--surface);stroke-width:3;stroke-dasharray:6 4"/>`);
+      const ls=[[180,95],[300,110],[290,205]].map(([x,y])=>put(g,`<circle cx="${x}" cy="${y}" r="9" style="fill:var(--saf)"/>`));await wait(300);
+      ls.forEach((l,i)=>{const [x,y]=[[180,95],[300,110],[290,205]][i];tw(l,(230-x)*.38,(150-y)*.38,1,1000);});await wait(1100);if(my!==run)return;
+      flash($('#bb'),'pulse');cap('Lysosomes are blocked: the bacterium survives');}}
+  ];
+  chipRow('j3-ctrl',F,(f)=>{info.innerHTML=infoHTML(f.t,f.title,f.body);play(f);},0);
+  function play(f){const my=++run;f.play(my);}
+}
+
+/* Stage 4: damage */
+function initJ4(){
+  scene('j4-scene','0 0 640 300','Animated scene showing how bacteria damage the host.',`<rect width="640" height="300" class="f-tissue"/><g id="j4-dyn"></g><text id="j4-cap" x="320" y="288" text-anchor="middle" class="t tb"></text>`);
+  const g=$('#j4-dyn'),cap=t=>$('#j4-cap').textContent=t,info=$('#j4-info');let run=0;
+  const F=[
+   {label:'Siderophores (steal iron)',t:'Using host nutrients',title:'Siderophores',body:'<p>Most pathogenic bacteria need <b>iron</b>, but the host keeps iron locked up in iron-binding proteins. Bacteria secrete <b>siderophores</b> that bind iron more tightly than the host\'s proteins, then take the iron back into the cell.</p>',
+    play:async my=>{const fe=[[470,90],[540,160],[470,220]];g.innerHTML=`<g>${D.rod(140,150,'f-bact',70,30)}</g>`+fe.map(([x,y])=>`<path d="${blob(x,y,32,.12,10,x)}" style="fill:var(--mac-soft);stroke:var(--mac);stroke-width:2"/>`).join('')+D.label(500,40,'Host iron-binding proteins','middle','tm');
+      const irons=fe.map(([x,y])=>put(g,`<circle cx="${x}" cy="${y}" r="8" class="f-fe"/>`));cap('Iron is locked in host proteins');await wait(700);if(my!==run)return;
+      const sids=fe.map(()=>put(g,`<path d="M176 150 m-7 0 a7 7 0 1 0 14 0" class="s-saf" stroke-width="4"/>`));sids.forEach((s,i)=>tw(s,fe[i][0]-176,fe[i][1]-150-10,1,1200));cap('Siderophores are secreted');await wait(1300);if(my!==run)return;
+      sids.forEach(s=>tw(s,140-176+38,0,1,1300));irons.forEach((ir,i)=>tw(ir,140-fe[i][0]+30,150-fe[i][1]+(i-1)*10,1,1300));cap('Iron is carried back to the bacterium');await wait(1300);cap('The bacterium now has the iron it needs to grow');}},
+   {label:'Direct damage',t:'Direct damage',title:'Direct damage',body:'<p>Pathogens can harm host cells directly:</p><ul><li>Disrupting host cell function</li><li>Using up the cell\'s nutrients</li><li>Producing waste products</li><li>Multiplying inside the cell until it ruptures</li></ul>',
+    play:async my=>{g.innerHTML=`<g id="hc">${D.host(190,50,260,200,30)}</g>`;const pts=[[290,110],[350,110],[260,190],[380,190],[320,90],[240,140],[400,140],[320,215]];const bs=[];
+      for(let k=0;k<pts.length;k++){if(my!==run)return;const [x,y]=pts[k];bs.push(put(g,`<g class="k a-appear">${D.rod(x,y,'f-bact',34,15,(k*40)%180)}</g>`));cap(`Multiplying inside the cell: ${k+1}`);await wait(330);}
+      const hc=$('#hc');hc.style.transition='opacity .8s';hc.style.opacity=.25;cap('The host cell ruptures');await wait(300);bs.forEach((b,i)=>{const [x,y]=pts[i];tw(b,(x-320)*1.6,(y-150)*1.2,1,1200);});}},
+   {label:'Exotoxins',t:'Toxins',title:'Exotoxins',body:'<p><b>Proteins</b> produced and <b>secreted</b> by living bacteria (mostly gram-positive). They are highly specific for their target cells, and some are extremely lethal.</p><ul><li><b>A-B toxins</b>: the B part binds the host cell, the A part (enzyme) enters and does the damage. Example: diphtheria toxin</li><li><b>Membrane-disrupting toxins</b>: leukocidins kill phagocytes, hemolysins and streptolysins lyse red blood cells</li><li><b>Genotoxins</b> damage DNA</li></ul><p>Antibodies against exotoxins are called <b>antitoxins</b>.</p>',
+    play:async my=>{g.innerHTML=`<g>${D.rod(110,150,'f-bact',70,30)}</g><g id="tc">${D.host(400,50,210,200,26)}</g>`+[90,150,210].map(y=>`<line x1="400" y1="${y}" x2="388" y2="${y}" class="s-mac" stroke-width="3"/><path d="M382 ${y-7} Q394 ${y} 382 ${y+7}" class="s-mac" stroke-width="3"/>`).join('');cap('A living gram-positive bacterium');await wait(500);if(my!==run)return;
+      const tx=[90,150,210].map(()=>put(g,`<g><circle cx="150" cy="150" r="7" style="fill:var(--mac)"/><circle cx="162" cy="150" r="8" class="f-tox"/></g>`));tx.forEach((t,i)=>tw(t,384-150-6,[90,150,210][i]-150,1,1400));cap('Exotoxins are secreted');await wait(1500);if(my!==run)return;
+      cap('B parts bind receptors, A parts enter');const as=[90,150,210].map(y=>put(g,`<circle cx="390" cy="${y}" r="8" class="f-tox"/>`));tx.forEach(t=>{const c=t.lastElementChild;c.style.opacity=0;});as.forEach((a,i)=>tw(a,80+i*20,(150-[90,150,210][i])*.4,1,1000));await wait(1100);if(my!==run)return;
+      $('#tc rect').style.transition='fill 1s';$('#tc rect').style.fill='var(--line)';cap('The A part damages the target cell');}},
+   {label:'Endotoxins',t:'Toxins',title:'Endotoxins',body:'<p>The <b>lipid A</b> part of the lipopolysaccharide (LPS) in the outer membrane of <b>gram-negative</b> bacteria. Released during multiplication and especially when the bacteria <b>die</b>.</p><ul><li>Stimulates macrophages to release large amounts of cytokines</li><li>Fever, chills, weakness, aches</li><li>Disseminated intravascular coagulation</li><li>Endotoxic shock: a dangerous drop in blood pressure</li></ul>',
+    play:async my=>{g.innerHTML=`<g id="gn"><rect x="148" y="112" width="124" height="56" rx="28" style="fill:none;stroke:var(--gneg);stroke-width:3;stroke-dasharray:3 3"/>${D.rod(210,140,'f-gneg',112,44)}</g><g id="mm">${D.phago(450,170,58,'mac',4)}</g>`+
+      `<rect x="590" y="40" width="20" height="200" rx="10" class="f-surface" style="stroke:var(--muted);stroke-width:2"/><rect id="therm" x="594" y="60" width="12" height="176" rx="6" class="f-tox" style="transform-box:fill-box;transform-origin:bottom;transform:scaleY(.25)"/>`+D.label(600,262,'Temp','middle','tm');
+      cap('A gram-negative bacterium, LPS in its outer membrane');await wait(800);if(my!==run)return;
+      const gn=$('#gn');gn.style.transition='opacity .6s';gn.style.opacity=.15;cap('The bacterium dies and releases lipid A');
+      const bits=[];for(let i=0;i<12;i++){const a=i/12*6.28;bits.push(put(g,`<rect x="206" y="136" width="8" height="8" style="fill:var(--gneg)"/>`));}
+      bits.forEach((b,i)=>{const a=i/12*6.28;const toMac=i%3===0;tw(b,toMac?225+Math.random()*30:Math.cos(a)*90,toMac?20+Math.random()*30:Math.sin(a)*70,1,1200);});await wait(1300);if(my!==run)return;
+      cap('Macrophages respond by releasing cytokines');for(let i=0;i<3;i++)put(g,`<circle cx="450" cy="170" r="50" class="k a-ring" style="fill:none;stroke:var(--mac);stroke-width:3;animation-delay:${i*.4}s"/>`);
+      await wait(900);if(my!==run)return;const th=$('#therm');th.style.transition='transform 1.6s ease-in-out';th.style.transform='scaleY(.9)';await wait(1500);cap('Cytokines cause fever and, in large amounts, shock');}}
+  ];
+  chipRow('j4-ctrl',F,f=>{info.innerHTML=infoHTML(f.t,f.title,f.body);const my=++run;f.play(my);},0);
+}
+
+/* Stage 5: portals of exit */
+function initJ5(){
+  const person=(x,cls)=>`<circle cx="${x}" cy="70" r="30" class="${cls}"/><path d="M${x-40} 112 Q${x} 98 ${x+40} 112 L${x+52} 232 Q${x} 248 ${x-52} 232 Z" class="${cls}"/>`;
+  scene('j5-scene','0 0 640 300','Two people. Pathogens leave the first person and travel to a new host.',`<rect width="640" height="300" class="f-sunk"/>${person(150,'f-host')}<g id="nh">${person(500,'f-host')}</g>${D.label(150,276,'Infected host')}${D.label(500,276,'New host')}<g id="j5-dyn"></g>`);
+  $('#nh').style.opacity=.55;
+  const g=$('#j5-dyn'),info=$('#j5-info');let run=0;
+  const R=[
+   {label:'Respiratory tract',from:[176,82],to:[476,80],html:'<p><b>Coughing and sneezing</b> spray droplets carrying pathogens into the air.</p>',spread:1},
+   {label:'Gastrointestinal tract',from:[150,236],to:[478,82],html:'<p>Pathogens leave in <b>feces and saliva</b>. Contaminated food, water, or hands carry them to the next host.</p>',arc:1},
+   {label:'Genitourinary tract',from:[160,232],to:[490,232],html:'<p>Pathogens leave in <b>urine</b> and in <b>secretions from the penis and vagina</b>.</p>'},
+   {label:'Skin',from:[196,150],to:[456,150],html:'<p>Pathogens shed from skin lesions and are passed by contact.</p>'},
+   {label:'Blood',from:[104,150],to:[452,150],html:'<p>Pathogens leave in blood taken by <b>arthropods that bite</b> (mosquitoes, ticks, fleas) or on <b>needles and syringes</b>.</p>',bug:1}
+  ];
+  chipRow('j5-ctrl',R,async r=>{const my=++run;info.innerHTML=infoHTML('Stage 5 · Portal of exit',r.label,r.html+'<p class="muted">A pathogen that cannot leave cannot spread. The exit is how disease is transmitted, and the new host\'s portal of entry starts the cycle again.</p>');
+    g.innerHTML='';const [fx,fy]=r.from,[tx,ty]=r.to;const n=r.bug?1:9;const ps=[];
+    for(let i=0;i<n;i++)ps.push(put(g,r.bug?`<g><ellipse cx="${fx}" cy="${fy}" rx="9" ry="5" style="fill:var(--ink)"/><ellipse cx="${fx-3}" cy="${fy-7}" rx="6" ry="3" style="fill:var(--muted)"/></g>`:`<circle cx="${fx}" cy="${fy}" r="${r.spread?5:4.5}" class="f-bact"/>`));
+    await wait(100);
+    if(r.arc){ps.forEach((p,i)=>tw(p,(i-4)*6,300-fy-40,1,900));await wait(950);if(my!==run)return;ps.forEach((p,i)=>tw(p,tx-fx+(i-4)*4,ty-fy+(i%3)*4,1,1500));}
+    else ps.forEach((p,i)=>tw(p,(tx-fx)*(r.spread?.75+Math.random()*.3:1)+(i-4)*3,(ty-fy)+(r.spread?(i-4)*14:(i-4)*3),1,1600+i*60));
+    await wait(1700);if(my!==run)return;const nh=$('#nh');nh.style.transition='opacity .6s';nh.style.opacity=1;flash(nh,'shake');await wait(1200);nh.style.opacity=.55;
+  });
+  const back=h('button',{class:'btn ghost',type:'button'},'Start over at Stage 1 in the new host');back.addEventListener('click',()=>{window.journeyGo(1);$('#p15-3').scrollIntoView({behavior:RM?'auto':'smooth'});});$('#j5-ctrl').appendChild(back);
+  info.innerHTML=infoHTML('Stage 5','Portal of exit','<p>Pick a route. Watch the pathogen leave and reach a new host.</p>');
+}
+
+/* ================= 16.2 DEFENSE EXPLORER + INFECTION RUN ================= */
+function shoot(g,x1,y1,x2,y2,color,ms=900,n=3,r=5){for(let i=0;i<n;i++){const c=put(g,`<circle cx="${x1}" cy="${y1}" r="${r}" style="fill:${color}"/>`);setTimeout(()=>{tw(c,x2-x1,y2-y1,1,ms).then(()=>c.remove());},RM?0:i*170);}return wait(ms+n*170);}
+
+function initDefense(){
+  let g=`<rect x="0" y="168" width="720" height="168" class="f-tissue"/>`;
+  for(let k=0;k<4;k++)g+=`<rect x="0" y="${86+k*12}" width="360" height="12" class="f-ker"/>`;
+  for(let i=0;i<9;i++)g+=`<rect x="${2+i*40}" y="135" width="38" height="32" rx="7" class="f-host"/>`;
+  g+=`<rect x="82" y="86" width="16" height="130" rx="8" class="f-sunk" style="stroke:var(--keratin-edge)"/><line x1="90" y1="40" x2="90" y2="212" class="s-muted" stroke-width="3"/><path d="${blob(116,186,18,.1,10,2)}" style="fill:var(--ab);fill-opacity:.55;stroke:var(--ab)"/>`;
+  g+=`<rect x="296" y="86" width="8" height="100" rx="4" class="f-sunk" style="stroke:var(--keratin-edge)"/><circle cx="300" cy="196" r="12" style="fill:none;stroke:var(--keratin-edge);stroke-width:4"/>`;
+  g+=`<rect x="360" y="78" width="360" height="26" class="f-mucus"/>`;
+  for(let i=0;i<8;i++){const x=362+i*45;g+=`<rect x="${x}" y="114" width="43" height="54" rx="6" class="f-host"/>`;for(let k=0;k<6;k++)g+=`<line x1="${x+5+k*7}" y1="114" x2="${x+9+k*7}" y2="104" class="s-muted" stroke-width="1.5"/>`;}
+  g+=`<path d="M497 114 q 14 -14 28 0 v 54 h -28 z" style="fill:var(--mucus);stroke:var(--mucus-edge)"/>`;
+  for(let i=0;i<9;i++)g+=D.rod(20+i*36,80,'f-bact',16,7,(i*50)%180);
+  for(let i=0;i<5;i++)g+=D.rod(390+i*62,90,'f-gneg',14,6,(i*70)%180);
+  for(let i=0;i<10;i++)g+=`<circle cx="${230+(i%5)*14}" cy="${255+Math.floor(i/5)*14}" r="2.6" class="f-saf"/>`;
+  g+=`<g id="dx-vessel"><rect x="0" y="338" width="720" height="68" class="f-vessel"/></g>`;
+  for(let i=0;i<9;i++)g+=`<ellipse cx="${40+i*80}" cy="${360+(i%2)*22}" rx="13" ry="7" class="f-rbc"/>`;
+  g+=`<rect id="dx-red" x="110" y="168" width="270" height="168" class="f-rbc" style="opacity:0"/>`;
+  g+=`<g id="dx-mac">${D.phago(450,252,34,'mac',3)}<circle id="dx-tlr" cx="418" cy="244" r="12" style="fill:none;stroke:var(--saf);stroke-width:3;opacity:0"/></g>`;
+  [[150,372],[330,370],[520,372]].forEach(([x,y],i)=>g+=`<g id="dx-n${i}">${D.phago(x,y,17,'neu',i)}</g>`);
+  g+=`<path id="dx-cut" d="M198 84 L242 84 L226 204 L214 204 Z" class="f-sunk" style="opacity:0"/>`;
+  g+=`<g id="dx-inv" style="opacity:0">${D.rod(212,48,'f-gneg',24,10,20)}${D.rod(232,58,'f-gneg',24,10,-30)}${D.rod(222,36,'f-gneg',24,10,80)}</g>`;
+  g+=`<g id="dx-rings"></g><g id="dx-leak"></g>`;
+  g+=`<text x="180" y="22" text-anchor="middle" class="t tb">Skin</text><text x="540" y="22" text-anchor="middle" class="t tb">Mucous membrane</text><text x="700" y="328" text-anchor="end" class="tm">Tissue</text><text x="700" y="398" text-anchor="end" class="t tb" style="fill:var(--surface)">Blood vessel</text>`;
+  g+=`<g id="dx-hots"></g>`;
+  scene('dx-scene','0 0 720 410','Cross-section of skin and a mucous membrane with tissue and a blood vessel below. Numbered markers label the defenses.',g);
+
+  const HS=[
+   {line:1,kind:'Physical',title:'Skin: epidermis and keratin',x:180,y:110,body:'<p>The epidermis is tightly packed cells filled with <b>keratin</b>, a protective protein. Shedding and dryness also slow microbial growth. Microbes rarely, if ever, get through intact, healthy epidermis.</p>'},
+   {line:1,kind:'Physical',title:'Mucous membranes and mucus',x:610,y:91,body:'<p>Mucous membranes line the digestive, respiratory, and genitourinary tracts. <b>Mucus</b> is a thick glycoprotein layer that traps microbes and keeps the tracts from drying out.</p>'},
+   {line:1,kind:'Physical',title:'Ciliary escalator',x:430,y:108,body:'<p>Cilia beat together to move mucus and the microbes trapped in it <b>up and away from the lungs</b>. The epiglottis also keeps microbes out of the lower respiratory tract.</p>'},
+   {line:1,kind:'Chemical',title:'Sebum and skin pH',x:116,y:186,body:'<p>Sebaceous glands make <b>sebum</b>, which forms a protective film and lowers skin pH to about <b>3–5</b>.</p>'},
+   {line:1,kind:'Chemical',title:'Lysozyme',x:300,y:196,body:'<p>Lysozyme in <b>perspiration, tears, saliva, and urine</b> breaks down bacterial cell walls.</p>'},
+   {line:1,kind:'Microbial',title:'Normal microbiota',x:58,y:66,body:'<p>Your own microbes compete with pathogens for space and nutrients (<b>microbial antagonism</b>, or competitive exclusion). They make substances harmful to pathogens, change local conditions, and help the immune system develop.</p>'},
+   {line:1,kind:'Physical & chemical',title:'Flushing and low pH elsewhere',x:null,body:'<ul><li>Tears wash the eye; urine flushes the urethra; vaginal secretions move microbes out</li><li>Peristalsis, defecation, vomiting, diarrhea</li><li>Earwax</li><li>Gastric juice, pH 1.2–3.0, destroys most bacteria and toxins</li><li>Vaginal secretions, pH 3–5</li></ul>'},
+   {line:2,kind:'Phagocyte',title:'Macrophages',x:450,y:252,body:'<p>Large phagocytes already waiting in the tissue. Their <b>TLRs</b> detect PAMPs, and they release cytokines that start inflammation. They dominate later in an infection as the <b>clean-up crew</b>.</p>'},
+   {line:2,kind:'Phagocyte',title:'Neutrophils',x:330,y:370,body:'<p>Phagocytes carried in the blood. They are the <b>first responders</b> and leave the blood within about an hour of the start of inflammation.</p>'},
+   {line:2,kind:'Response',title:'Inflammation',x:600,y:372,body:'<p>When tissue is damaged, blood vessels dilate and become leaky so phagocytes and clotting factors can reach the site. Switch to <b>Watch an infection</b> to see it step by step.</p>'},
+   {line:2,kind:'Antimicrobial substance',title:'Antimicrobial peptides',x:258,y:262,body:'<p>Short peptides made in response to microbes. They have a broad spectrum and can block cell wall synthesis, punch pores in membranes, and destroy DNA and RNA.</p>'},
+   {line:2,kind:'Response & substances',title:'Fever, interferons, iron-binding proteins',x:null,body:'<ul><li><b>Fever</b>: a body-wide response (see 16.5)</li><li><b>Interferons</b>: antiviral cytokines made by infected cells (see 16.6)</li><li><b>Iron-binding proteins</b> keep iron away from bacteria, which is why some bacteria make siderophores</li></ul>'}
+  ];
+  const hotG=$('#dx-hots'),info=$('#dx-info'),list=$('#dx-list');
+  const lbl=['','First line','Second line'];
+  function pick(i){const s=HS[i];info.innerHTML=infoHTML(`${lbl[s.line]} of defense · ${s.kind}`,s.title,s.body);$$('.hot',hotG).forEach(hh=>hh.classList.toggle('sel',+hh.dataset.i===i));$$('button',list).forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===i?'true':'false'));}
+  HS.forEach((s,i)=>{if(s.x!=null){const m=put(hotG,`<g class="hot" data-i="${i}" tabindex="0" role="button" aria-label="${s.title}"><circle class="mk" cx="${s.x}" cy="${s.y}" r="11"/><text x="${s.x}" y="${s.y+4}" text-anchor="middle">${i+1}</text></g>`);m.addEventListener('click',()=>pick(i));m.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(i);}});}});
+  [1,2].forEach(L=>{list.appendChild(h('span',{class:'group-label'},`${lbl[L]} of defense`));HS.forEach((s,i)=>{if(s.line!==L)return;const b=h('button',{class:'chip',type:'button','data-i':i,'aria-pressed':'false'},`${s.x!=null?(i+1)+' · ':''}${s.title}`);b.addEventListener('click',()=>pick(i));list.appendChild(b);});});
+  info.innerHTML=infoHTML('Explore','Pick a defense','<p>Tap a numbered marker or a button below. The <b>first line</b> keeps microbes out. The <b>second line</b> deals with microbes that get past it.</p>');
+
+  /* infection run */
+  const ST=[
+   ['Intact first line','<p>Skin and mucous membranes keep microbes out. Bacteria sit on the surface but cannot get through healthy, intact epidermis.</p>'],
+   ['The first line is breached','<p>A cut breaks the skin. Bacteria get into the tissue underneath, so the <b>second line</b> takes over.</p>'],
+   ['TLRs detect PAMPs','<p>A macrophage already in the tissue moves toward the bacteria. Its <b>TLRs</b> bind PAMPs on the bacteria, like LPS and flagellin.</p>'],
+   ['Cytokines sound the alarm','<p>The macrophage releases <b>cytokines</b>, and damaged cells release chemicals. Cytokines cause even more cytokine release, a positive feedback loop.</p>'],
+   ['Vasodilation and increased permeability','<p>Blood vessels <b>dilate</b>: more blood brings <b>redness and heat</b>. Vessels become <b>leaky</b>: fluid escapes into the tissue, causing <b>swelling</b> and pain.</p>'],
+   ['Phagocyte migration','<p>Neutrophils stick to the vessel wall (<b>margination</b>), squeeze between the cells of the wall, and follow chemokines to the site. This happens within about an hour.</p>'],
+   ['Phagocytosis','<p>Neutrophils engulf and digest the bacteria. Dead cells and fluid may collect as <b>pus</b>.</p>'],
+   ['Tissue repair','<p>Macrophages clean up dead cells and debris, and the tissue is repaired. <b>Acute</b> inflammation lasts days to weeks. <b>Chronic</b> inflammation lasts months to years.</p>']
+  ];
+  let step=0;
+  const E=id=>document.getElementById(id);
+  function setT(el,tr,op,ms=1000){if(!el)return;el.style.transformBox='fill-box';el.style.transformOrigin='center';el.style.transition=`transform ${ms}ms ease-in-out, opacity 700ms ease`;if(tr!=null)el.style.transform=tr;if(op!=null)el.style.opacity=op;}
+  function apply(n){
+    setT(E('dx-cut'),null,n>=1&&n<7?1:0);
+    setT(E('dx-inv'),n>=1?'translate(0px,192px)':'translate(0px,0px)',n===0?0:n>=6?0:1,1300);
+    if(n>=6)E('dx-inv').style.transform='translate(0px,192px) scale(.3)';
+    setT(E('dx-mac'),n>=2?'translate(-170px,-20px)':'translate(0px,0px)',1,1300);
+    setT(E('dx-tlr'),null,n>=2&&n<=3?1:0);
+    setT(E('dx-red'),null,n>=4&&n<7?.2:0);
+    setT(E('dx-vessel'),n>=4&&n<7?'scaleY(1.18)':'scaleY(1)',null,900);
+    const nt=[[70,-130],[-90,-112],[-300,-150]];
+    nt.forEach((d,i)=>{const t=n>=5?`translate(${d[0]+(n>=6?(i-1)*-8:0)}px,${d[1]}px)`:n>=4?`translate(0px,-14px)`:'translate(0px,0px)';setT(E('dx-n'+i),t,n>=7?.25:1,1500+i*200);});
+    const rings=E('dx-rings');rings.innerHTML='';if(n>=3&&n<=5){for(let i=0;i<3;i++)put(rings,`<circle cx="280" cy="232" r="34" class="k a-ring" style="fill:none;stroke:var(--mac);stroke-width:3;animation-delay:${i*.4}s;animation-iteration-count:infinite"/>`);}
+    const lk=E('dx-leak');lk.innerHTML='';if(n===4){for(let i=0;i<7;i++){const c=put(lk,`<circle cx="${170+i*30}" cy="336" r="4" style="fill:var(--neu);fill-opacity:.6"/>`);setTimeout(()=>tw(c,(i-3)*4,-70-(i%3)*20,1,1500,0),RM?0:i*120);}}
+    $('#dx-stepnum').textContent=`Step ${n+1} of ${ST.length}`;
+    info.innerHTML=infoHTML(`Infection · step ${n+1}`,ST[n][0],ST[n][1]+(n===4?'<p class="mono">PRISH: Pain · Redness · Immobility · Swelling · Heat</p>':''));
+    $('#dx-back').disabled=n===0;$('#dx-next').textContent=n===ST.length-1?'Start over':'Next step';
+  }
+  $('#dx-next').addEventListener('click',()=>{step=step===ST.length-1?0:step+1;apply(step);if(step===ST.length-1)markDone('ch16-dxrun-0');});
+  $('#dx-back').addEventListener('click',()=>{if(step>0){step--;apply(step);}});
+  reg('ch16-dxrun-0');
+  const mE=$('#dx-mode-explore'),mR=$('#dx-mode-run');
+  function mode(run){mE.classList.toggle('on',!run);mR.classList.toggle('on',run);mE.setAttribute('aria-pressed',String(!run));mR.setAttribute('aria-pressed',String(run));list.hidden=run;$('#dx-run').hidden=!run;hotG.style.display=run?'none':'';step=0;apply(0);
+    if(!run){info.innerHTML=infoHTML('Explore','Pick a defense','<p>Tap a numbered marker or a button below. The <b>first line</b> keeps microbes out. The <b>second line</b> deals with microbes that get past it.</p>');E('dx-inv').style.opacity=0;}}
+  mE.addEventListener('click',()=>mode(false));mR.addEventListener('click',()=>mode(true));
+  apply(0);mode(false);
+}
+
+/* ================= 16.3 TLR / PAMP PUZZLE ================= */
+function shapeD(k,x,y,s){switch(k){
+  case 'tri':return `M${x} ${y-s} L${x+s} ${y+s*.8} L${x-s} ${y+s*.8} Z`;
+  case 'circ':return `M${x-s} ${y} a${s} ${s} 0 1 0 ${2*s} 0 a${s} ${s} 0 1 0 ${-2*s} 0`;
+  case 'sq':return `M${x-s*.85} ${y-s*.85} h${s*1.7} v${s*1.7} h${-s*1.7} Z`;
+  case 'dia':return `M${x} ${y-s*1.15} L${x+s} ${y} L${x} ${y+s*1.15} L${x-s} ${y} Z`;
+  case 'hex':{let d='';for(let i=0;i<6;i++){const a=Math.PI/6+i*Math.PI/3;d+=(i?'L':'M')+(x+s*Math.cos(a)).toFixed(1)+' '+(y+s*Math.sin(a)).toFixed(1)+' ';}return d+'Z';}
+  case 'star':{let d='';for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,r=i%2?s*.45:s;d+=(i?'L':'M')+(x+r*Math.cos(a)).toFixed(1)+' '+(y+r*Math.sin(a)).toFixed(1)+' ';}return d+'Z';}}}
+function initTLR(){
+  const R=[{k:'tri',sense:'gram-negative outer membrane'},{k:'circ',sense:'bacterial flagella'},{k:'sq',sense:'bacterial cell walls'},{k:'dia',sense:'viral genomes'},{k:'hex',sense:'bacterial DNA'}];
+  const M=[{k:'tri',name:'LPS',from:'the outer membrane of gram-negative bacteria'},{k:'circ',name:'Flagellin',from:'bacterial flagella'},{k:'sq',name:'Peptidoglycan',from:'bacterial cell walls'},{k:'dia',name:'Viral RNA',from:'many viruses'},{k:'hex',name:'Bacterial DNA',from:'bacteria'},{k:'star',name:'Your own membrane protein',from:'your own cells',self:1}];
+  const xs=[80,200,320,440,560];
+  let g=`<path d="M-40 300 L-40 226 Q320 170 680 226 L680 300 Z" class="f-mac"/><text x="320" y="282" text-anchor="middle" class="t tb" style="fill:var(--surface)">Macrophage</text>`;
+  R.forEach((r,i)=>{const x=xs[i];g+=`<g class="hot" id="tr${i}" data-i="${i}" tabindex="0" role="button" aria-label="Receptor ${i+1}, senses ${r.sense}"><line x1="${x}" y1="${210}" x2="${x}" y2="168" class="s-mac" stroke-width="7"/><g class="rh"><rect x="${x-32}" y="110" width="64" height="58" rx="12" class="f-surface" style="stroke:var(--mac);stroke-width:3"/><path d="${shapeD(r.k,x,139,15)}" style="fill:none;stroke:var(--muted);stroke-width:2;stroke-dasharray:4 3"/></g><text x="${x}" y="100" text-anchor="middle" class="tl">TLR ${i+1}</text></g>`;});
+  g+=`<g id="tlr-fx"></g>`;
+  scene('tlr-scene','0 0 640 300','A macrophage surface with five Toll-like receptors, each with a differently shaped binding site.',g);
+  const info=$('#tlr-info'),tray=$('#tlr-tray'),recBox=$('#tlr-rec'),fx=$('#tlr-fx');
+  let sel=null;const filled=new Set();let foundSelf=false;const id='ch16-tlrgame-0';reg(id);
+  const icon=k=>`<svg width="22" height="22" viewBox="0 0 40 40" aria-hidden="true" style="vertical-align:-5px;margin-right:6px"><path d="${shapeD(k,20,21,14)}" style="fill:var(--saf)"/></svg>`;
+  const chips=shuffle(M).map(m=>{const b=h('button',{class:'chip',type:'button','aria-pressed':'false'},icon(m.k)+m.name);b.addEventListener('click',()=>{if(b.disabled)return;sel=m;chips.forEach(c=>c.b.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');info.innerHTML=infoHTML('Selected molecule',m.name,`<p>Found on ${m.from}. Now choose a receptor.</p>`);});tray.appendChild(b);return {b,m};});
+  R.forEach((r,i)=>{const b=h('button',{class:'chip',type:'button'},`TLR ${i+1} · senses ${r.sense}`);b.addEventListener('click',()=>tryR(i));recBox.appendChild(b);const s=$('#tr'+i);s.addEventListener('click',()=>tryR(i));s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tryR(i);}});});
+  function check(){if(filled.size===5&&foundSelf){info.innerHTML=infoHTML('Complete','All five PAMPs detected','<p>Each TLR recognized one microbial pattern, and none of them reacted to your own protein. That is how innate immunity tells "microbe" from "self" without needing to know the exact species.</p>');markDone(id);}}
+  async function tryR(i){
+    if(!sel){info.innerHTML=infoHTML('First','Choose a molecule','<p>Pick one of the molecules below, then choose a receptor.</p>');return;}
+    const r=R[i],head=$('#tr'+i+' .rh');
+    if(sel.self){foundSelf=true;flash(head,'shake');const c=chips.find(c=>c.m===sel);c.b.disabled=true;c.b.classList.add('done');c.b.setAttribute('aria-pressed','false');
+      info.innerHTML=infoHTML('No receptor fits','That is a self molecule','<p>No TLR binds it, because it is a molecule from <b>your own cells</b>, not a PAMP. TLRs only recognize patterns found on microbes, so they leave healthy host cells alone.</p>');sel=null;check();return;}
+    if(filled.has(i)){info.innerHTML=infoHTML('Already bound',`TLR ${i+1} is taken`,'<p>Try a different receptor.</p>');return;}
+    if(r.k!==sel.k){flash(head,'shake');info.innerHTML=infoHTML('No fit',`${sel.name} does not fit TLR ${i+1}`,`<p>TLR ${i+1} senses ${r.sense}. Each TLR recognizes only its own pattern. Try another receptor.</p>`);return;}
+    filled.add(i);const c=chips.find(c=>c.m===sel);c.b.disabled=true;c.b.classList.add('done');c.b.setAttribute('aria-pressed','false');
+    put(fx,`<path d="${shapeD(r.k,xs[i],139,15)}" class="k a-appear" style="fill:var(--saf)"/>`);$('#tr'+i+' rect').style.stroke='var(--ok)';
+    info.innerHTML=infoHTML('Bound!',`${sel.name} + TLR ${i+1}`,`<p>The TLR binds ${sel.name.toLowerCase()} from ${sel.from}. The macrophage now releases <b>cytokines</b> to recruit help and activate the adaptive response.</p><p class="muted">${filled.size} of 5 PAMPs detected.</p>`);
+    sel=null;for(let k=0;k<6;k++){const a=-Math.PI*(k+.5)/6;shoot(fx,xs[i],215,xs[i]+Math.cos(a)*90,215+Math.sin(a)*70,'var(--mac)',900,1,4);}
+    check();
+  }
+}
+
+/* ================= 16.4 PHAGOCYTOSIS ================= */
+function initPhago(){
+  scene('ph-scene','0 0 640 250','A phagocyte approaching, attaching to, engulfing, and digesting a bacterium.',`<rect width="640" height="250" class="f-tissue"/><g id="ph-dyn"></g>`);
+  const g=$('#ph-dyn'),info=$('#ph-info');let run=0;
+  const P=[
+   {t:'Chemotaxis',b:'<p>Chemical signals (microbial products, complement, chemicals from damaged cells and white blood cells) attract the phagocyte toward the microbe.</p>'},
+   {t:'Adherence',b:'<p>The phagocyte attaches to the microbe. <b>TLRs</b> on the phagocyte bind <b>PAMPs</b> on the microbe.</p>'},
+   {t:'Ingestion',b:'<p><b>Pseudopods</b> extend around the microbe and engulf it, enclosing it in a <b>phagosome</b>. The phagosome becomes acidic (about pH 4).</p>'},
+   {t:'Digestion',b:'<p><b>Lysosomes</b> fuse with the phagosome to form a <b>phagolysosome</b>. Enzymes and toxic oxygen products (the oxidative burst) digest the microbe.</p>'}
+  ];
+  const PX=[520,340,292,205,205];
+  function base(n){g.innerHTML='';if(n<1){for(let i=0;i<8;i++)put(g,`<circle cx="${250+i*34}" cy="${125+((i*37)%30)-15}" r="${4-i*.35}" class="f-saf" style="opacity:${1-i*.1}"/>`);}
+    put(g,`<g id="ph-b">${D.rod(200,125,'f-bact',56,24)}</g>`);put(g,`<g id="ph-p">${D.phago(0,125,62,'mac',1)}</g>`);$('#ph-p').style.transform=`translate(${PX[n]}px,0px)`;
+    if(n>=3)put(g,`<circle id="ph-ps" cx="200" cy="125" r="38" style="fill:none;stroke:var(--surface);stroke-width:3"/>`);}
+  async function phase(n,my){base(n);const p=$('#ph-p');info.innerHTML=infoHTML(`Phase ${n+1} of 4`,P[n].t,P[n].b);await wait(60);if(my!==run)return;
+    if(n===0){await tw(p,PX[1],0,1,1600);}
+    if(n===1){await tw(p,PX[2],0,1,900);put(g,`<circle cx="232" cy="125" r="10" class="k a-ring" style="fill:none;stroke:var(--saf);stroke-width:3"/>`);}
+    if(n===2){await tw(p,PX[3],0,1,1400);if(my!==run)return;put(g,`<circle id="ph-ps" cx="200" cy="125" r="38" class="k a-appear" style="fill:none;stroke:var(--surface);stroke-width:3"/>`);}
+    if(n===3){const ls=[[160,80],[250,88],[240,172]].map(([x,y])=>put(g,`<circle cx="${x}" cy="${y}" r="9" class="f-saf"/>`));await wait(200);ls.forEach((l,i)=>{const [x,y]=[[160,80],[250,88],[240,172]][i];tw(l,(200-x)*.7,(125-y)*.7,1,1000);});await wait(1000);if(my!==run)return;ls.forEach(l=>l.style.opacity=0);tw($('#ph-b'),0,0,.4,1200,.15);}
+  }
+  const ctrl=$('#ph-ctrl');
+  P.forEach((p,i)=>{const b=h('button',{class:'chip',type:'button'},`${i+1} · ${p.t}`);b.addEventListener('click',()=>{const my=++run;phase(i,my);});ctrl.appendChild(b);});
+  const all=h('button',{class:'btn',type:'button'},'Play all four phases');all.addEventListener('click',async()=>{const my=++run;for(let i=0;i<4;i++){await phase(i,my);if(my!==run)return;await wait(1100);}});ctrl.appendChild(all);
+  base(0);
+  $('[data-order="ch16-phago"]').addEventListener('ordered',()=>all.click());
+}
+
+/* ================= 16.5 FEVER ================= */
+function initFever(){
+  const Yt=T=>226-(T-36)*36;
+  let g=`<rect x="104" y="28" width="32" height="214" rx="16" class="f-surface" style="stroke:var(--muted);stroke-width:2"/><circle cx="120" cy="256" r="24" class="f-tox"/><rect id="fv-m" x="111" y="0" width="18" height="10" rx="6" class="f-tox"/>`;
+  for(let T=36;T<=41;T++)g+=`<line x1="136" y1="${Yt(T)}" x2="146" y2="${Yt(T)}" class="s-ink"/><text x="96" y="${Yt(T)+4}" text-anchor="end" class="tl">${T} °C</text>`;
+  g+=`<g id="fv-sp"><path d="M150 0 l12 -7 v14 z" class="f-cv"/><text x="168" y="4" class="t tb" style="fill:var(--cv)">set point</text></g>`;
+  g+=`<path d="${blob(282,92,40,.12,12,1)}" style="fill:var(--saf-soft);stroke:var(--saf);stroke-width:2"/><text x="282" y="96" text-anchor="middle" class="tl">Hypo-</text><text x="282" y="108" text-anchor="middle" class="tl">thalamus</text>`;
+  g+=`<g id="fv-pg" style="opacity:0"><text x="282" y="160" text-anchor="middle" class="t tb" style="fill:var(--saf)">Prostaglandins ↑</text><path d="M282 168 V 200" class="s-saf" stroke-width="2"/><text x="282" y="220" text-anchor="middle" class="tm">raise set point</text></g>`;
+  scene('fever-scene','0 0 360 290','A thermometer showing body temperature and the hypothalamus set point.',g);
+  const sl=$('#cyto'),rd=$('#fever-read'),msg=$('#fever-msg');let body=37,last=performance.now(),raf=0;
+  const F=c=>(c*9/5+32).toFixed(1);
+  function frame(t){const dt=Math.min(.1,(t-last)/1000);last=t;const sp=37+3*(sl.value/100);const diff=sp-body;body+=Math.sign(diff)*Math.min(Math.abs(diff),(RM?5:.7)*dt);
+    const y=Yt(body);const m=$('#fv-m');m.setAttribute('y',y);m.setAttribute('height',250-y);$('#fv-sp').setAttribute('transform',`translate(0 ${Yt(sp)})`);$('#fv-pg').style.opacity=sl.value>0?Math.min(1,.3+sl.value/100):0;
+    rd.innerHTML=`Set point <b>${sp.toFixed(1)} °C</b> (${F(sp)} °F)<br>Body <b>${body.toFixed(1)} °C</b> (${F(body)} °F)`;
+    msg.textContent=Math.abs(diff)<.05?(sl.value>0?'Body holds the higher temperature as long as the cytokines are present.':'Normal set point, about 37 °C (98.6 °F).'):diff>0?'Body is below the new set point, so you feel cold: shivering and chills while the temperature climbs.':'The set point has dropped. Body is too warm, so you sweat and flush until temperature returns to normal.';
+    raf=requestAnimationFrame(frame);}
+  raf=requestAnimationFrame(frame);
+  $('#fever-clear').addEventListener('click',()=>{sl.value=0;});
+}
+
+/* ================= 16.6 CYTOKINE NETWORK ================= */
+function initCyto(){
+  const N={mac:[110,170],th:[330,64],bc:[540,64],brain:[560,178],neu:[560,306],nb:[[250,300],[330,300],[410,300]]};
+  let g=`<rect x="460" y="270" width="180" height="70" class="f-vessel"/><text x="630" y="334" text-anchor="end" class="tl" style="fill:var(--surface)">blood vessel</text>`;
+  [['mac','th'],['th','bc'],['mac','brain'],['mac','neu']].forEach(([a,b])=>g+=`<line x1="${N[a][0]}" y1="${N[a][1]}" x2="${N[b][0]}" y2="${N[b][1]}" class="s-line" stroke-width="2" stroke-dasharray="5 5"/>`);
+  g+=`<g id="cy-mac">${D.phago(N.mac[0],N.mac[1],46,'mac',2)}</g>${D.label(110,236,'Macrophage')}`;
+  g+=`<g id="cy-th"><circle cx="330" cy="64" r="26" class="f-t"/></g>${D.label(330,110,'Helper T cell')}`;
+  g+=`<g id="cy-bc"><circle cx="540" cy="64" r="26" class="f-b"/></g>${D.label(540,110,'B cell')}`;
+  g+=`<g id="cy-brain"><path d="${blob(560,178,32,.14,12,2)}" style="fill:var(--saf-soft);stroke:var(--saf);stroke-width:2"/></g>${D.label(560,228,'Hypothalamus')}`;
+  g+=`<g id="cy-neu">${D.phago(N.neu[0],N.neu[1],20,'neu',1)}</g>${D.label(520,262,'Neutrophil','middle','tm')}`;
+  N.nb.forEach(([x,y],i)=>g+=`<g id="cy-nb${i}">${D.host(x-32,y-26,64,52,10)}</g>`);
+  g+=D.virus(330,300,7)+D.label(330,348,'Neighboring body cells (middle one infected)','middle','tm');
+  g+=`<g id="cy-fx"></g><rect x="20" y="16" width="160" height="12" rx="6" class="f-line"/><rect id="cy-dmg" x="20" y="16" width="0" height="12" rx="6" class="f-tox"/><text x="20" y="44" class="tl" id="cy-dmgt">Tissue damage</text>`;
+  scene('cy-scene','0 0 640 360','A network of immune cells exchanging cytokine signals.',g);
+  const fx=$('#cy-fx'),info=$('#cy-info');let run=0,storm=null;
+  const glow=(id,c)=>{const e=document.getElementById(id);put(fx,`<circle cx="${e.getBBox().x+e.getBBox().width/2}" cy="${e.getBBox().y+e.getBBox().height/2}" r="${e.getBBox().width/2+6}" class="k a-ring" style="fill:none;stroke:${c};stroke-width:3"/>`);};
+  const C=[
+   {label:'Interleukins',col:'var(--tcell)',t:'Between leukocytes',b:'<p><b>Interleukins (ILs)</b> carry messages between white blood cells. Here the macrophage activates a helper T cell, and the helper T cell then helps activate a B cell.</p>',
+    play:async my=>{await shoot(fx,...N.mac,...N.th,'var(--tcell)',900);if(my!==run)return;glow('cy-th','var(--tcell)');await shoot(fx,...N.th,...N.bc,'var(--tcell)',900);if(my!==run)return;glow('cy-bc','var(--bcell)');}},
+   {label:'Chemokines',col:'var(--neu)',t:'Come here',b:'<p><b>Chemokines</b> make white blood cells move toward the site of infection (<b>chemotaxis</b>). The neutrophil leaves the blood and follows the signal.</p>',
+    play:async my=>{const n=$('#cy-neu');n.style.transform='';await shoot(fx,...N.mac,...N.neu,'var(--neu)',1000);if(my!==run)return;await tw(n,-330,-110,1,1600);await wait(900);n.style.transition='none';n.style.transform='';}},
+   {label:'Interferons',col:'var(--vir)',t:'Antiviral warning',b:'<p><b>Interferons (IFNs)</b> interfere with viral infections. A virus-infected cell releases alpha and beta interferons, and its neighbors respond by making <b>antiviral proteins</b> that block viral replication.</p>',
+    play:async my=>{shoot(fx,330,300,250,300,'var(--vir)',800);await shoot(fx,330,300,410,300,'var(--vir)',800);if(my!==run)return;[0,2].forEach(i=>{const [x,y]=N.nb[i];put(fx,`<rect x="${x-37}" y="${y-31}" width="74" height="62" rx="14" class="k a-appear" style="fill:none;stroke:var(--ok);stroke-width:3;stroke-dasharray:6 4"/>`);});}},
+   {label:'Fever signal',col:'var(--saf)',t:'Body-wide effect',b:'<p>Some cytokines travel in the blood to the <b>hypothalamus</b>, which raises the body\'s set point and causes fever. <b>TNF-α</b> is a cytokine involved in inflammation.</p>',
+    play:async my=>{await shoot(fx,...N.mac,...N.brain,'var(--saf)',1000);if(my!==run)return;glow('cy-brain','var(--saf)');}},
+   {label:'Cytokine storm',col:'var(--tox)',t:'Too much of a good thing',b:'<p>Cytokines stimulate cells to release <b>more</b> cytokines. If this positive feedback runs out of control, the flood of cytokines damages tissue. This <b>cytokine storm</b> can cause pneumonia, pulmonary edema, ARDS, and multiorgan dysfunction.</p>',
+    play:async my=>{let dmg=0;const d=$('#cy-dmg');for(let k=0;k<22;k++){if(my!==run)return;const targets=[N.th,N.bc,N.brain,N.neu,...N.nb];const tg=targets[k%targets.length];shoot(fx,N.mac[0]+((k*13)%30)-15,N.mac[1]+((k*7)%30)-15,tg[0],tg[1],'var(--tox)',700,2,4);if(k%2)shoot(fx,tg[0],tg[1],N.mac[0],N.mac[1],'var(--tox)',700,1,4);dmg=Math.min(160,dmg+8);d.setAttribute('width',dmg);flash($('#cy-mac'),'shake');await wait(260);}
+      $('#cy-dmgt').textContent='Tissue damage: severe';}}
+  ];
+  const ctrl=$('#cy-ctrl');
+  C.forEach(c=>{const b=h('button',{class:'chip',type:'button','aria-pressed':'false'},`<i class="dot" style="background:${c.col};margin-right:6px;vertical-align:-1px"></i>${c.label}`);b.addEventListener('click',()=>{$$('.chip',ctrl).forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');b.classList.add('done');const my=++run;fx.innerHTML='';$('#cy-dmg').setAttribute('width',0);$('#cy-dmgt').textContent='Tissue damage';info.innerHTML=infoHTML(c.t,c.label,c.b);c.play(my);});ctrl.appendChild(b);});
+  ctrl.appendChild(h('span',{class:'group-label'},'Also: hematopoietic cytokines tell bone marrow stem cells to make more red and white blood cells.'));
+}
+
+/* Y pointing its arms at (cx,cy) from angle a (radians) at distance r */
+function Yat(cx,cy,a,r,s=1.4){const x=cx+r*Math.cos(a),y=cy+r*Math.sin(a);return {x,y,rot:a*180/Math.PI-90,s};}
+
+/* ================= 17.2 HUMORAL vs CELLULAR ================= */
+function initHC(){
+  let g=`<rect width="640" height="280" class="f-sunk"/>`;
+  g+=`<g id="hc-b"><circle cx="80" cy="140" r="34" class="f-b"/>${[0,1,2].map(i=>D.Y(80+40*Math.cos(-.6+i*.6),140+40*Math.sin(-.6+i*.6),1,(-.6+i*.6)*180/Math.PI+90)).join('')}</g>${D.label(80,200,'B cell')}`;
+  g+=`<g id="hc-t"><circle cx="560" cy="140" r="32" class="f-t"/><path d="M526 128 h-8 M526 152 h-8" class="s-ink" stroke-width="4" style="stroke:var(--tcell)"/></g>${D.label(560,200,'Cytotoxic T cell')}`;
+  g+=`<g id="hc-target"></g><g id="hc-fx"></g><text id="hc-cap" x="320" y="262" text-anchor="middle" class="t tb"></text>`;
+  scene('hc-scene','0 0 640 280','A B cell on the left, a cytotoxic T cell on the right, and a threat in the middle.',g);
+  const T=[
+   {label:'Bacteria multiplying in the blood',arm:'h',draw:()=>D.rod(290,120,'f-bact',44,20,20)+D.rod(345,135,'f-bact',44,20,-30)+D.rod(318,170,'f-bact',44,20,80)},
+   {label:'A toxin circulating in the blood',arm:'h',draw:()=>[[300,115],[340,130],[310,165],[350,170]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="9" class="f-tox"/><circle cx="${x-10}" cy="${y}" r="6" style="fill:var(--mac)"/>`).join('')},
+   {label:'Viruses floating free, before they enter a cell',arm:'h',draw:()=>D.virus(295,120,12)+D.virus(345,140,12)+D.virus(315,175,12)},
+   {label:'A body cell already infected by a virus',arm:'c',cell:1,draw:()=>D.host(260,85,120,110,24)+D.virus(300,120,8)+D.virus(340,165,8)},
+   {label:'<i>Listeria</i> living inside a host cell',arm:'c',cell:1,draw:()=>D.host(260,85,120,110,24)+D.rod(300,118,'f-bact',30,13,20)+D.rod(345,160,'f-bact',30,13,-40)},
+   {label:'<i>Mycobacterium leprae</i> inside a host cell',arm:'c',cell:1,draw:()=>D.host(260,85,120,110,24)+D.rod(305,160,'f-bact',30,12,70)+D.rod(340,118,'f-bact',30,12,0)}
+  ];
+  const tg=$('#hc-target'),fx=$('#hc-fx'),info=$('#hc-info'),cap=t=>$('#hc-cap').textContent=t;let cur=null,run=0;
+  T.forEach((t,i)=>reg('ch17-hc-'+i));
+  const btns=chipRow('hc-threats',T,(t,i)=>{cur={t,i};const my=++run;tg.innerHTML=`<g id="hc-tg">${t.draw()}</g>`;tg.style.opacity=1;fx.innerHTML='';$('#hc-t').style.transform='';cap('');info.innerHTML=infoHTML('Threat '+(i+1)+' of 6',t.label,'<p>Is this threat outside cells or inside a cell? Choose humoral or cellular below.</p>');});
+  const solved=new Set();btns.forEach((b,i)=>{if(progress['ch17-hc-'+i])solved.add(i);b.classList.toggle('done',solved.has(i));b.addEventListener('click',()=>b.classList.toggle('done',solved.has(i)));});
+  $$('#hc-answer [data-arm]').forEach(b=>b.addEventListener('click',async()=>{
+    if(!cur){info.innerHTML=infoHTML('First','Choose a threat','<p>Pick one of the threats above.</p>');return;}
+    const {t,i}=cur,my=++run;
+    if(b.dataset.arm!==t.arm){info.innerHTML=infoHTML('Not quite',t.label,t.arm==='h'?'<p class="fb bad"><strong>Think again.</strong> This threat is <b>outside</b> cells, in blood and body fluids, where antibodies can reach it.</p>':'<p class="fb bad"><strong>Think again.</strong> Antibodies cannot get inside a cell, so a pathogen hiding inside is out of their reach.</p>');return;}
+    markDone('ch17-hc-'+i);solved.add(i);btns[i].classList.add('done');fx.innerHTML='';
+    if(t.arm==='h'){info.innerHTML=infoHTML('Correct · humoral immunity',t.label,'<p class="fb ok"><strong>Correct.</strong> The threat is outside cells. B cells make <b>antibodies</b> that bind it and tag it for destruction.</p>');cap('B cell releases antibodies');
+      const ys=[];for(let k=0;k<8;k++){const a=k/8*Math.PI*2,p=Yat(320,145,a,52);ys.push({el:put(fx,D.Y(80,140,1.4,p.rot)),p});}
+      await wait(80);ys.forEach(({el,p},k)=>setTimeout(()=>tw(el,p.x-80,p.y-140,1,1200),RM?0:k*90));await wait(1700);if(my!==run)return;cap('Antibodies coat the threat');}
+    else{info.innerHTML=infoHTML('Correct · cellular immunity',t.label,'<p class="fb ok"><strong>Correct.</strong> The pathogen is inside a host cell. A <b>cytotoxic T cell</b> recognizes the infected cell and kills it, taking the pathogen down with it.</p>');cap('Cytotoxic T cell moves in');
+      await tw($('#hc-t'),-150,0,1,1300);if(my!==run)return;for(let k=0;k<6;k++)put(fx,`<circle cx="${388}" cy="${120+k*8}" r="3.5" class="f-t"/>`);$$('circle',fx).forEach((c,k)=>tw(c,-20-k*4,(k-3)*6,1,700));cap('It releases chemicals that kill the infected cell');await wait(800);if(my!==run)return;
+      tw($('#hc-tg'),0,0,.6,1400,.3);await wait(1400);cap('The infected cell dies, and the pathogen with it');}
+  }));
+  info.innerHTML=infoHTML('Humoral or cellular?','Choose a threat','<p>Pick a threat, then decide which arm of adaptive immunity should handle it.</p>');
+}
+
+/* ================= 17.3 ANTIBODY EXPLORER + EPITOPES ================= */
+function initAb(){
+  const parts=[
+   {id:'heavy',name:'Heavy chains',d:'<p>Two identical <b>long</b> protein chains. They form the stem and the inner part of each arm.</p>'},
+   {id:'light',name:'Light chains',d:'<p>Two identical <b>short</b> chains on the outside of the arms.</p>'},
+   {id:'var',name:'Variable regions',d:'<p>The <b>tips of the arms</b>, on both heavy and light chains. Their sequence differs from one antibody to the next, so each antibody fits one specific epitope.</p>'},
+   {id:'site',name:'Antigen-binding sites',d:'<p>Where a heavy and light chain\'s variable regions meet. A single Y has <b>two</b>, so its <b>valence is 2</b>. The IgM pentamer has 10.</p>'},
+   {id:'fc',name:'Constant (Fc) region',d:'<p>The <b>stem</b>. It is the same for every antibody of one class (IgG, IgM, and so on). Phagocytes, NK cells, and complement attach to the Fc region.</p>'},
+   {id:'ss',name:'Disulfide bonds',d:'<p>Chemical links that hold the four chains together in the Y shape.</p>'}
+  ];
+  const L='stroke-linecap:round;fill:none';
+  let g=`<rect width="360" height="340" class="f-sunk"/>`;
+  g+=`<g class="part" data-p="fc"><rect x="146" y="168" width="68" height="160" rx="14" style="fill:var(--cv-soft);stroke:var(--cv);stroke-dasharray:5 4"/></g>`;
+  g+=`<g class="part" data-p="heavy"><path d="M160 320 L160 170 L80 60" style="stroke:var(--cv);stroke-width:16;${L}"/><path d="M200 320 L200 170 L280 60" style="stroke:var(--cv);stroke-width:16;${L}"/></g>`;
+  g+=`<g class="part" data-p="light"><path d="M118 150 L62 73" style="stroke:var(--saf);stroke-width:14;${L}"/><path d="M242 150 L298 73" style="stroke:var(--saf);stroke-width:14;${L}"/></g>`;
+  g+=`<g class="part" data-p="var"><path d="M104 93 L80 60 M86 106 L62 73 M256 93 L280 60 M274 106 L298 73" style="stroke:var(--ab);stroke-width:15;${L}"/></g>`;
+  g+=`<g class="part" data-p="site"><circle cx="66" cy="54" r="24" style="fill:none;stroke:var(--ink);stroke-width:2.5;stroke-dasharray:5 4"/><circle cx="294" cy="54" r="24" style="fill:none;stroke:var(--ink);stroke-width:2.5;stroke-dasharray:5 4"/></g>`;
+  g+=`<g class="part" data-p="ss"><path d="M160 186 H200 M160 202 H200 M132 132 L114 145 M228 132 L246 145" style="stroke:var(--ink);stroke-width:3;stroke-dasharray:3 3"/></g>`;
+  g+=`<text x="180" y="20" text-anchor="middle" class="tl">antigen-binding sites at the tips</text><text x="226" y="300" class="tl">Fc stem</text>`;
+  const svg=scene('ab-scene','0 0 360 340','Diagram of a Y-shaped antibody with two heavy chains, two light chains, variable regions at the tips, and a constant Fc stem.',g);
+  const info=$('#ab-info'),ctrl=$('#ab-ctrl');
+  function pick(id){const p=parts.find(x=>x.id===id);svg.classList.add('dimmed');$$('.part',svg).forEach(e=>e.classList.toggle('sel',e.dataset.p===id));$$('button',ctrl).forEach(b=>b.setAttribute('aria-pressed',b.dataset.p===id?'true':'false'));info.innerHTML=infoHTML('Antibody structure',p.name,p.d);}
+  $$('.part',svg).forEach(e=>e.addEventListener('click',()=>pick(e.dataset.p)));
+  parts.forEach(p=>{const b=h('button',{class:'chip',type:'button','data-p':p.id,'aria-pressed':'false'},p.name);b.addEventListener('click',()=>pick(p.id));ctrl.appendChild(b);});
+
+  /* epitopes */
+  const EP=[{k:'tri',x:230},{k:'circ',x:320},{k:'sq',x:410}];
+  let e=`<rect width="640" height="260" class="f-sunk"/><rect x="150" y="150" width="340" height="90" rx="45" class="f-bact"/>`;
+  EP.forEach(p=>e+=`<path d="${shapeD(p.k,p.x,140,11)}" class="f-saf"/>`);
+  e+=`<text x="320" y="202" text-anchor="middle" class="t tb" style="fill:var(--surface)">Antigen (bacterium) with 3 epitopes</text><g id="ep-fx"></g>`;
+  scene('ep-scene','0 0 640 260','A bacterium with three differently shaped epitopes on its surface.',e);
+  const fx=$('#ep-fx'),ei=$('#ep-info'),bound=new Set();const done='ch17-epi-0';reg(done);
+  const abY=k=>`<g><g transform="translate(320 -40) rotate(180) scale(2.2)"><path d="M0 14 V0 M0 0 L-9 -11 M0 0 L9 -11" class="s-ab" style="stroke-width:2"/></g><path d="${shapeD(k,320-19.8,-40+27,6)}" style="fill:none;stroke:var(--ab);stroke-width:2.5"/><path d="${shapeD(k,320+19.8,-40+27,6)}" style="fill:none;stroke:var(--ab);stroke-width:2.5"/></g>`;
+  ['tri','circ','sq','star'].forEach((k,i)=>{const b=h('button',{class:'chip',type:'button'},`<svg width="22" height="22" viewBox="0 0 40 40" aria-hidden="true" style="vertical-align:-5px;margin-right:6px"><path d="${shapeD(k,20,21,13)}" style="fill:none;stroke:var(--ab);stroke-width:4"/></svg>Antibody ${String.fromCharCode(65+i)}`);
+    b.addEventListener('click',async()=>{const ep=EP.find(p=>p.k===k);
+      if(ep&&bound.has(k)){ei.innerHTML=infoHTML('Already bound',`Antibody ${String.fromCharCode(65+i)}`,`<p>That epitope is already covered. Bound so far: ${bound.size} of 3.</p>`);return;}
+      const y=put(fx,abY(k));await wait(60);
+      if(ep){bound.add(k);b.classList.add('done');await tw(y,ep.x-19.8-320,140-12-(-40+27)+2,1,1300);ei.innerHTML=infoHTML('Bound!',`Antibody ${String.fromCharCode(65+i)} fits`,`<p>Its variable regions match this epitope's shape, so it binds. Bound so far: <b>${bound.size} of 3</b>.</p>`+(bound.size===3?'<p class="fb ok"><strong>All three epitopes bound.</strong> One antigen, three different antibodies: each antibody recognizes only its own epitope.</p>':''));if(bound.size===3)markDone(done);}
+      else{await tw(y,0,120,1,1100);await wait(350);tw(y,150,40,1,900,0);ei.innerHTML=infoHTML('No match',`Antibody ${String.fromCharCode(65+i)} does not bind`,`<p>None of this bacterium's epitopes fit its binding sites, so it floats away. That is specificity. Bound so far: ${bound.size} of 3.</p>`);}
+    });$('#ep-ctrl').appendChild(b);});
+  const rs=h('button',{class:'btn ghost',type:'button'},'Reset');rs.addEventListener('click',()=>{fx.innerHTML='';bound.clear();$$('#ep-ctrl .chip').forEach(c=>c.classList.remove('done'));ei.innerHTML=infoHTML('Specificity','Choose an antibody','<p>Bound so far: 0 of 3 epitopes</p>');});$('#ep-ctrl').appendChild(rs);
+}
+
+/* ================= 17.4 ANTIBODY CLASSES: BARS, BUILDER, DECK ================= */
+function initClasses(){
+  const bars=$('#ab-bars');ABCLASSES.forEach(c=>{const w=(Math.log10(c.pct)+3)/5*100;bars.appendChild(h('div',{class:'ab-bar'},`<b>${c.k}</b><div class="track"><div class="fill" style="width:${w.toFixed(1)}%"></div></div><span class="pct">${c.pct}%</span>`));});
+  const CK='molb2210-s3-cards';let notes=Store.get(CK,{});if(typeof notes!=='object'||!notes)notes={};
+  const bd=$('#builder');
+  ABCLASSES.forEach(c=>{const id=`ch17-card-${c.k}`;reg(id);const n=notes[c.k]||{};
+    const card=h('div',{class:'bcard'});
+    card.innerHTML=`<div class="bcard-top"><h4>${c.k}</h4><span class="muted" style="font-size:.9rem">Make this card in your own words</span></div>
+    <div class="bfields">
+      <label>How common is it?<select id="bf-${c.k}-r"><option value="">Choose…</option>${RANKS.slice(1).map((r,i)=>`<option value="${i+1}">${r}</option>`).join('')}</select></label>
+      <label>Where is it found?<input id="bf-${c.k}-w" type="text" autocomplete="off"></label>
+      <label>Basic function<input id="bf-${c.k}-j" type="text" autocomplete="off"></label>
+      <label>My memory trick (optional)<input id="bf-${c.k}-h" type="text" autocomplete="off"></label>
+    </div><div><button class="btn" type="button">Check my card</button></div><div class="key" hidden aria-live="polite"></div>`;
+    bd.appendChild(card);
+    const f={r:$(`#bf-${c.k}-r`,card),w:$(`#bf-${c.k}-w`,card),j:$(`#bf-${c.k}-j`,card),h:$(`#bf-${c.k}-h`,card)};
+    f.r.value=n.r||'';f.w.value=n.w||'';f.j.value=n.j||'';f.h.value=n.h||'';
+    Object.values(f).forEach(el=>el.addEventListener('input',()=>{notes[c.k]={r:f.r.value,w:f.w.value,j:f.j.value,h:f.h.value};Store.set(CK,notes);}));
+    $('button',card).addEventListener('click',()=>{const key=$('.key',card);key.hidden=false;const ok=+f.r.value===c.rank;
+      key.innerHTML=`<div>${f.r.value?(ok?`<b style="color:var(--ok)">✓ Abundance correct:</b> ${RANKS[c.rank]} (${c.pct}% of serum antibodies)`:`<b style="color:var(--bad)">✗ Abundance:</b> you chose "${RANKS[f.r.value]}". ${c.k} is <b>${RANKS[c.rank].toLowerCase()}</b> (${c.pct}%).`):`<b>Abundance:</b> ${RANKS[c.rank]} (${c.pct}%)`}</div><div><b>Where:</b> ${c.where}</div><div><b>Basic function:</b> ${c.job}</div><div><b>Memory trick idea:</b> ${c.hook}</div><div class="muted">Compare your words with the key. If they say the same thing, your card is good.</div>`;
+      if(ok&&f.j.value.trim())markDone(id);});
+  });
+  /* deck */
+  const deck=$('#deck');let mode='class',queue=[],mastered=0,flipped=false;
+  function build(){const cls=ABCLASSES.map(c=>({type:'class',c})),clue=CLUES.map(([t,k])=>({type:'clue',t,k}));queue=shuffle(mode==='class'?cls:mode==='clue'?clue:[...cls,...clue]);mastered=0;render();}
+  function backClass(c){const n=notes[c.k]||{};const mine=(n.w||n.j||n.h)?`<div class="key" style="text-align:left;margin-bottom:8px"><b>Your card:</b> ${n.r?RANKS[n.r]+' · ':''}${esc(n.w||'')}${n.j?' · '+esc(n.j):''}${n.h?'<br><i>'+esc(n.h)+'</i>':''}</div>`:'';
+    return `<div class="sm" style="text-align:left;display:grid;gap:4px">${mine}<div><b>${RANKS[c.rank]}</b> (${c.pct}%)</div><div><b>Where:</b> ${c.where}</div><div><b>Function:</b> ${c.job}</div></div>`;}
+  function render(){deck.innerHTML='';flipped=false;
+    if(!queue.length){deck.appendChild(h('p',{class:'fb ok'},`<strong>Deck complete.</strong> You marked all ${mastered} cards as known.`));const again=h('button',{class:'btn',type:'button'},'Shuffle and study again');again.onclick=build;deck.appendChild(again);markDone('ch17-deck-0');return;}
+    const it=queue[0];
+    const front=it.type==='class'?`<div><div class="big">${it.c.k}</div><div class="sm muted">How common? Where? Basic function?</div></div>`:`<div><div class="sm muted">Which antibody class?</div><div class="big" style="font-size:clamp(1.1rem,3vw,1.5rem)">${it.t}</div></div>`;
+    const back=it.type==='class'?backClass(it.c):(()=>{const c=ABCLASSES.find(x=>x.k===it.k);return `<div><div class="big">${it.k}</div><div class="sm">${c.job.split(';')[0]}</div></div>`;})();
+    const card=h('button',{class:'flash',type:'button','aria-label':'Flashcard front: '+(it.type==='class'?it.c.k+'; recall abundance, location, and function':it.t)+'. Activate to reveal the answer.'},`<div class="flash-inner"><div class="face front">${front}</div><div class="face back" aria-hidden="true">${back}</div></div>`);
+    card.addEventListener('click',()=>{flipped=!flipped;card.classList.toggle('flipped',flipped);$('.front',card).setAttribute('aria-hidden',flipped);$('.back',card).setAttribute('aria-hidden',!flipped);card.setAttribute('aria-label',flipped?'Flashcard answer: '+$('.back',card).innerText.replace(/\s+/g,' ').trim()+'. Activate to return to the question.':'Flashcard front: '+(it.type==='class'?it.c.k+'; recall abundance, location, and function':it.t)+'. Activate to reveal the answer.');acts.hidden=!flipped;});
+    deck.appendChild(card);
+    deck.appendChild(h('div',{class:'deck-meta','aria-live':'polite'},`${queue.length} card${queue.length>1?'s':''} left · ${mastered} known`));
+    const acts=h('div',{class:'controls'});acts.hidden=true;
+    const again=h('button',{class:'btn ghost',type:'button'},'Still learning');const got=h('button',{class:'btn',type:'button'},'Got it');
+    again.onclick=()=>{queue.push(queue.shift());render();$('.flash',deck)?.focus();};got.onclick=()=>{queue.shift();mastered++;render();($('.flash',deck)||$('button',deck))?.focus();};
+    acts.append(again,got);deck.appendChild(acts);
+  }
+  reg('ch17-deck-0');
+  $$('#deck-mode .chip').forEach(b=>b.addEventListener('click',()=>{$$('#deck-mode .chip').forEach(x=>x.classList.toggle('on',x===b));mode=b.dataset.mode;build();}));
+  build();
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+/* ================= 17.5 B CELL ACTIVATION ================= */
+function initBcell(){
+  scene('bc-scene','0 0 640 300','B cells with different receptors; one is selected by an antigen, activated, and expands into plasma and memory cells.',`<rect width="640" height="300" class="f-sunk"/><g id="bc-dyn"></g>`);
+  const g=$('#bc-dyn'),info=$('#bc-info');let step=0,td=true,run=0;
+  const xs=[70,170,270,370,470,570],ks=['circ','sq','tri','dia','hex','star'];
+  const S=[
+   ['Many B cells, many receptors','<p>Each B cell carries over 100,000 copies of <b>one</b> kind of receptor (B cell receptor, BCR). Different B cells recognize different epitopes. They wait in lymph nodes and the spleen.</p>'],
+   ['An antigen arrives','<p>An antigen with triangle-shaped epitopes enters the lymph node.</p>'],
+   ['Clonal selection','<p>Only the B cell whose receptor <b>fits</b> the antigen binds it. The antigen has <b>selected</b> that one B cell. The others are not activated.</p>'],
+   [null,null],
+   ['Clonal expansion','<p>The activated B cell divides again and again, making a <b>clone</b> of identical cells that all recognize the same antigen.</p>'],
+   ['Plasma cells and memory cells','<p>Most of the clone become <b>plasma cells</b>, antibody factories that release thousands of antibodies per second. A few become long-lived <b>memory B cells</b> (M) that respond faster next time.</p>']
+  ];
+  function txt(n){if(n===3)return td?['Help from a helper T cell (T-dependent)','<p>For a <b>protein</b> antigen, the B cell shows a piece of the antigen to a <b>helper T cell</b>. The T cell recognizes it and releases <b>cytokines</b> that finish activating the B cell.</p>']:['No T cell help needed (T-independent)','<p>A <b>T-independent</b> antigen, such as a capsule polysaccharide or LPS, has the same epitope repeated many times. It binds many receptors at once, which activates the B cell without T cell help. The response is weaker and makes little memory.</p>'];return S[n];}
+  function antigen(x,y){return td?`<path d="${blob(x,y,18,.15,10,1)}" style="fill:var(--saf-soft);stroke:var(--saf);stroke-width:2"/><path d="${shapeD('tri',x,y+12,7)}" class="f-saf" transform="rotate(180 ${x} ${y+12})"/><path d="${shapeD('tri',x-14,y-4,6)}" class="f-saf"/>`:`<path d="M${x-50} ${y} H${x+50}" style="stroke:var(--saf);stroke-width:3"/>${[-40,-20,0,20,40].map(d=>`<path d="${shapeD('tri',x+d,y+9,6)}" class="f-saf" transform="rotate(180 ${x+d} ${y+9})"/>`).join('')}`;}
+  async function render(n){const my=++run;g.innerHTML='';
+    xs.forEach((x,i)=>{const sel=i===2;const dim=n>=2&&!sel;put(g,`<g style="opacity:${dim?.3:1}"><circle cx="${x}" cy="110" r="28" class="f-b"/>${(td||!sel||n<3)?`<line x1="${x}" y1="82" x2="${x}" y2="72" class="s-ink" stroke-width="2"/><path d="${shapeD(ks[i],x,63,8)}" style="fill:none;stroke:var(--ink);stroke-width:2"/>`:[-22,-8,8,22].map(d=>`<line x1="${x+d}" y1="${84+Math.abs(d)/3}" x2="${x+d}" y2="${74+Math.abs(d)/3}" class="s-ink" stroke-width="2"/><path d="${shapeD('tri',x+d,66+Math.abs(d)/3,6)}" style="fill:none;stroke:var(--ink);stroke-width:2"/>`).join('')}</g>`);});
+    if(n>=2)put(g,`<circle cx="270" cy="110" r="36" class="${n===2?'k a-ring':''}" style="fill:none;stroke:var(--ab);stroke-width:3;${n===2?'animation-iteration-count:infinite':''}"/>`);
+    if(n===1){const a=put(g,`<g>${antigen(320,-30)}</g>`);await wait(60);if(my!==run)return;tw(a,-50,62,1,1400);}
+    if(n>=2)put(g,`<g>${antigen(270,td?40:56)}</g>`);
+    if(n===3&&td){const t=put(g,`<g><circle cx="600" cy="200" r="24" class="f-t"/><text x="600" y="240" text-anchor="middle" class="tl">helper T</text></g>`);await wait(60);await tw(t,-280,-60,1,1300);if(my!==run)return;shoot(g,320,140,280,118,'var(--tcell)',700,4,4);}
+    if(n===3&&!td)put(g,`<circle cx="270" cy="110" r="44" class="k a-ring" style="fill:none;stroke:var(--saf);stroke-width:3"/>`);
+    if(n>=4){for(let k=0;k<8;k++){const x=110+k*60,plasma=n>=5&&k!==2&&k!==5;put(g,`<g class="k a-appear" style="animation-delay:${n===4?k*.15:0}s">${plasma?`<ellipse cx="${x}" cy="230" rx="26" ry="20" style="fill:var(--bcell);fill-opacity:.55;stroke:var(--bcell);stroke-width:2"/>`:`<circle cx="${x}" cy="230" r="18" class="f-b"/>`}${n>=5&&!plasma?`<text x="${x}" y="235" text-anchor="middle" class="t tb" style="fill:var(--surface)">M</text>`:''}</g>`);}
+      put(g,`<path d="M270 140 L270 196" class="s-ink" stroke-width="2" stroke-dasharray="4 4"/>`);
+      if(n>=5){await wait(300);for(let k=0;k<8;k++){if(k===2||k===5)continue;const x=110+k*60;for(let j=0;j<3;j++){const y=put(g,D.Y(x,230,1,(j-1)*40));setTimeout(()=>tw(y,(j-1)*26,40+j*4,1,1100,0),RM?0:j*200+k*60);}}
+        put(g,`<text x="320" y="290" text-anchor="middle" class="tl">Plasma cells release antibodies · M = memory B cells</text>`);}}
+  }
+  function go(n){step=n;const [t,b]=txt(n);info.innerHTML=infoHTML(`Step ${n+1} of 6`,t,b);$('#bc-num').textContent=`Step ${n+1} of 6`;$('#bc-back').disabled=n===0;$('#bc-next').textContent=n===5?'Start over':'Next step';render(n);}
+  $('#bc-next').addEventListener('click',()=>go(step===5?0:step+1));$('#bc-back').addEventListener('click',()=>{if(step>0)go(step-1);});
+  const tdB=$('#bc-td'),tiB=$('#bc-ti');
+  function setTD(v){td=v;tdB.classList.toggle('on',v);tiB.classList.toggle('on',!v);tdB.setAttribute('aria-pressed',v);tiB.setAttribute('aria-pressed',!v);go(step);}
+  tdB.addEventListener('click',()=>setTD(true));tiB.addEventListener('click',()=>setTD(false));
+  go(0);
+}
+
+/* ================= 17.6 MHC I ================= */
+function bodyCell(cx,cy,r,mhc,pep,id='bcell'){let s=`<g id="${id}"><circle cx="${cx}" cy="${cy}" r="${r}" class="f-host"/><ellipse cx="${cx-r*.25}" cy="${cy}" rx="${r*.3}" ry="${r*.24}" class="f-nuc"/>`;
+  const n=mhc;for(let i=0;i<n;i++){const a=n===1?0:(-60+i*(120/(n-1)));s+=`<g transform="translate(${cx} ${cy}) rotate(${a})"><line x1="${r}" y1="0" x2="${r+12}" y2="0" style="stroke:var(--cv);stroke-width:4"/><path d="M${r+12} -10 v20 M${r+12} -10 h10 M${r+12} 10 h10" style="stroke:var(--cv);stroke-width:4;fill:none;stroke-linecap:round"/>${pep==='viral'?`<path d="${shapeD('star',r+20,0,7)}" class="f-vir"/>`:`<circle cx="${r+19}" cy="0" r="5" style="fill:var(--muted)"/>`}</g>`;}
+  if(pep==='viral')s+=D.virus(cx+r*.2,cy-r*.35,7)+D.virus(cx+r*.1,cy+r*.4,7);return s+'</g>';}
+function initMHC(){
+  scene('mhc-scene','0 0 640 280','A body cell displaying MHC class I molecules, with a cytotoxic T cell and an NK cell nearby.',`<rect width="640" height="280" class="f-sunk"/><g id="mhc-dyn"></g><text id="mhc-cap" x="320" y="268" text-anchor="middle" class="t tb"></text>`);
+  const g=$('#mhc-dyn'),info=$('#mhc-info'),cap=t=>$('#mhc-cap').textContent=t;let run=0;
+  const Tc=`<g id="m-tc"><circle cx="560" cy="80" r="28" class="f-t"/><text x="560" y="84" text-anchor="middle" class="tl" style="fill:var(--surface)">Tc</text></g>`;
+  const NK=`<g id="m-nk"><circle cx="560" cy="200" r="28" class="f-nk"/><text x="560" y="204" text-anchor="middle" class="tl" style="fill:var(--surface)">NK</text></g>`;
+  const kill=async(cellSel,x,y)=>{for(let k=0;k<6;k++){const c=put(g,`<circle cx="${x}" cy="${y}" r="4" class="f-saf"/>`);tw(c,-40-k*6,(k-3)*10,1,700,.2);}await wait(700);tw($('#bcell'),0,0,.6,1400,.3);await wait(1400);};
+  const C=[
+   {label:'Healthy body cell',html:'<p>MHC I displays pieces of the cell\'s <b>own</b> normal proteins (gray). The cytotoxic T cell finds nothing foreign. The NK cell sees normal MHC I. Both move on.</p>',
+    play:async my=>{g.innerHTML=bodyCell(220,140,90,3,'self')+Tc+NK;cap('');await wait(300);await tw($('#m-tc'),-200,40,1,1200);if(my!==run)return;cap('Tc checks MHC I: self peptides, no action');await wait(700);tw($('#m-tc'),0,0,1,1000);await tw($('#m-nk'),-200,-40,1,1200);if(my!==run)return;cap('NK sees normal MHC I: spares the cell');await wait(700);tw($('#m-nk'),0,0,1,1000);}},
+   {label:'Virus-infected cell',html:'<p>Viral proteins are being made inside the cell, so MHC I now displays <b>viral peptides</b> (purple stars). The <b>cytotoxic T cell</b> recognizes the foreign peptide on MHC I and kills the infected cell.</p>',
+    play:async my=>{g.innerHTML=bodyCell(220,140,90,3,'viral')+Tc+NK;cap('');await wait(300);await tw($('#m-tc'),-210,50,1,1200);if(my!==run)return;cap('Tc recognizes a viral peptide on MHC I');await wait(500);await kill('#bcell',330,130);if(my!==run)return;cap('The infected cell is destroyed');}},
+   {label:'Cell that hides its MHC I',html:'<p>Some viruses, and many tumor cells, <b>stop displaying MHC I</b> so cytotoxic T cells have nothing to read. But an <b>NK cell</b> notices that MHC I is missing and kills the cell. NK cells do not need to recognize a specific antigen.</p>',
+    play:async my=>{g.innerHTML=bodyCell(220,140,90,0,'self')+Tc+NK;cap('');await wait(300);await tw($('#m-tc'),-200,40,1,1200);if(my!==run)return;cap('Tc finds no MHC I to read');await wait(700);tw($('#m-tc'),0,0,1,1000);await tw($('#m-nk'),-220,-50,1,1200);if(my!==run)return;cap('NK detects missing MHC I');await wait(400);await kill('#bcell',320,150);cap('The NK cell destroys it');}}
+  ];
+  chipRow('mhc-ctrl',C,c=>{info.innerHTML=infoHTML('MHC class I',c.label,c.html);const my=++run;c.play(my);},0);
+}
+
+/* ================= 17.7 NK PATROL ================= */
+function initNK(){
+  scene('nk-scene','0 0 640 280','A body cell being inspected by an NK cell.',`<rect width="640" height="280" class="f-sunk"/><g id="nk-dyn"></g><text id="nk-cap" x="320" y="268" text-anchor="middle" class="t tb"></text>`);
+  const g=$('#nk-dyn'),info=$('#nk-info'),score=$('#nk-score'),nxt=$('#nk-next');const id='ch17-nk-0';reg(id);
+  const TYPES=[
+   {mhc:5,pep:'self',ok:'spare',who:'a healthy body cell',why:'MHC I is present at normal levels, so the NK cell leaves it alone.'},
+   {mhc:5,pep:'viral',ok:'spare',who:'a virus-infected cell that still shows MHC I',why:'MHC I looks normal, so an NK cell spares it. But look at the purple viral peptides: a <b>cytotoxic T cell</b> will recognize those and kill it. NK cells and T cells cover each other\'s blind spots.'},
+   {mhc:1,pep:'self',ok:'kill',who:'a virus-infected cell that hid most of its MHC I',why:'NK cells also kill cells with <b>low</b> MHC I.'},
+   {mhc:0,pep:'self',ok:'kill',who:'a tumor cell with no MHC I',why:'Missing MHC I is exactly what NK cells look for.'}
+  ];
+  let seq=[],i=0,right=0,answered=false;
+  function start(){seq=shuffle([0,0,1,2,2,3,3,0]).map(k=>TYPES[k]);i=0;right=0;show();}
+  function show(){answered=false;nxt.hidden=true;$$('#nk-ctrl [data-nk]').forEach(b=>b.disabled=false);const c=seq[i];g.innerHTML=bodyCell(230,135,85,c.mhc,c.pep,'nkcell')+`<g id="nk-me"><circle cx="560" cy="135" r="30" class="f-nk"/><text x="560" y="139" text-anchor="middle" class="tl" style="fill:var(--surface)">NK</text></g>`;
+    $('#nk-cap').textContent=`Cell ${i+1} of ${seq.length}: ${c.mhc===0?'no':c.mhc===1?'only one':'normal'} MHC I`;score.textContent=`Score: ${right} / ${i}`;
+    info.innerHTML=infoHTML(`Cell ${i+1} of ${seq.length}`,'Inspect this cell','<p>Count the MHC I molecules (violet holders). Spare it or destroy it?</p>');}
+  $$('#nk-ctrl [data-nk]').forEach(b=>b.addEventListener('click',async()=>{if(answered)return;answered=true;$$('#nk-ctrl [data-nk]').forEach(x=>x.disabled=true);const c=seq[i],ok=b.dataset.nk===c.ok;if(ok)right++;
+    const me=$('#nk-me');await tw(me,-210,0,1,1000);
+    if(b.dataset.nk==='kill'){for(let k=0;k<6;k++){const d=put(g,`<circle cx="330" cy="135" r="4" class="f-saf"/>`);tw(d,-30-k*5,(k-3)*10,1,700,.2);}await wait(700);tw($('#nkcell'),0,0,.6,1200,.3);}
+    else{await wait(300);tw(me,0,0,1,900);}
+    info.innerHTML=infoHTML(ok?'Correct':'Not quite',`This was ${c.who}`,`<p class="fb ${ok?'ok':'bad'}"><strong>${ok?'Correct.':'The NK cell should '+(c.ok==='kill'?'destroy':'spare')+' it.'}</strong> ${c.why}</p>`);
+    score.textContent=`Score: ${right} / ${i+1}`;
+    if(i<seq.length-1){nxt.hidden=false;nxt.textContent='Next cell';}else{nxt.hidden=false;nxt.textContent='Play again';info.insertAdjacentHTML('beforeend',`<p><b>Patrol finished: ${right} of ${seq.length} correct.</b></p>`);if(right>=6)markDone(id);}
+    nxt.focus();}));
+  nxt.addEventListener('click',()=>{if(i<seq.length-1){i++;show();}else start();});
+  start();
+}
+
+/* ================= 17.8 ANTIGEN-ANTIBODY REACTIONS ================= */
+function initRx(){
+  scene('rx-scene','0 0 640 300','Animated antigen-antibody reaction.',`<rect width="640" height="300" class="f-sunk"/><g id="rx-dyn"></g><text id="rx-cap" x="320" y="288" text-anchor="middle" class="t tb"></text>`);
+  const g=$('#rx-dyn'),info=$('#rx-info'),ctrl=$('#rx-ctrl'),tabs=$('#rx-tabs'),cap=t=>$('#rx-cap').textContent=t;let run=0;
+  const coat=(cx,cy,rx,ry,n,s=1.3,gap=16)=>{let o='';for(let k=0;k<n;k++){const a=k/n*Math.PI*2;const x=cx+(rx+gap)*Math.cos(a),y=cy+(ry+gap)*Math.sin(a);o+=D.Y(x,y,s,a*180/Math.PI-90);}return o;};
+  const R=[
+   {k:'agg',label:'Agglutination',html:'<p>Each antibody has at least two binding sites, so one antibody can <b>bridge two cells</b>. Many antibodies link cells into clumps. Clumps are easier for phagocytes to engulf. <b>IgM</b>, with 10 binding sites, is especially good at this.</p><p class="muted">This is also the basis of blood typing and many lab tests.</p>',
+    setup:()=>{const cl=[[180,130],[330,170],[480,120]];const off=[[-17,-12],[17,-12],[-17,12],[17,12]];
+      const sc=[[60,60],[140,230],[250,50],[300,250],[400,60],[560,240],[600,70],[90,170],[220,180],[420,200],[520,180],[350,110]];
+      g.innerHTML='';const bs=sc.map((p,i)=>{const c=cl[Math.floor(i/4)],o=off[i%4];const e=put(g,`<g>${D.rod(0,0,'f-gneg',30,14,(i*45)%180)}</g>`);return {e,s:p,t:[c[0]+o[0],c[1]+o[1]]};});
+      const ys=cl.map(([x,y])=>put(g,`<g>${D.Y(x,y-2,1.1,0)}${D.Y(x,y+2,1.1,180)}${D.Y(x-17,y,1.1,90)}${D.Y(x+17,y,1.1,-90)}</g>`));
+      ctrl.innerHTML='<label for="rx-amt" class="group-label">Antibodies added</label>';const sl=h('input',{type:'range',id:'rx-amt',min:'0',max:'100',value:'0'});ctrl.appendChild(sl);
+      const upd=()=>{const t=sl.value/100,e=t*t*(3-2*t);bs.forEach(b=>b.e.setAttribute('transform',`translate(${b.s[0]+(b.t[0]-b.s[0])*e} ${b.s[1]+(b.t[1]-b.s[1])*e})`));ys.forEach(y=>y.style.opacity=Math.max(0,(t-.45)*1.8));cap(t<.15?'No antibodies: cells float freely':t<.7?'Antibodies start linking cells':'Cells are clumped together (agglutinated)');};
+      sl.addEventListener('input',upd);upd();}},
+   {k:'ops',label:'Opsonization',html:'<p>Antibodies coat the microbe. Phagocytes have receptors for the antibody <b>Fc stem</b>, so a coated microbe is grabbed and engulfed much more easily. Coating a cell to make phagocytosis easier is called opsonization.</p>',
+    setup:()=>{let coated=false;const draw=()=>{g.innerHTML=`<ellipse cx="200" cy="140" rx="44" ry="30" style="fill:var(--cv-soft);stroke:var(--bact);stroke-dasharray:5 4;stroke-width:2"/><g id="rx-rb">${D.rod(200,140,'f-bact',56,24)}</g>${coated?coat(200,140,44,30,8,1.3,10):''}<g id="rx-pp"><g class="pin">${D.phago(500,140,62,'mac',2)}</g></g>`;cap(coated?'Coated with antibodies':'An encapsulated bacterium');};
+      ctrl.innerHTML='';const cb=h('button',{class:'chip',type:'button','aria-pressed':'false'},'Coat with antibodies');const go=h('button',{class:'btn',type:'button'},'Send in a phagocyte');ctrl.append(cb,go);
+      cb.onclick=()=>{coated=!coated;cb.setAttribute('aria-pressed',coated);run++;draw();};
+      go.onclick=async()=>{const my=++run;draw();await wait(60);const p=$('#rx-pp');if(coated){await tw(p,-290,0,1,1500);if(my!==run)return;tw($('#rx-rb'),0,0,.5,900,.25);$$('g > g[transform]',g).forEach(y=>{y.parentNode.style.transition='opacity .8s';y.parentNode.style.opacity=.2;});cap('Grabbed by the Fc stems and engulfed');}
+        else{await tw(p,-200,0,1,1300);flash($('.pin',p),'shake');await wait(500);await tw(p,-110,0,1,900);cap('Without antibodies, the capsule is hard to grab');}};
+      draw();}},
+   {k:'neu',label:'Neutralization',html:'<p>Antibodies bind the parts of a <b>toxin or virus</b> that would attach to host cells. Blocked, it cannot attach and cannot cause damage. <b>Antitoxins</b> work this way, and IgG is good at it.</p>',
+    setup:()=>{let ab=false;const tx=[[150,40],[320,30],[490,40]];const draw=()=>{g.innerHTML=`<g id="hcell">${D.host(60,210,520,70,14)}</g>`+[150,320,490].map(x=>`<line x1="${x}" y1="210" x2="${x}" y2="198" class="s-mac" stroke-width="3"/><path d="M${x-8} 190 Q${x} 204 ${x+8} 190" class="s-mac" stroke-width="3"/>`).join('')+tx.map(([x,y],i)=>`<g id="tx${i}"><circle cx="${x}" cy="${y}" r="13" class="f-tox"/><circle cx="${x}" cy="${y+15}" r="6" style="fill:var(--mac)"/></g>`).join('');cap(ab?'Antibodies are present':'Toxin molecules approach host cells');};
+      ctrl.innerHTML='';const cb=h('button',{class:'chip',type:'button','aria-pressed':'false'},'Add antibodies (antitoxin)');const go=h('button',{class:'btn',type:'button'},'Play');ctrl.append(cb,go);
+      cb.onclick=()=>{ab=!ab;cb.setAttribute('aria-pressed',ab);run++;draw();};
+      go.onclick=async()=>{const my=++run;draw();await wait(60);
+        if(ab){const ys=tx.map(([x,y])=>put(g,D.Y(x,250,1.4,0)));ys.forEach((y,i)=>tw(y,0,tx[i][1]+60+33-250,1,1100));tx.forEach((t,i)=>tw($('#tx'+i),0,60,1,1100));await wait(1150);if(my!==run)return;
+          cap('Antibodies cover the toxin\'s binding sites');await wait(500);if(my!==run)return;tx.forEach((t,i)=>{tw($('#tx'+i),(i-1)*40,20,1,1300);tw(ys[i],(i-1)*40,tx[i][1]+20+33-250,1,1300);});await wait(1300);cap('Blocked: the toxin cannot attach to host cells');}
+        else{tx.forEach((t,i)=>tw($('#tx'+i),0,190-t[1]-21,1,1400));await wait(1400);if(my!==run)return;const r=$('#hcell rect');r.style.transition='fill 1s';r.style.fill='var(--line)';cap('The toxin attaches and damages the cells');}};
+      draw();}},
+   {k:'comp',label:'Complement activation',html:'<p>Antibodies bound to a cell trigger the <b>complement system</b>, a group of proteins in blood. Complement proteins assemble on the cell and punch holes in its membrane, so it bursts (lysis). Complement also attracts phagocytes and promotes inflammation. IgG and IgM activate complement.</p>',
+    setup:()=>{ctrl.innerHTML='';const go=h('button',{class:'btn',type:'button'},'Play');ctrl.appendChild(go);
+      const draw=()=>{g.innerHTML=`<g id="cb"><rect x="200" y="100" width="240" height="90" rx="45" class="f-gneg"/></g>`;cap('A gram-negative bacterium');};
+      go.onclick=async()=>{const my=++run;draw();await wait(60);const pts=[[240,100,0],[320,100,0],[400,100,0],[240,190,180],[320,190,180],[400,190,180]];
+        const ys=pts.map(([x,y,r])=>put(g,D.Y(x,r?310:-20,1.4,r?0:180)));ys.forEach((y,i)=>tw(y,0,(pts[i][2]?pts[i][1]+22:pts[i][1]-22)-(pts[i][2]?310:-20),1,1100));cap('Antibodies bind the cell');await wait(1200);if(my!==run)return;
+        const cs=[];pts.forEach(([x,y,r])=>{for(let k=0;k<3;k++){const c=put(g,`<circle cx="${x+(k-1)*60}" cy="${r?300:-10}" r="5" class="f-comp"/>`);cs.push([c,x+(k-1)*10-(x+(k-1)*60),(r?y+8:y-8)-(r?300:-10)]);}});cs.forEach(([c,dx,dy])=>tw(c,dx,dy,1,1100));cap('Complement proteins assemble');await wait(1200);if(my!==run)return;
+        pts.forEach(([x,y])=>put(g,`<circle cx="${x}" cy="${y}" r="9" class="k a-appear" style="fill:var(--sunk);stroke:var(--comp);stroke-width:4"/>`));cap('They punch holes in the membrane');await wait(800);if(my!==run)return;
+        for(let k=0;k<14;k++){const c=put(g,`<circle cx="320" cy="145" r="3.5" style="fill:var(--gneg)"/>`);tw(c,Math.cos(k)*170,Math.sin(k)*100,1,1100,0);}const cb=$('#cb');cb.style.transition='opacity 1.2s';cb.style.opacity=.2;cap('The cell bursts (lysis)');};
+      draw();}},
+   {k:'adcc',label:'ADCC',html:'<p><b>Antibody-dependent cell-mediated cytotoxicity.</b> Protozoa and helminths are too big to be phagocytized. Antibodies coat the target, then <b>NK cells and macrophages</b> attach to the antibody Fc stems and release chemicals that lyse it from the outside.</p>',
+    setup:()=>{ctrl.innerHTML='';const go=h('button',{class:'btn',type:'button'},'Play');ctrl.appendChild(go);
+      const wormD='M60 120 C 140 70, 220 170, 300 120 S 460 70, 580 120';
+      const draw=()=>{g.innerHTML=`<path id="worm" d="${wormD}" style="fill:none;stroke:var(--keratin-edge);stroke-width:34;stroke-linecap:round"/>`;cap('A parasitic worm (helminth)');};
+      go.onclick=async()=>{const my=++run;draw();await wait(60);const w=$('#worm'),L=w.getTotalLength();const ys=[];for(let k=1;k<9;k++){const p=w.getPointAtLength(L*k/9);const y=put(g,D.Y(p.x,p.y+60,1.3,0));ys.push([y,p]);}
+        ys.forEach(([y,p])=>tw(y,0,-30,1,1000));cap('Antibodies coat the worm');await wait(1100);if(my!==run)return;
+        const cells=[[1,'nk'],[3,'mac'],[5,'nk'],[7,'nk']].map(([k,t])=>{const p=w.getPointAtLength(L*(k+1)/9);const c=put(g,`<g>${t==='mac'?D.phago(p.x,300,24,'mac',k):`<circle cx="${p.x}" cy="300" r="20" class="f-nk"/>`}</g>`);return [c,p];});
+        cells.forEach(([c,p])=>tw(c,0,p.y+80-300,1,1200));cap('NK cells and a macrophage attach to the Fc stems');await wait(1300);if(my!==run)return;
+        cells.forEach(([c,p])=>{for(let k=0;k<4;k++){const d=put(g,`<circle cx="${p.x}" cy="${p.y+56}" r="3.5" class="f-saf"/>`);tw(d,(k-1.5)*8,-34,1,700,.2);}});await wait(800);if(my!==run)return;
+        w.style.transition='stroke 1.4s, opacity 1.4s';w.style.stroke='var(--line)';w.style.opacity=.5;cap('Released chemicals destroy the worm');};
+      draw();}}
+  ];
+  const tb=R.map((r,i)=>{const b=h('button',{class:'chip',type:'button',role:'tab','aria-selected':'false'},r.label);b.addEventListener('click',()=>{tb.forEach(x=>{x.classList.remove('on');x.setAttribute('aria-selected','false');});b.classList.add('on');b.setAttribute('aria-selected','true');run++;info.innerHTML=infoHTML('Antigen–antibody reaction',r.label,r.html);r.setup();});tabs.appendChild(b);return b;});
+  tb[0].click();
+}
+
+/* ================= 17.9 MEMORY GRAPH ================= */
+function initMem(){
+  const x0=60,x1=540,y0=24,y1=236,X=d=>x0+d/60*(x1-x0),Y=v=>y1-(Math.log10(v))/4*(y1-y0);
+  const prim=d=>d<4?1:d<=13?1+9*Math.exp(-Math.pow((d-13)/4,2)):1+9*Math.exp(-(d-13)/8);
+  const sec=d=>{const base=d<=30?prim(d):1+(prim(30)-1)*Math.exp(-(d-30)/6);return d<31?base:base+999*(1-Math.exp(-(d-31)/2.2))*Math.exp(-Math.max(0,d-38)/20);};
+  const path=(f,a,b)=>{let s='';for(let d=a;d<=b+.001;d+=.25)s+=(s?'L':'M')+X(d).toFixed(1)+' '+Y(Math.max(1,f(d))).toFixed(1)+' ';return s;};
+  let g='';[0,10,20,30,40,50,60].forEach(d=>g+=`<line x1="${X(d)}" y1="${y0}" x2="${X(d)}" y2="${y1}" class="s-line"/><text x="${X(d)}" y="${y1+18}" text-anchor="middle" class="tl">${d}</text>`);
+  [[1,'low'],[100,''],[10000,'high']].forEach(([v,l])=>g+=`<text x="${x0-8}" y="${Y(v)+4}" text-anchor="end" class="tl">${l}</text>`);
+  g+=`<line x1="${x0}" y1="${y1}" x2="${x1}" y2="${y1}" class="s-ink"/><line x1="${x0}" y1="${y0}" x2="${x0}" y2="${y1}" class="s-ink"/>`;
+  g+=`<text x="${(x0+x1)/2}" y="${y1+40}" text-anchor="middle" class="tm">Days</text><text x="18" y="${(y0+y1)/2}" text-anchor="middle" class="tm" transform="rotate(-90 18 ${(y0+y1)/2})">Antibody titer (log)</text>`;
+  g+=`<path id="mem-p" d="${path(prim,0,30)}" class="s-saf" stroke-width="3" style="opacity:0"/><path id="mem-s" d="${path(sec,30,60)}" class="s-cv" stroke-width="3.5" style="opacity:0"/>`;
+  g+=`<g id="mem-m1" style="opacity:0"><path d="M${X(0)} ${y0} V${y1}" class="s-saf" stroke-width="2" stroke-dasharray="4 3"/><text x="${X(0)+6}" y="${y0+12}" class="tl" style="fill:var(--saf)">1st exposure</text></g>`;
+  g+=`<g id="mem-m2" style="opacity:0"><path d="M${X(30)} ${y0} V${y1}" class="s-cv" stroke-width="2" stroke-dasharray="4 3"/><text x="${X(30)+6}" y="${y0+12}" class="tl" style="fill:var(--cv)">2nd exposure</text></g>`;
+  scene('mem-scene','0 0 560 290','Graph of antibody titer over 60 days with a small primary response and a much larger, faster secondary response.',g);
+  const info=$('#mem-info');
+  const draw=id=>{const p=document.getElementById(id),L=p.getTotalLength();p.style.opacity=1;p.style.strokeDasharray=L;p.style.strokeDashoffset=L;p.getBoundingClientRect();p.style.transition=`stroke-dashoffset ${RM?0:1.8}s ease-out`;p.style.strokeDashoffset=0;};
+  $('#mem-1').addEventListener('click',()=>{$('#mem-m1').style.opacity=1;draw('mem-p');$('#mem-2').disabled=false;info.innerHTML=infoHTML('Primary response','First exposure','<p>There is a lag of several days while B cells are selected and expand. The titer rises slowly, peaks, and falls. IgM is made first. Memory cells are made along the way.</p>');});
+  $('#mem-2').addEventListener('click',()=>{$('#mem-m2').style.opacity=1;draw('mem-s');info.innerHTML=infoHTML('Secondary (memory) response','Second exposure','<p>Memory cells respond right away. The lag is short, the titer climbs <b>far higher</b>, and it lasts longer. Most of the antibody is now IgG because of <b>class switching</b>. This is why vaccines work.</p>');markDone('ch17-mem-0');});
+  $('#mem-r').addEventListener('click',()=>{['mem-p','mem-s','mem-m1','mem-m2'].forEach(i=>document.getElementById(i).style.opacity=0);$('#mem-2').disabled=true;info.innerHTML=infoHTML('Antibody titer over time','Expose the body to an antigen','<p>Press <b>First exposure</b>, then <b>Second exposure</b>.</p>');});
+  reg('ch17-mem-0');
+}
+
+/* ================= BOOT ================= */
+function boot(){
+  $$('[data-quiz]').forEach(mountQuiz);$$('[data-sort]').forEach(mountSort);$$('[data-match]').forEach(mountMatch);$$('[data-order]').forEach(mountOrder);
+  const inits=[initDose,initJourneyNav,initJ1,initJ2,initJ3,initJ4,initJ5,initDefense,initTLR,initPhago,initFever,initCyto,initHC,initAb,initClasses,initBcell,initMHC,initNK,initRx,initMem];
+  inits.forEach(f=>{try{f();}catch(e){console.error(f.name,e);}});
+  updateBadges();
+  let start=location.hash.slice(1);if(!['ch15','ch16','ch17'].includes(start))start=Store.get('molb2210-s3-tab','ch15');show(start);
+  $$('[data-jump]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();location.hash='ch16';show('ch16');setTimeout(()=>document.getElementById(a.dataset.jump).scrollIntoView({behavior:RM?'auto':'smooth'}),150);}));
+}
+boot();
+</script>
+</body></html>
